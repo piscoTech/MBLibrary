@@ -9,10 +9,23 @@
 import Foundation
 
 extension String {
+		
+	public var length: Int {
+		get {
+			return self.characters.count
+		}
+	}
+	
+	public func URLEncode() -> String {
+		let set = CharacterSet(charactersIn: "=\"#%/<>?@\\^`{|}&").inverted
+		return self.addingPercentEncoding(withAllowedCharacters: set)!
+	}
 	
 	public func toCSV() -> String {
 		return "\"\(self.replacingOccurrences(of: "\"", with: "\"\""))\""
 	}
+	
+	// MARK: - Substring
 	
 	public subscript (i: Int) -> String {
 		let j = i < 0 ? self.characters.count + i : i
@@ -48,6 +61,8 @@ extension String {
 		
 		return nFormat
 	}()
+	
+	// MARK: - Constants
 	
 	public static var decimalPoint: String {
 		get {

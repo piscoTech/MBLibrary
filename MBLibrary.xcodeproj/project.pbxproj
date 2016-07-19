@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0064BC1D3E92D60089297D /* Main iOS.swift */; };
+		7A0064BF1D3E935B0089297D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0064BE1D3E935B0089297D /* Array.swift */; };
+		7A0064C31D3E96740089297D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0064C21D3E96740089297D /* Dictionary.swift */; };
 		7A3A67601D3E462800E639BC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A675F1D3E462800E639BC /* String.swift */; };
 		7A5323961D3E4C2600A07FB6 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5323951D3E4C2600A07FB6 /* TimeInterval.swift */; };
 		7A5323981D3E4C4000A07FB6 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5323971D3E4C4000A07FB6 /* DispatchQueue.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A0064BC1D3E92D60089297D /* Main iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Main iOS.swift"; sourceTree = "<group>"; };
+		7A0064BE1D3E935B0089297D /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		7A0064C21D3E96740089297D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		7A3A675F1D3E462800E639BC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7A5323951D3E4C2600A07FB6 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		7A5323971D3E4C4000A07FB6 /* DispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
@@ -62,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0064BB1D3E92B50089297D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 		7A584F7C1D3E23ED000C739B = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +98,8 @@
 		7A584FA61D3E241C000C739B /* MBLibrary iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */,
+				7A0064BB1D3E92B50089297D /* UIKit */,
+				7A0064BC1D3E92D60089297D /* Main iOS.swift */,
 				7A75FB671D3E619F00F66CF9 /* Supporting Files */,
 			);
 			path = "MBLibrary iOS";
@@ -107,6 +122,8 @@
 				7A84ABBA1D3E490300E728BF /* Date.swift */,
 				7A5323951D3E4C2600A07FB6 /* TimeInterval.swift */,
 				7A5323971D3E4C4000A07FB6 /* DispatchQueue.swift */,
+				7A0064BE1D3E935B0089297D /* Array.swift */,
+				7A0064C21D3E96740089297D /* Dictionary.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -231,7 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0064BF1D3E935B0089297D /* Array.swift in Sources */,
+				7A0064C31D3E96740089297D /* Dictionary.swift in Sources */,
 				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
+				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
 				7A3A67601D3E462800E639BC /* String.swift in Sources */,
 				7A5323961D3E4C2600A07FB6 /* TimeInterval.swift in Sources */,
 				7A84ABB91D3E48DE00E728BF /* Double.swift in Sources */,
