@@ -13,6 +13,7 @@
 		7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A584FA71D3E241C000C739B /* MBLibrary iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A584FAF1D3E241C000C739B /* MBLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A584FA51D3E241C000C739B /* MBLibrary.framework */; };
 		7A584FBF1D3E25E5000C739B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A584FBE1D3E25E5000C739B /* Main.swift */; };
+		7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */; };
 		7A84ABB91D3E48DE00E728BF /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A84ABB81D3E48DE00E728BF /* Double.swift */; };
 		7A84ABBB1D3E490300E728BF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A84ABBA1D3E490300E728BF /* Date.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		7A584FAE1D3E241C000C739B /* MBLibrary iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBLibrary iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A584FB51D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A584FBE1D3E25E5000C739B /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextView.swift; sourceTree = "<group>"; };
 		7A84ABB81D3E48DE00E728BF /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		7A84ABBA1D3E490300E728BF /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,8 +84,8 @@
 		7A584FA61D3E241C000C739B /* MBLibrary iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7A584FA71D3E241C000C739B /* MBLibrary iOS.h */,
-				7A584FA91D3E241C000C739B /* Info.plist */,
+				7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */,
+				7A75FB671D3E619F00F66CF9 /* Supporting Files */,
 			);
 			path = "MBLibrary iOS";
 			sourceTree = "<group>";
@@ -107,6 +109,15 @@
 				7A5323971D3E4C4000A07FB6 /* DispatchQueue.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7A75FB671D3E619F00F66CF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A584FA71D3E241C000C739B /* MBLibrary iOS.h */,
+				7A584FA91D3E241C000C739B /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +177,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Marco Boschi";
 				TargetAttributes = {
 					7A584FA41D3E241C000C739B = {
@@ -220,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
 				7A3A67601D3E462800E639BC /* String.swift in Sources */,
 				7A5323961D3E4C2600A07FB6 /* TimeInterval.swift in Sources */,
 				7A84ABB91D3E48DE00E728BF /* Double.swift in Sources */,
@@ -285,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -328,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -375,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Marco-Boschi.ios.$(PRODUCT_NAME)";
 				PRODUCT_NAME = MBLibrary;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

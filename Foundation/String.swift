@@ -51,9 +51,7 @@ extension String {
 	
 	public static var decimalPoint: String {
 		get {
-			let n = nFormat.string(from: 0.1)!
-			
-			return n[1]
+			return nFormat.string(from: 0.1)![1]
 		}
 	}
 	
