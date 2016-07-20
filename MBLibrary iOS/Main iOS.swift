@@ -15,3 +15,8 @@ public let isIPad = {
 public let isIPhone = {
 	return UIDevice.current().userInterfaceIdiom == .phone
 }()
+
+public func is3AndHalfInchesScreen() -> Bool {
+	let screen = UIScreen.main().bounds.size
+	return max(screen.width, screen.height) == 480
+}

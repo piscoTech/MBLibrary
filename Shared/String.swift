@@ -16,6 +16,23 @@ extension String {
 		}
 	}
 	
+	public func isDigit() -> Bool {
+		if self == "" {
+			return false
+		}
+		
+		let digit = "0123456789"
+		for c in self.characters {
+			if digit.range(of: "\(c)") == nil {
+				return false
+			}
+		}
+		
+		return true
+	}
+	
+	// MARK: - Transform
+	
 	public func URLEncode() -> String {
 		let set = CharacterSet(charactersIn: "=\"#%/<>?@\\^`{|}&").inverted
 		return self.addingPercentEncoding(withAllowedCharacters: set)!
@@ -23,6 +40,30 @@ extension String {
 	
 	public func toCSV() -> String {
 		return "\"\(self.replacingOccurrences(of: "\"", with: "\"\""))\""
+	}
+	
+	public func toDouble() -> Double? {
+		var s = self
+		
+		var sign = ""
+		if s != "" {
+			if s[0] == "+" {
+				s = s.substring(from: 1)
+			}
+			
+			if s[0] == "-" {
+				s = s.substring(from: 1)
+				sign = "-"
+			}
+		}
+		
+		if s != "" && s[0] == String.decimalPoint {
+			s = "0" + s
+		}
+		
+		s = sign + s
+		
+		return NumberFormatter().number(from: s)?.doubleValue
 	}
 	
 	// MARK: - Substring
