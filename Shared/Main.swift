@@ -10,3 +10,11 @@ import Foundation
 
 public var decimalPoint: String { return String.decimalPoint }
 public var CSVSeparator: String { return String.CSVSeparator }
+
+public protocol Animatable: class {
+	
+	func startAnimation()
+	func stopAnimation()
+	func isAnimating() -> Bool
+	
+}

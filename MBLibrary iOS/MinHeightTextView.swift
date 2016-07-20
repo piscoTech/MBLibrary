@@ -182,10 +182,18 @@ public class MinHeightTextView: UITextView {
 	}
 	
 	private func editMode() {
+		backgroundColor = UIColor.white()
+		layer.borderWidth = 0.6
+		textContainerInset = UIEdgeInsets(top: 3, left: 1, bottom: 3, right: 1)
+		
 		self.autocorrectionType = self.editCorrectionType
 	}
 	
 	private func displayMode() {
+		backgroundColor = nil
+		layer.borderWidth = 0
+		textContainerInset = UIEdgeInsetsZero
+		
 		self.autocorrectionType = .no
 	}
 	
