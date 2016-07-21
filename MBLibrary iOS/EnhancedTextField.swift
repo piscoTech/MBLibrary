@@ -1,5 +1,5 @@
 //
-//  EnancedTextField.swift
+//  EnhancedTextField.swift
 //  MBLibrary
 //
 //  Created by Marco Boschi on 22/07/15.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-public class EnancedTextField: UITextField {
+public class EnhancedTextField: UITextField {
 
 	public var isEditable: Bool {
 		didSet {
 			isUserInteractionEnabled = isEditable
+			isEnabled = isEditable
 			if isEditable {
 				borderStyle = UITextBorderStyle.roundedRect
 				backgroundColor = UIColor.white()
