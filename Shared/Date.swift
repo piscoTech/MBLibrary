@@ -19,16 +19,16 @@ extension Date {
 	
 	private static let localDateF = { Void -> DateFormatter in
 		let formatter = DateFormatter()
-		formatter.dateStyle = .mediumStyle
-		formatter.timeStyle = .noStyle
+		formatter.dateStyle = .medium
+		formatter.timeStyle = .none
 		
 		return formatter
 	}()
 	
 	private static let localTimeF = { Void -> DateFormatter in
 		let formatter = DateFormatter()
-		formatter.dateStyle = .noStyle
-		formatter.timeStyle = .shortStyle
+		formatter.dateStyle = .none
+		formatter.timeStyle = .short
 		
 		return formatter
 	}()

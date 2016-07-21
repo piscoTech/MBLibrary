@@ -93,7 +93,7 @@ public class MinHeightTextView: UITextView {
 		layer.borderColor = UIColor(white: 212.0 / 255.0, alpha: 1).cgColor
 		layer.cornerRadius = 6
 		
-		NotificationCenter.default().addObserver(self, selector: #selector(MinHeightTextView.textChanged(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(MinHeightTextView.textChanged(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
 		
 		self.contentInset = UIEdgeInsetsZero
 		self.editCorrectionType = self.autocorrectionType
@@ -106,7 +106,7 @@ public class MinHeightTextView: UITextView {
 	}
 	
 	deinit {
-		NotificationCenter.default().removeObserver(self)
+		NotificationCenter.default.removeObserver(self)
 	}
 	
 	private func updatePlaceholder() {
