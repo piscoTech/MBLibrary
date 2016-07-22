@@ -80,6 +80,8 @@
 		7A4CE3B31D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
 		7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A584FA71D3E241C000C739B /* MBLibrary iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */; };
+		7A83150C1D4241FD000F35AE /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83150B1D4241FD000F35AE /* FAQController.swift */; };
+		7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83150B1D4241FD000F35AE /* FAQController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,7 @@
 		7A584FA71D3E241C000C739B /* MBLibrary iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary iOS.h"; sourceTree = "<group>"; };
 		7A584FA91D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextView.swift; sourceTree = "<group>"; };
+		7A83150B1D4241FD000F35AE /* FAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +249,7 @@
 				7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */,
 				7A3994921D3F5F3D000665A0 /* Complex.swift */,
 				7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */,
+				7A83150B1D4241FD000F35AE /* FAQController.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -529,6 +533,7 @@
 				7A3994A41D3F5F3D000665A0 /* Date.swift in Sources */,
 				7A4CE3A81D3F741700DAAE70 /* NSFont.swift in Sources */,
 				7A4CE3A41D3F73BF00DAAE70 /* NSView.swift in Sources */,
+				7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */,
 				7A3994AC1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A3994B01D3F5F3D000665A0 /* Double.swift in Sources */,
 				7A3994B41D3F5F3D000665A0 /* Main.swift in Sources */,
@@ -603,6 +608,7 @@
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
 				7A4CE3AA1D3F746000DAAE70 /* UIView.swift in Sources */,
 				7A4CE3AE1D3F74BB00DAAE70 /* UIFont.swift in Sources */,
+				7A83150C1D4241FD000F35AE /* FAQController.swift in Sources */,
 				7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */,
 				7A3994AB1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A3994A71D3F5F3D000665A0 /* Dictionary.swift in Sources */,
