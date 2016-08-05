@@ -82,6 +82,7 @@
 		7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */; };
 		7A83150C1D4241FD000F35AE /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83150B1D4241FD000F35AE /* FAQController.swift */; };
 		7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83150B1D4241FD000F35AE /* FAQController.swift */; };
+		7AD2D56B1D548A3A00CF755F /* VariableToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2D56A1D548A3A00CF755F /* VariableToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		7A584FA91D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextView.swift; sourceTree = "<group>"; };
 		7A83150B1D4241FD000F35AE /* FAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQController.swift; sourceTree = "<group>"; };
+		7AD2D56A1D548A3A00CF755F /* VariableToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				7A2F5AFF1D3FABFB0012F485 /* PopoverController.swift */,
 				7A2F5B031D3FB1250012F485 /* EnhancedTextField.swift */,
 				7A2F5B041D3FB1250012F485 /* SlidingLabel.swift */,
+				7AD2D56A1D548A3A00CF755F /* VariableToolbar.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */,
 				7A3994AB1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A3994A71D3F5F3D000665A0 /* Dictionary.swift in Sources */,
+				7AD2D56B1D548A3A00CF755F /* VariableToolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
