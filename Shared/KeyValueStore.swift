@@ -8,11 +8,7 @@
 
 import Foundation
 
-public protocol KeyValueStoreKey {
-	
-	func get() -> String
-	
-}
+public typealias KeyValueStoreKey = CustomStringConvertible
 
 public class KeyValueStore {
 	
@@ -39,7 +35,7 @@ public class KeyValueStore {
 	// MARK: - Setter
 	
 	public func set(_ value: Bool, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -48,7 +44,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: Int, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -57,7 +53,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: Double, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -66,7 +62,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: String, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -75,7 +71,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: [AnyObject], forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -84,7 +80,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: [String: AnyObject], forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -93,7 +89,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: Data, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -102,7 +98,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: URL, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.setURL(value, forKey: key)
 		} else {
@@ -111,7 +107,7 @@ public class KeyValueStore {
 	}
 	
 	public func set(_ value: AnyObject, forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
@@ -122,7 +118,7 @@ public class KeyValueStore {
 	// MARK: - Getter
 	
 	public func bool(forKey: KeyValueStoreKey) -> Bool {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.bool(forKey: key)
 		} else {
@@ -131,7 +127,7 @@ public class KeyValueStore {
 	}
 	
 	public func integer(forKey: KeyValueStoreKey) -> Int {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.integer(forKey: key)
 		} else {
@@ -140,7 +136,7 @@ public class KeyValueStore {
 	}
 	
 	public func double(forKey: KeyValueStoreKey) -> Double {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.double(forKey: key)
 		} else {
@@ -149,7 +145,7 @@ public class KeyValueStore {
 	}
 	
 	public func string(forKey: KeyValueStoreKey) -> String? {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.string(forKey: key)
 		} else {
@@ -158,7 +154,7 @@ public class KeyValueStore {
 	}
 	
 	public func array(forKey: KeyValueStoreKey) -> [AnyObject]? {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.array(forKey: key)
 		} else {
@@ -167,7 +163,7 @@ public class KeyValueStore {
 	}
 	
 	public func dictionary(forKey: KeyValueStoreKey) -> [String: AnyObject]? {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.dictionary(forKey: key)
 		} else {
@@ -176,7 +172,7 @@ public class KeyValueStore {
 	}
 	
 	public func data(forKey: KeyValueStoreKey) -> Data? {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.data(forKey: key)
 		} else {
@@ -185,7 +181,7 @@ public class KeyValueStore {
 	}
 	
 	public func url(forKey: KeyValueStoreKey) -> URL? {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.url(forKey: key)
 		} else {
@@ -198,7 +194,7 @@ public class KeyValueStore {
 	}
 	
 	public func object(forKey: KeyValueStoreKey) -> AnyObject? {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			return localStore.object(forKey: key)
 		} else {
@@ -209,7 +205,7 @@ public class KeyValueStore {
 	// MARK: - Manage
 	
 	public func removeObject(forKey: KeyValueStoreKey) {
-		let key = forKey.get()
+		let key = forKey.description
 		if isLocal {
 			localStore.removeObject(forKey: key)
 		} else {

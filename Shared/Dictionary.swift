@@ -11,10 +11,13 @@ import Foundation
 ///Add all the pairs of the second dictionary to the first one, if a key already exists its value is replaced.
 public func + <K,V>(left: [K: V], right: [K: V]) -> [K: V] {
 	var res = left
-	
-	for (k, v) in right {
-		res[k] = v
-	}
-	
+	res += right
 	return res
+}
+
+///Add all the pairs of the second dictionary to the first one, if a key already exists its value is replaced.
+public func += <K,V>(left: inout [K: V], right: [K: V]) {
+	for (k, v) in right {
+		left[k] = v
+	}
 }

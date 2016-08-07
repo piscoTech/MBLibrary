@@ -23,12 +23,19 @@ class DictionaryTests: XCTestCase {
     func testSum() {
 		let a = [1: "Lol", 3: "Ok"]
 		let b = [2: "Lmao", 3: "Hi"]
+		var c = a
 		let sum = a + b
 		
 		XCTAssertEqual(sum[1], a[1])
 		XCTAssertEqual(sum[2], b[2])
 		XCTAssertNotEqual(sum[3], a[3])
 		XCTAssertEqual(sum[3], b[3])
+		
+		c += b
+		XCTAssertEqual(c[1], a[1])
+		XCTAssertEqual(c[2], b[2])
+		XCTAssertNotEqual(c[3], a[3])
+		XCTAssertEqual(c[3], b[3])
     }
 
 }
