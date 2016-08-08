@@ -23,6 +23,9 @@ public class InAppPurchaseManager: NSObject {
 	
 	private var productsRequestHandler: ((success: Bool, products: [SKProduct]?) -> ())?
 	private var buyCompletionHandler: [String: (success: Bool, error: NSError?) -> ()] = [:]
+	private var restoreProcessHandler: ((success: Bool, restored: Int?, error: NSError?) -> ())?
+	
+	private var restoredTransaction = 0
 	
 	override private init() {
 		fatalError("Use the public init method.")
@@ -84,8 +87,16 @@ public class InAppPurchaseManager: NSObject {
 		buyCompletionHandler[product.productIdentifier] = completion
 	}
 	
-	public func restorePurchases(productCompletion: [String: ProductTransactionHandler]?) {
+	///Initialize restore process for previous purchases.
+	///- parameter requestCompletion: This block is called upon error on restoring purchases or if there are no purchase to restore, if some purchases are restored the appropriate callback block will be called (if present).
+	///- parameter success: Set to `true` if the restoration process was successful, `false` otherwise.
+	///- parameter restored: If the restoration was successful will hold the number of restored transaction, `nil` otherwise.
+	///- parameter error: The error in case of failure of the restoration process, `nil` otherwise.
+	///- parameter productCompletion: The callback block to be called after each purchases, identified by its productId as the key, is completed.
+	public func restorePurchases(requestCompletion: ((success: Bool, restored: Int?, error: NSError?) -> ())?, productCompletion: [String: ProductTransactionHandler]?) {
+		restoreProcessHandler = requestCompletion
 		buyCompletionHandler += productCompletion ?? [:]
+		restoredTransaction = 0
 		SKPaymentQueue.default().restoreCompletedTransactions()
 	}
 	
@@ -157,6 +168,16 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 		}
 	}
 	
+	public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+		restoreProcessHandler?(success: true, restored: restoredTransaction, error: nil)
+		restoreProcessHandler = nil
+	}
+	
+	public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: NSError) {
+		restoreProcessHandler?(success: false, restored: nil, error: error)
+		restoreProcessHandler = nil
+	}
+	
 	private func complete(_ transaction: SKPaymentTransaction) {
 		finishTrasactionFor(transaction.payment.productIdentifier)
 		SKPaymentQueue.default().finishTransaction(transaction)
@@ -167,6 +188,7 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 			return
 		}
 		
+		restoredTransaction += 1
 		finishTrasactionFor(productIdentifier)
 		SKPaymentQueue.default().finishTransaction(transaction)
 	}
@@ -184,5 +206,6 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 		}
 		
 		buyCompletionHandler[identifier]?(success: error == nil, error: error)
+		buyCompletionHandler[identifier] = nil
 	}
 }
