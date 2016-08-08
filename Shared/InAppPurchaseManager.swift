@@ -89,6 +89,19 @@ public class InAppPurchaseManager: NSObject {
 		SKPaymentQueue.default().restoreCompletedTransactions()
 	}
 	
+	public class func getProductListError() -> UIAlertController {
+		return UIAlertController(simpleAlert: MBLocalizedString("ERROR_PURCHASE", comment: "Error"), message: MBLocalizedString("ERROR_PROD_LIST", comment: "Product list"))
+	}
+	
+	public class func getAlert(forError error: NSError) -> UIAlertController? {
+		guard error.code != SKErrorCode.paymentCancelled.rawValue else {
+			// No need to display any error if the payment was cancelled.
+			return nil
+		}
+		
+		return UIAlertController(simpleAlert: MBLocalizedString("ERROR_PURCHASE", comment: "Error"), message: error.localizedDescription)
+	}
+	
 }
 
 // MARK: - Product request delegate methods
@@ -96,7 +109,6 @@ public class InAppPurchaseManager: NSObject {
 extension InAppPurchaseManager: SKProductsRequestDelegate {
 	
 	public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-		print("Loaded list of products...")
 		let products = response.products
 		
 		for p in products {
@@ -160,11 +172,6 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 	}
 	
 	private func failed(_ transaction: SKPaymentTransaction) {
-		if transaction.error!.code != SKErrorCode.paymentCancelled.rawValue {
-			// TODO: Display error on view
-			print("Transaction Error: \(transaction.error?.localizedDescription)")
-		}
-		
 		finishTrasactionFor(transaction.payment.productIdentifier, withError: transaction.error)
 		SKPaymentQueue.default().finishTransaction(transaction)
 	}

@@ -9,6 +9,15 @@
 import UIKit
 
 extension UIAlertController {
+	
+	convenience public init(simpleAlert title: String, message: String?) {
+		self.init(title: title, message: message, preferredStyle: .alert)
+		
+		let ok = UIAlertAction(title: MBLocalizedString("OK", comment: "Ok"), style: .cancel) { (_) in
+			self.dismiss(animated: true, completion: nil)
+		}
+		self.addAction(ok)
+	}
 
 	public class func getModalLoading() -> UIAlertController {
 		let pending = UIAlertController(title: nil, message: "", preferredStyle: .alert)

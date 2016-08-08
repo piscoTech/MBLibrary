@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  MBLibrary
+
+  Created by Marco Boschi on 07/08/16.
+  Copyright © 2016 Marco Boschi. All rights reserved.
+*/
+
+"OK" = "OK";
+
+// InApp Purchases stuff
+"ERROR_PURCHASE" = "Purchase error";
+"ERROR_PROD_LIST" = "Cannot load products";
+"ERROR_TRANSACTION" = "Cannot complete purchase";
