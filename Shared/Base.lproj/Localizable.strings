@@ -12,3 +12,4 @@
 "ERROR_PURCHASE" = "Purchase error";
 "ERROR_PROD_LIST" = "Cannot load products";
 "ERROR_TRANSACTION" = "Cannot complete purchase";
+"PURCHASE_RESTORED" = "Purchase restored";
