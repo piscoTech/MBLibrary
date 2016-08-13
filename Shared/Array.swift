@@ -56,3 +56,28 @@ extension Array where Element: Equatable {
 	}
 	
 }
+
+extension Array {
+	
+	mutating public func shuffle() {
+		self = self.shuffled()
+	}
+	
+	public func shuffled() -> [Element] {
+		var res = [Element]()
+		var indices = [Int]()
+		for i in 0 ..< self.count {
+			indices.append(i)
+		}
+		
+		while indices.count > 0 {
+			let i = Int.random(to: indices.count)
+			let index = indices[i]
+			indices.remove(at: i)
+			res.append(self[index])
+		}
+		
+		return res
+	}
+	
+}
