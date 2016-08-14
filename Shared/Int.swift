@@ -8,10 +8,17 @@
 
 import Foundation
 
+private var seeded = false
+
 extension Int {
 	
 	///Generate a random number between `from` (inclusive) and `to` (exclusive).
 	public static func random(from: Int, to: Int) -> Int {
+		if !seeded {
+			srand48(Int(Date().timeIntervalSince1970))
+			seeded = true
+		}
+		
 		var a = from
 		var b = to
 		if a > b {
