@@ -8,6 +8,8 @@
 
 import Foundation
 
+public let π = M_PI
+
 public var decimalPoint: String { return String.decimalPoint }
 public var CSVSeparator: String { return String.CSVSeparator }
 
