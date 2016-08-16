@@ -6,7 +6,7 @@
 //  Copyright © 2016 Marco Boschi. All rights reserved.
 //
 
-import Foundation
+import SceneKit
 
 public func == (l: Float3, r: Float3) -> Bool {
 	return l.x == r.x && l.y == r.y && l.z == r.z
@@ -52,6 +52,22 @@ public struct Float3: ArrayLiteralConvertible, Equatable {
 		}
 		
 		return [x / module, y / module, z / module]
+	}
+	
+	public var vector: SCNVector3 {
+		return SCNVector3(CGFloat(x), CGFloat(y), CGFloat(z))
+	}
+	
+}
+
+extension SCNVector3 {
+	
+	public var float3: Float3 {
+		return [x, y, z]
+	}
+	
+	public func normalized() -> SCNVector3 {
+		return float3.normalized().vector
 	}
 	
 }
