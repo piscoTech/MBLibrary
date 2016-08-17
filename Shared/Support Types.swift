@@ -60,18 +60,6 @@ public struct Float3: ArrayLiteralConvertible, Equatable {
 	
 }
 
-extension SCNVector3 {
-	
-	public var float3: Float3 {
-		return [x, y, z]
-	}
-	
-	public func normalized() -> SCNVector3 {
-		return float3.normalized().vector
-	}
-	
-}
-
 public struct Face: ArrayLiteralConvertible {
 	
 	public typealias Element = Float3

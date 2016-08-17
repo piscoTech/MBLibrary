@@ -11,16 +11,18 @@ import SceneKit
 
 extension SCNGeometry {
 	
-	public convenience init(faces: [Face]) {
-		let vertexCount = faces.count * 3
-		let rawVertices = faces.map { $0.rawData }.reduce([]) { $0 + $1 }
+	///Create a custom geometry from the specified arrays of faces, each array will become an indipendent `SCNGeometryElement`.
+	public convenience init(faces: [Face]...) {
+		let allFaces = faces.reduce([]) { $0 + $1 }
+		let allVertexCount = allFaces.count * 3
+		let rawVertices = allFaces.map { $0.rawData }.reduce([]) { $0 + $1 }
 		let dataType = Float.self
 		
-		let data = NSData(bytes: rawVertices, length: vertexCount * sizeof(dataType) * 6) as Data
+		let data = NSData(bytes: rawVertices, length: allVertexCount * sizeof(dataType) * 6) as Data
 		
 		let vertexSource = SCNGeometrySource(data: data,
 		                                     semantic: SCNGeometrySourceSemanticVertex,
-		                                     vectorCount: vertexCount,
+		                                     vectorCount: allVertexCount,
 		                                     floatComponents: true,
 		                                     componentsPerVector: 3, //Tridimensional space
 		                                     bytesPerComponent: sizeof(dataType),
@@ -29,7 +31,7 @@ extension SCNGeometry {
 		)
 		let normalSource = SCNGeometrySource(data: data,
 		                                     semantic: SCNGeometrySourceSemanticNormal,
-		                                     vectorCount: vertexCount,
+		                                     vectorCount: allVertexCount,
 		                                     floatComponents: true,
 		                                     componentsPerVector: 3,
 		                                     bytesPerComponent: sizeof(dataType),
@@ -37,16 +39,18 @@ extension SCNGeometry {
 											dataStride: sizeof(dataType) * 6 //Bytes for each vertex: 3 data for the vertex position, 3 for the normal
 		)
 		
-		//Use a Swift Range to quickly construct a sequential index buffer
-		let indexData = NSData(bytes: Array<Int32>(0 ..< Int32(vertexCount)),
-		                       length: vertexCount * sizeof(Int32.self)) as Data
+		var elements: [SCNGeometryElement] = []
+		var start: Int32 = 0
+		for e in faces {
+			let vertexCount = Int32(e.count) * 3
+			let indices = Array(start ..< (start + vertexCount))
+			let indexData = NSData(bytes: indices, length: Int(vertexCount) * sizeof(Int32.self)) as Data
+			start += vertexCount
+			
+			elements.append(SCNGeometryElement(data: indexData, primitiveType: .triangles,  primitiveCount: e.count, bytesPerIndex: sizeof(Int32.self)))
+		}
 		
-		let element = SCNGeometryElement(data: indexData,
-		                                 primitiveType: .triangles,
-		                                 primitiveCount: faces.count,
-		                                 bytesPerIndex: sizeof(Int32.self))
-		
-		self.init(sources: [vertexSource, normalSource], elements: [element])
+		self.init(sources: [vertexSource, normalSource], elements: elements)
 	}
 	
 }
