@@ -20,3 +20,20 @@ prefix operator - {}
 public prefix func - (p: CGPoint) -> CGPoint {
 	return CGPoint(x: -p.x, y: -p.y)
 }
+
+extension CGPoint {
+	
+	public var module: CGFloat {
+		return sqrt(x*x + y*y)
+	}
+	
+	public func normalized() -> CGPoint {
+		let m = module
+		guard m != 0 else {
+			return .zero
+		}
+		
+		return CGPoint(x: x / m, y: y / m)
+	}
+	
+}
