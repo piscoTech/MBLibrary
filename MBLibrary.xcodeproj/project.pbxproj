@@ -80,7 +80,12 @@
 		7A4CE3B11D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
 		7A4CE3B21D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
 		7A4CE3B31D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
+		7A51E2FC1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
+		7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
+		7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A584FA71D3E241C000C739B /* MBLibrary iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A72CEC41D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
+		7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
 		7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
 		7A75AED31D5525470034B4EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A75AED21D5525470034B4EA /* StoreKit.framework */; };
 		7A75AED51D55255B0034B4EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A75AED41D55255B0034B4EA /* StoreKit.framework */; };
@@ -159,9 +164,11 @@
 		7A4CE3AB1D3F748D00DAAE70 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		7A4CE3AD1D3F74BB00DAAE70 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		7A51E2FB1D64A4860081A9AD /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		7A584FA51D3E241C000C739B /* MBLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A584FA71D3E241C000C739B /* MBLibrary iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary iOS.h"; sourceTree = "<group>"; };
 		7A584FA91D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector4.swift; sourceTree = "<group>"; };
 		7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
 		7A75AED21D5525470034B4EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7A75AED41D55255B0034B4EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -308,6 +315,7 @@
 				7A3994951D3F5F3D000665A0 /* DispatchQueue.swift */,
 				7A3994911D3F5F3D000665A0 /* Array.swift */,
 				7A3994941D3F5F3D000665A0 /* Dictionary.swift */,
+				7A51E2FB1D64A4860081A9AD /* CGPoint.swift */,
 				7A3994981D3F5F3D000665A0 /* Misc.swift */,
 			);
 			name = Foundation;
@@ -384,6 +392,7 @@
 			children = (
 				7A80AC151D625D320085A3F0 /* Support Types.swift */,
 				7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */,
+				7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */,
 				7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */,
 			);
 			name = SceneKit;
@@ -597,6 +606,7 @@
 				7AA084041D5FB9B100B57943 /* Int.swift in Sources */,
 				7A80AC141D62564D0085A3F0 /* SCNGeometry.swift in Sources */,
 				7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */,
+				7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */,
 				7A3994C01D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
 				7A3994B81D3F5F3D000665A0 /* Misc.swift in Sources */,
@@ -614,6 +624,7 @@
 				7A39949C1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A4CE3A61D3F73FA00DAAE70 /* NSTextField.swift in Sources */,
 				7A80AC171D625D320085A3F0 /* Support Types.swift in Sources */,
+				7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */,
 				7A0C41C31D55398C0082AEAE /* InAppPurchaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +669,7 @@
 				7A3994B91D3F5F3D000665A0 /* Misc.swift in Sources */,
 				7A3994A91D3F5F3D000665A0 /* Dictionary.swift in Sources */,
 				7A3994BD1D3F5F3D000665A0 /* String.swift in Sources */,
+				7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */,
 				7A3994A51D3F5F3D000665A0 /* Date.swift in Sources */,
 				7A3994AD1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A3994B11D3F5F3D000665A0 /* Double.swift in Sources */,
@@ -677,6 +689,7 @@
 				7A3994BB1D3F5F3D000665A0 /* String.swift in Sources */,
 				7A39949F1D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A3994A31D3F5F3D000665A0 /* Date.swift in Sources */,
+				7A72CEC41D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A3994B71D3F5F3D000665A0 /* Misc.swift in Sources */,
 				7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */,
 				7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */,
@@ -698,6 +711,7 @@
 				7A80AC161D625D320085A3F0 /* Support Types.swift in Sources */,
 				7AA084031D5FB9B100B57943 /* Int.swift in Sources */,
 				7A3994A71D3F5F3D000665A0 /* Dictionary.swift in Sources */,
+				7A51E2FC1D64A4860081A9AD /* CGPoint.swift in Sources */,
 				7AD2D56B1D548A3A00CF755F /* VariableToolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

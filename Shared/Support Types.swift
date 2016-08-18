@@ -41,17 +41,17 @@ public struct Float3: ArrayLiteralConvertible, Equatable {
 		return [a.y*b.z - a.z*b.y, a.z*b.x - a.x*b.z, a.x*b.y - a.y*b.x]
 	}
 	
-	public func module() -> Float {
+	public var module: Float {
 		return sqrt(x*x + y*y + z*z)
 	}
 	
 	public func normalized() -> Float3 {
-		let module = self.module()
-		guard module != 0 else {
+		let m = module
+		guard m != 0 else {
 			return [0,0,0]
 		}
 		
-		return [x / module, y / module, z / module]
+		return [x / m, y / m, z / m]
 	}
 	
 	public var vector: SCNVector3 {

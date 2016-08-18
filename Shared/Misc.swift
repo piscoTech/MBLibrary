@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreGraphics
 
 public func max<T: Comparable>(_ num: [T]) -> T? {
 	var res = num.first
@@ -25,10 +24,6 @@ public func min<T: Comparable>(_ num: [T]) -> T? {
 	}
 	
 	return res
-}
-
-public func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
-	return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 }
 
 public func sgn<T: SignedNumber>(_ x: T) -> Int {
