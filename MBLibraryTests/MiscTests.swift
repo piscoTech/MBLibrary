@@ -39,11 +39,17 @@ class MiscTests: XCTestCase {
 		XCTAssertTrue(sgn(0.0) == 0)
 	}
 	
-	func testSumPoint() {
-		let a = CGPoint(x: 3, y: 7)
-		let b = CGPoint(x: 1, y: -3)
-		let sum = a + b
-		XCTAssertEqual(CGPoint(x: 4, y: 4), sum)
+	func testClamp() {
+		XCTAssertEqual(1, clamp(0, 1, 3))
+		XCTAssertEqual(2, clamp(2, 1, 3))
+		XCTAssertEqual(3, clamp(5, 1, 3))
+		XCTAssertEqual(1, clamp(1, 1, 3))
+		XCTAssertEqual(3, clamp(3, 1, 3))
+		
+		XCTAssertEqual(1.5, clamp(0, 1.5, 3))
+		XCTAssertEqual(2.1, clamp(2.1, 1.5, 3))
+		XCTAssertEqual(3, clamp(3.1, 1.5, 3))
+		XCTAssertEqual(3, clamp(3, 1.5, 3))
 	}
 
 }

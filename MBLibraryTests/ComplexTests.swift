@@ -59,7 +59,7 @@ class ComplexTests: XCTestCase {
 		XCTAssertEqual(prod, a * 3.1)
 	}
 	
-	func testDivion() {
+	func testDivision() {
 		let div = a / d
 		XCTAssertEqualWithAccuracy(div.r, -0.2, accuracy: 0.0001)
 		XCTAssertEqualWithAccuracy(div.i, -0.6, accuracy: 0.0001)

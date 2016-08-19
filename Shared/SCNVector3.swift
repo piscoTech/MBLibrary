@@ -28,11 +28,11 @@ public prefix func - (p: SCNVector3) -> SCNVector3 {
 extension SCNVector3: Equatable {
 	
 	public var float3: Float3 {
-		return [x, y, z]
+		return [Float(x), Float(y), Float(z)]
 	}
 	
 	public var module: Float {
-		return sqrt(x*x + y*y + z*z)
+		return Float(sqrt(x*x + y*y + z*z))
 	}
 	
 	///The translation matrix corresponding to the vector.
@@ -46,7 +46,7 @@ extension SCNVector3: Equatable {
 			return SCNVector3(0,0,0)
 		}
 		
-		return SCNVector3(x / m, y / m, z / m)
+		return SCNVector3(Float(x) / m, Float(y) / m, Float(z) / m)
 	}
 	
 	///Rotate the vector by applying the rotation specified by the passed vector using the first three component to determine the direction of the rotation axis and the fourth as the angle of rotation (in radians).
@@ -59,7 +59,7 @@ extension SCNVector3: Equatable {
 	}
 	
 	public func scale(by f: Float) -> SCNVector3 {
-		return SCNVector3(f*x, f*y, f*z)
+		return SCNVector3(f*Float(x), f*Float(y), f*Float(z))
 	}
 	
 }

@@ -26,6 +26,14 @@ public func min<T: Comparable>(_ num: [T]) -> T? {
 	return res
 }
 
+public func clamp<T: Comparable>(_ num: T, _ minVal: T, _ maxVal: T) -> T {
+	guard minVal <= maxVal else {
+		preconditionFailure("minVal cannot be greater than maxVal")
+	}
+	
+	return min(max(minVal, num), maxVal)
+}
+
 public func sgn<T: SignedNumber>(_ x: T) -> Int {
 	let absX = abs(x)
 	if x == absX && x != -x {
