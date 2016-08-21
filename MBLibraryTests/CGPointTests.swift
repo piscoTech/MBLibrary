@@ -49,4 +49,19 @@ class CGPointTests: XCTestCase {
 		XCTAssertEqualWithAccuracy(val, norm.y, accuracy: 0.0001)
 	}
 	
+	func testAngle() {
+		XCTAssertEqualWithAccuracy(CGFloat(π_2), CGPoint(x: 0, y: 1).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(-CGFloat(π_2), CGPoint(x: 0, y: -1).angle, accuracy: 0.0001)
+		
+		XCTAssertEqualWithAccuracy(CGFloat(π) / 3, CGPoint(x: 1.0/2, y: sqrt(3)/2).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(2 * CGFloat(π) / 3, CGPoint(x: -1.0/2, y: sqrt(3)/2).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(-CGFloat(π) / 3, CGPoint(x: 1.0/2, y: -sqrt(3)/2).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(-2 * CGFloat(π) / 3, CGPoint(x: -1.0/2, y: -sqrt(3)/2).angle, accuracy: 0.0001)
+		
+		XCTAssertEqualWithAccuracy(CGFloat(π_2) / 3, CGPoint(x: sqrt(3)/2, y: 1.0/2).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(5 * CGFloat(π_2) / 3, CGPoint(x: -sqrt(3)/2, y: 1.0/2).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(-CGFloat(π_2) / 3, CGPoint(x: sqrt(3)/2, y: -1.0/2).angle, accuracy: 0.0001)
+		XCTAssertEqualWithAccuracy(-5 * CGFloat(π_2) / 3, CGPoint(x: -sqrt(3)/2, y: -1.0/2).angle, accuracy: 0.0001)
+	}
+	
 }

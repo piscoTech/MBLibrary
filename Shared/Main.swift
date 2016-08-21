@@ -9,6 +9,8 @@
 import Foundation
 
 public let π = M_PI
+public let π_2 = M_PI_2
+public let π_4 = M_PI_4
 
 public var decimalPoint: String { return String.decimalPoint }
 public var CSVSeparator: String { return String.CSVSeparator }

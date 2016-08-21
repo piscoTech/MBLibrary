@@ -34,7 +34,7 @@ public func clamp<T: Comparable>(_ num: T, _ minVal: T, _ maxVal: T) -> T {
 	return min(max(minVal, num), maxVal)
 }
 
-public func sgn<T: SignedNumber>(_ x: T) -> Int {
+public func sgn<T: SignedNumber>(_ x: T) -> T {
 	let absX = abs(x)
 	if x == absX && x != -x {
 		return 1
