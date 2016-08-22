@@ -8,6 +8,16 @@
 
 import Foundation
 
+var rngSeeded = false
+func seedRng(_ s: Int? = nil, forceSeed force: Bool = false) {
+	if rngSeeded && !force {
+		return
+	}
+	
+	srand48(s ?? Int(Date().timeIntervalSince1970))
+	rngSeeded = true
+}
+
 public let π = M_PI
 public let π_2 = M_PI_2
 public let π_4 = M_PI_4

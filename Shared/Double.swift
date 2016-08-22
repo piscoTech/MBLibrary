@@ -70,4 +70,31 @@ extension Double {
 		return base
 	}
 	
+	// MARK: - RNG
+	
+	///Generate a random number between `from` (inclusive) and `to` (exclusive).
+	public static func random(from: Double, to: Double) -> Double {
+		seedRng()
+		
+		var a = from
+		var b = to
+		if a > b {
+			let tmp = a
+			a = b
+			b = tmp
+		}
+		
+		return drand48() * (b - a) + a
+	}
+	
+	///Generate a random number between `0` (inclusive) and `to` (exclusive).
+	public static func random(to: Double = 1) -> Double {
+		return random(from: 0, to: to)
+	}
+	
+	///Seed the random number generator with the specified seed, if none the current time will be used. This also seed the `Int` and `Bool` number generator.
+	public static func seedRandom(_ s: Int? = nil) {
+		seedRng(s, forceSeed: true)
+	}
+	
 }

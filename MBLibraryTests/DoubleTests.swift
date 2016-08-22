@@ -27,5 +27,23 @@ class DoubleTests: XCTestCase {
 		XCTAssertEqual((1e12 + 0.16).toString(), "1000000000000\(decimalPoint)16")
 		XCTAssertEqual((-1e12 - 0.16).toString(), "-1000000000000\(decimalPoint)16")
 	}
+	
+	func testRange() {
+		let min = 10.0
+		let max = 103.0
+		for _ in 0 ..< 1000 {
+			let i = Double.random(from: min, to: max)
+			if i < min || i >= max {
+				XCTFail("Generated number outside range")
+			}
+		}
+		
+		for _ in 0 ..< 1000 {
+			let i = Double.random()
+			if i < 0 || i >= 1 {
+				XCTFail("Generated number outside range")
+			}
+		}
+	}
 
 }

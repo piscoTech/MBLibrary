@@ -84,6 +84,10 @@
 		7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A584FA71D3E241C000C739B /* MBLibrary iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
+		7A6B9C8E1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
+		7A6B9C8F1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
+		7A6B9C901D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A72CEC41D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
 		7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
 		7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
@@ -170,6 +174,7 @@
 		7A584FA51D3E241C000C739B /* MBLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A584FA71D3E241C000C739B /* MBLibrary iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary iOS.h"; sourceTree = "<group>"; };
 		7A584FA91D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A6B9C8C1D6B28E400018648 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector4.swift; sourceTree = "<group>"; };
 		7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
 		7A75AED21D5525470034B4EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -314,6 +319,7 @@
 				7A3994991D3F5F3D000665A0 /* String.swift */,
 				7AA084021D5FB9B100B57943 /* Int.swift */,
 				7A3994961D3F5F3D000665A0 /* Double.swift */,
+				7A6B9C8C1D6B28E400018648 /* Bool.swift */,
 				7A3994931D3F5F3D000665A0 /* Date.swift */,
 				7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */,
 				7A3994951D3F5F3D000665A0 /* DispatchQueue.swift */,
@@ -627,6 +633,7 @@
 				7A3994B41D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A39949C1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A4CE3A61D3F73FA00DAAE70 /* NSTextField.swift in Sources */,
+				7A6B9C8E1D6B28E400018648 /* Bool.swift in Sources */,
 				7A80AC171D625D320085A3F0 /* Support Types.swift in Sources */,
 				7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */,
 				7A0C41C31D55398C0082AEAE /* InAppPurchaseManager.swift in Sources */,
@@ -655,6 +662,7 @@
 				7A00652A1D3EB5670089297D /* DoubleTests.swift in Sources */,
 				7A0065331D3EBC310089297D /* ArrayTests.swift in Sources */,
 				7A9B2C861D6760CA00A132C0 /* CGPoint.swift in Sources */,
+				7A6B9C901D6B28E400018648 /* Bool.swift in Sources */,
 				7A0065281D3EB4FD0089297D /* StringTests.swift in Sources */,
 				7A3994A61D3F5F3D000665A0 /* Date.swift in Sources */,
 				7A3994A21D3F5F3D000665A0 /* Complex.swift in Sources */,
@@ -681,6 +689,7 @@
 				7A3994B11D3F5F3D000665A0 /* Double.swift in Sources */,
 				7A3994B51D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A39949D1D3F5F3D000665A0 /* Array.swift in Sources */,
+				7A6B9C8F1D6B28E400018648 /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +714,7 @@
 				7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */,
 				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
 				7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */,
+				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
 				7A19E0901D5753BD009AFD27 /* UIAlertController.swift in Sources */,
