@@ -67,6 +67,8 @@
 		7A3994C01D3F5F3D000665A0 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */; };
 		7A3994C11D3F5F3D000665A0 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */; };
 		7A3994C21D3F5F3D000665A0 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */; };
+		7A48EBBE1D6C78AF00A55987 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */; };
+		7A48EBBF1D6C78AF00A55987 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */; };
 		7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */; };
 		7A4CE39C1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */; };
 		7A4CE39D1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */; };
@@ -162,6 +164,7 @@
 		7A3994981D3F5F3D000665A0 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		7A3994991D3F5F3D000665A0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
 		7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Main iOS & macOS.swift"; sourceTree = "<group>"; };
 		7A4CE3A31D3F73BF00DAAE70 /* NSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
 		7A4CE3A51D3F73FA00DAAE70 /* NSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 				7A80AC151D625D320085A3F0 /* Support Types.swift */,
 				7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */,
 				7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */,
+				7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */,
 				7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */,
 			);
 			name = SceneKit;
@@ -616,6 +620,7 @@
 				7AA084041D5FB9B100B57943 /* Int.swift in Sources */,
 				7A80AC141D62564D0085A3F0 /* SCNGeometry.swift in Sources */,
 				7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */,
+				7A48EBBF1D6C78AF00A55987 /* SCNNode.swift in Sources */,
 				7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */,
 				7A3994C01D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
@@ -716,6 +721,7 @@
 				7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */,
 				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
+				7A48EBBE1D6C78AF00A55987 /* SCNNode.swift in Sources */,
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
 				7A19E0901D5753BD009AFD27 /* UIAlertController.swift in Sources */,
 				7A4CE3AA1D3F746000DAAE70 /* UIView.swift in Sources */,

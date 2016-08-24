@@ -18,8 +18,11 @@ func seedRng(_ s: Int? = nil, forceSeed force: Bool = false) {
 	rngSeeded = true
 }
 
+///The value of π, shortcut for `M_PI`.
 public let π = M_PI
+///The value of π/2, shortcut for `M_PI_2`.
 public let π_2 = M_PI_2
+///The value of π/4, shortcut for `M_PI_4`.
 public let π_4 = M_PI_4
 
 public var decimalPoint: String { return String.decimalPoint }

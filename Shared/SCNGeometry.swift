@@ -53,4 +53,32 @@ extension SCNGeometry {
 		self.init(sources: [vertexSource, normalSource], elements: elements)
 	}
 	
+	///Retrieve the geometry with the specified name (if any) from the passed file.
+	///
+	///To get the geometry of a node with a given name see `SCNNode.load(from:withName:)`.
+	public class func load(from file: URL, withName name: String) -> SCNGeometry? {
+		let scene: SCNScene
+		do {
+			scene = try SCNScene(url: file, options: nil)
+		} catch _ {
+			return nil
+		}
+		
+		func search(node: SCNNode) -> SCNGeometry? {
+			if let geomName = node.geometry?.name, geomName == name {
+				return node.geometry
+			}
+			
+			for child in node.childNodes {
+				if let geom = search(node: child) {
+					return geom
+				}
+			}
+			
+			return nil
+		}
+		
+		return search(node: scene.rootNode)
+	}
+	
 }

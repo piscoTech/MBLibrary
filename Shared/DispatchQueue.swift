@@ -10,9 +10,7 @@ import Foundation
 
 extension DispatchQueue {
 	
-	public static var background: DispatchQueue {
-		return DispatchQueue.global(attributes: .qosBackground)
-	}
+	public static let background = DispatchQueue.global(attributes: .qosBackground)
 	
 	public func after(delay t: Double, closure: () -> Void) {
 		self.after(when: DispatchTime.now() + t, execute: closure)
