@@ -16,7 +16,7 @@ public class EnhancedTextField: UITextField {
 			isEnabled = isEditable
 			if isEditable {
 				borderStyle = UITextBorderStyle.roundedRect
-				backgroundColor = UIColor.white()
+				backgroundColor = .white
 			} else {
 				borderStyle = UITextBorderStyle.none
 				backgroundColor = nil

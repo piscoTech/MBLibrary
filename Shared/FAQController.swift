@@ -27,9 +27,9 @@ public class FAQController {
 	private lazy var data: [Int: (title: String, url: URL)] = {
 		var d = [Int: (title: String, url: URL)]()
 		
-		d[FAQController.errorIndex] = ("Error", self.bundle.urlForResource("FAQ_Error", withExtension: "html")!)
+		d[FAQController.errorIndex] = ("Error", self.bundle.url(forResource: "FAQ_Error", withExtension: "html")!)
 		for (n, title) in self.FAQ {
-			guard let url = self.bundle.urlForResource("FAQ_\(n)", withExtension: "html") else {
+			guard let url = self.bundle.url(forResource: "FAQ_\(n)", withExtension: "html") else {
 				continue
 			}
 			

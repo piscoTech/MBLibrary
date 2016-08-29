@@ -16,27 +16,28 @@ extension SCNGeometry {
 		let allFaces = faces.reduce([]) { $0 + $1 }
 		let allVertexCount = allFaces.count * 3
 		let rawVertices = allFaces.map { $0.rawData }.reduce([]) { $0 + $1 }
-		let dataType = Float.self
+		let floatSize = MemoryLayout<Float>.size
+		let int32Size = MemoryLayout<Int32>.size
 		
-		let data = NSData(bytes: rawVertices, length: allVertexCount * sizeof(dataType) * 6) as Data
+		let data = NSData(bytes: rawVertices, length: allVertexCount * floatSize * 6) as Data
 		
 		let vertexSource = SCNGeometrySource(data: data,
-		                                     semantic: SCNGeometrySourceSemanticVertex,
+		                                     semantic: .vertex,
 		                                     vectorCount: allVertexCount,
-		                                     floatComponents: true,
+		                                     usesFloatComponents: true,
 		                                     componentsPerVector: 3, //Tridimensional space
-		                                     bytesPerComponent: sizeof(dataType),
+		                                     bytesPerComponent: floatSize,
 		                                     dataOffset: 0, //The position is at the beginning of the vertex
-		                                     dataStride: sizeof(dataType) * 6 //Bytes for each vertex: 3 data for the vertex position, 3 for the normal
+		                                     dataStride: floatSize * 6 //Bytes for each vertex: 3 data for the vertex position, 3 for the normal
 		)
 		let normalSource = SCNGeometrySource(data: data,
-		                                     semantic: SCNGeometrySourceSemanticNormal,
+		                                     semantic: .normal,
 		                                     vectorCount: allVertexCount,
-		                                     floatComponents: true,
+		                                     usesFloatComponents: true,
 		                                     componentsPerVector: 3,
-		                                     bytesPerComponent: sizeof(dataType),
-											dataOffset: sizeof(dataType) * 3, //Normal is after the position
-											dataStride: sizeof(dataType) * 6 //Bytes for each vertex: 3 data for the vertex position, 3 for the normal
+		                                     bytesPerComponent: floatSize,
+											 dataOffset: floatSize * 3, //Normal is after the position
+											 dataStride: floatSize * 6 //Bytes for each vertex: 3 data for the vertex position, 3 for the normal
 		)
 		
 		var elements: [SCNGeometryElement] = []
@@ -44,10 +45,10 @@ extension SCNGeometry {
 		for e in faces {
 			let vertexCount = Int32(e.count) * 3
 			let indices = Array(start ..< (start + vertexCount))
-			let indexData = NSData(bytes: indices, length: Int(vertexCount) * sizeof(Int32.self)) as Data
+			let indexData = NSData(bytes: indices, length: Int(vertexCount) * int32Size) as Data
 			start += vertexCount
 			
-			elements.append(SCNGeometryElement(data: indexData, primitiveType: .triangles,  primitiveCount: e.count, bytesPerIndex: sizeof(Int32.self)))
+			elements.append(SCNGeometryElement(data: indexData, primitiveType: .triangles,  primitiveCount: e.count, bytesPerIndex: int32Size))
 		}
 		
 		self.init(sources: [vertexSource, normalSource], elements: elements)
@@ -59,7 +60,7 @@ extension SCNGeometry {
 	public class func load(from file: URL, withName name: String) -> SCNGeometry? {
 		let scene: SCNScene
 		do {
-			scene = try SCNScene(url: file, options: nil)
+			scene = try SCNScene(url: file, options: [:])
 		} catch _ {
 			return nil
 		}

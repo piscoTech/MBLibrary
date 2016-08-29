@@ -9,23 +9,24 @@
 import Foundation
 import StoreKit
 
-public typealias ProductTransactionHandler = (success: Bool, error: NSError?) -> ()
+public typealias ProductTransactionHandler = (_ success: Bool, _ error: Error?) -> ()
 
 public class InAppPurchaseManager: NSObject {
 	
 	public static let defaultsKeyPrefix = "iapStatus_"
-	public private(set) var areProductsLoaded = false
+	public fileprivate(set) var areProductsLoaded = false
 	
-	private let defaults: KeyValueStore
-	private var productsStatus: [String: (purchased: Bool, product: SKProduct?)]
+	fileprivate let defaults: KeyValueStore
+	fileprivate var productsStatus: [String: (purchased: Bool, product: SKProduct?)]
 	
-	private var productsRequest: SKProductsRequest?
+	fileprivate var productsRequest: SKProductsRequest?
 	
-	private var productsRequestHandler: ((success: Bool, products: [SKProduct]?) -> ())?
-	private var buyCompletionHandler: [String: (success: Bool, error: NSError?) -> ()] = [:]
-	private var restoreProcessHandler: ((success: Bool, restored: Int?, error: NSError?) -> ())?
+	fileprivate var productsRequestHandler: ((_ success: Bool, _ products: [SKProduct]?) -> ())?
+	fileprivate var buyCompletionHandler: [String: (_ success: Bool, _ error: Error?) -> ()] = [:]
+	fileprivate var restoreProcessHandler: ((_ success: Bool, _ restored: Int?, _ error:
+	Error?) -> ())?
 	
-	private var restoredTransaction = 0
+	fileprivate var restoredTransaction = 0
 	
 	override private init() {
 		fatalError("Use the public init method.")
@@ -48,7 +49,7 @@ public class InAppPurchaseManager: NSObject {
 		SKPaymentQueue.default().add(self)
 	}
 	
-	public func loadProducts(completion: ((success: Bool, products: [SKProduct]?) -> ())?) {
+	public func loadProducts(completion: ((_ success: Bool, _ products: [SKProduct]?) -> ())?) {
 		productsRequest?.cancel()
 		productsRequestHandler = completion
 
@@ -93,7 +94,7 @@ public class InAppPurchaseManager: NSObject {
 	///- parameter restored: If the restoration was successful will hold the number of restored transaction, `nil` otherwise.
 	///- parameter error: The error in case of failure of the restoration process, `nil` otherwise.
 	///- parameter productCompletion: The callback block to be called after each purchases, identified by its productId as the key, is completed.
-	public func restorePurchases(requestCompletion: ((success: Bool, restored: Int?, error: NSError?) -> ())?, productCompletion: [String: ProductTransactionHandler]?) {
+	public func restorePurchases(requestCompletion: ((_ success: Bool, _ restored: Int?, _ error: Error?) -> ())?, productCompletion: [String: ProductTransactionHandler]?) {
 		restoreProcessHandler = requestCompletion
 		buyCompletionHandler += productCompletion ?? [:]
 		restoredTransaction = 0
@@ -115,12 +116,12 @@ extension InAppPurchaseManager: SKProductsRequestDelegate {
 		
 		areProductsLoaded = true
 		
-		productsRequestHandler?(success: true, products: products)
+		productsRequestHandler?(true, products)
 		clearRequestAndHandler()
 	}
 	
-	public func request(_ request: SKRequest, didFailWithError error: NSError) {
-		productsRequestHandler?(success: false, products: nil)
+	public func request(_ request: SKRequest, didFailWithError error: Error) {
+		productsRequestHandler?(false, nil)
 		clearRequestAndHandler()
 	}
 	
@@ -156,12 +157,12 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 	}
 	
 	public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-		restoreProcessHandler?(success: true, restored: restoredTransaction, error: nil)
+		restoreProcessHandler?(true, restoredTransaction, nil)
 		restoreProcessHandler = nil
 	}
 	
-	public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: NSError) {
-		restoreProcessHandler?(success: false, restored: nil, error: error)
+	public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+		restoreProcessHandler?(false, nil, error)
 		restoreProcessHandler = nil
 	}
 	
@@ -185,14 +186,14 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 		SKPaymentQueue.default().finishTransaction(transaction)
 	}
 	
-	private func finishTrasactionFor(_ identifier: String, withError error: NSError? = nil) {
+	private func finishTrasactionFor(_ identifier: String, withError error: Error? = nil) {
 		if error == nil {
 			productsStatus[identifier]?.purchased = true
 			defaults.set(true, forKey: InAppPurchaseManager.defaultsKeyPrefix + identifier)
 			defaults.synchronize()
 		}
 		
-		buyCompletionHandler[identifier]?(success: error == nil, error: error)
+		buyCompletionHandler[identifier]?(error == nil, error)
 		buyCompletionHandler[identifier] = nil
 	}
 }

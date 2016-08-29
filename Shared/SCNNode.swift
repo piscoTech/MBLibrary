@@ -14,7 +14,7 @@ extension SCNNode {
 	public class func load(from file: URL, withName name: String) -> SCNNode? {
 		let scene: SCNScene
 		do {
-			scene = try SCNScene(url: file, options: nil)
+			scene = try SCNScene(url: file, options: [:])
 		} catch _ {
 			return nil
 		}

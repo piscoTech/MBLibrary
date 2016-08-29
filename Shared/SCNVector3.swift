@@ -20,7 +20,6 @@ public func - (l: SCNVector3, r: SCNVector3) -> SCNVector3 {
 	return SCNVector3(l.x - r.x, l.y - r.y, l.z - r.z)
 }
 
-prefix operator - {}
 public prefix func - (p: SCNVector3) -> SCNVector3 {
 	return SCNVector3(-p.x, -p.y, -p.z)
 }

@@ -100,7 +100,7 @@ public class KeyValueStore {
 	public func set(_ value: URL, forKey: KeyValueStoreKey) {
 		let key = forKey.description
 		if isLocal {
-			localStore.setURL(value, forKey: key)
+			localStore.set(value, forKey: key)
 		} else {
 			remoteStore.set(NSKeyedArchiver.archivedData(withRootObject: value), forKey: key)
 		}
@@ -153,7 +153,7 @@ public class KeyValueStore {
 		}
 	}
 	
-	public func array(forKey: KeyValueStoreKey) -> [AnyObject]? {
+	public func array(forKey: KeyValueStoreKey) -> [Any]? {
 		let key = forKey.description
 		if isLocal {
 			return localStore.array(forKey: key)
@@ -162,7 +162,7 @@ public class KeyValueStore {
 		}
 	}
 	
-	public func dictionary(forKey: KeyValueStoreKey) -> [String: AnyObject]? {
+	public func dictionary(forKey: KeyValueStoreKey) -> [String: Any]? {
 		let key = forKey.description
 		if isLocal {
 			return localStore.dictionary(forKey: key)
@@ -193,7 +193,7 @@ public class KeyValueStore {
 		}
 	}
 	
-	public func object(forKey: KeyValueStoreKey) -> AnyObject? {
+	public func object(forKey: KeyValueStoreKey) -> Any? {
 		let key = forKey.description
 		if isLocal {
 			return localStore.object(forKey: key)

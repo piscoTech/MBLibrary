@@ -26,7 +26,7 @@ public class MinHeightTextView: UITextView {
 		updatePlaceholder()
 	}
 	
-	override public var attributedText: AttributedString! {
+	override public var attributedText: NSAttributedString! {
 		didSet {
 			updatePlaceholder()
 		}
@@ -95,13 +95,13 @@ public class MinHeightTextView: UITextView {
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(MinHeightTextView.textChanged(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
 		
-		self.contentInset = UIEdgeInsetsZero
+		self.contentInset = .zero
 		self.editCorrectionType = self.autocorrectionType
-		self.textContainerInset = UIEdgeInsetsZero
+		self.textContainerInset = .zero
 		isEditable = false
 		
 		self.addSubview(placeholderView)
-		placeholderView.textColor = UIColor.lightGray()
+		placeholderView.textColor = .lightGray
 		placeholderView.lineBreakMode = .byTruncatingTail
 	}
 	
@@ -127,7 +127,7 @@ public class MinHeightTextView: UITextView {
 		// Inset the rect
 		var rect = UIEdgeInsetsInsetRect(bounds, self.contentInset)
 		
-		if let style = self.typingAttributes[NSParagraphStyleAttributeName] {
+		if let style = self.typingAttributes[NSParagraphStyleAttributeName] as AnyObject? {
 			rect.origin.x += style.headIndent
 			rect.origin.y += style.firstLineHeadIndent
 		}
@@ -150,7 +150,7 @@ public class MinHeightTextView: UITextView {
 	override public func layoutSubviews() {
 		super.layoutSubviews()
 		
-		let intrinsicSize = intrinsicContentSize()
+		let intrinsicSize = intrinsicContentSize
 		heightConstraint?.constant = intrinsicSize.height
 		
 		var topCorrect = (bounds.height - contentSize.height * zoomScale) / 2.0
@@ -160,7 +160,7 @@ public class MinHeightTextView: UITextView {
 		updatePlaceholder()
 	}
 	
-	override public func intrinsicContentSize() -> CGSize {
+	override public var intrinsicContentSize: CGSize {
 		var intrinsicContentSize = self.contentSize;
 		
 		intrinsicContentSize.width += (textContainerInset.left + textContainerInset.right) / 2
@@ -182,7 +182,7 @@ public class MinHeightTextView: UITextView {
 	}
 	
 	private func editMode() {
-		backgroundColor = UIColor.white()
+		backgroundColor = .white
 		layer.borderWidth = 0.6
 		textContainerInset = UIEdgeInsets(top: 3, left: 1, bottom: 3, right: 1)
 		
@@ -192,7 +192,7 @@ public class MinHeightTextView: UITextView {
 	private func displayMode() {
 		backgroundColor = nil
 		layer.borderWidth = 0
-		textContainerInset = UIEdgeInsetsZero
+		textContainerInset = .zero
 		
 		self.autocorrectionType = .no
 	}

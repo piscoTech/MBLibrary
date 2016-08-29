@@ -9,14 +9,14 @@
 import UIKit
 
 public let isIPad = {
-	return UIDevice.current().userInterfaceIdiom == .pad
+	return UIDevice.current.userInterfaceIdiom == .pad
 }()
 
 public let isIPhone = {
-	return UIDevice.current().userInterfaceIdiom == .phone
+	return UIDevice.current.userInterfaceIdiom == .phone
 }()
 
 public func is3AndHalfInchesScreen() -> Bool {
-	let screen = UIScreen.main().bounds.size
+	let screen = UIScreen.main.bounds.size
 	return max(screen.width, screen.height) == 480
 }

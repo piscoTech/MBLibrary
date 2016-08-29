@@ -16,7 +16,6 @@ public func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
 	return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
-prefix operator - {}
 public prefix func - (p: CGPoint) -> CGPoint {
 	return CGPoint(x: -p.x, y: -p.y)
 }

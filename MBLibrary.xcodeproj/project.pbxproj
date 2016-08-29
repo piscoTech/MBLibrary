@@ -22,6 +22,11 @@
 		7A1ACD021D3F973A00411C2C /* TitlelessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */; };
 		7A1ACD031D3F973A00411C2C /* MinHeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */; };
 		7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACD011D3F973A00411C2C /* FlippedView.swift */; };
+		7A2537F21D745A3200A1407C /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2537F11D745A3200A1407C /* SceneKit.framework */; };
+		7A2537F61D745AE800A1407C /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
+		7A2537F71D745B0B00A1407C /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */; };
+		7A2537F81D745B2200A1407C /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */; };
+		7A2537F91D745BE600A1407C /* SCNGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */; };
 		7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2F5AFF1D3FABFB0012F485 /* PopoverController.swift */; };
 		7A2F5B051D3FB1250012F485 /* EnhancedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2F5B031D3FB1250012F485 /* EnhancedTextField.swift */; };
 		7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2F5B041D3FB1250012F485 /* SlidingLabel.swift */; };
@@ -68,7 +73,6 @@
 		7A3994C01D3F5F3D000665A0 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */; };
 		7A3994C11D3F5F3D000665A0 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */; };
 		7A3994C21D3F5F3D000665A0 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A39949A1D3F5F3D000665A0 /* TimeInterval.swift */; };
-		7A48EBBE1D6C78AF00A55987 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */; };
 		7A48EBBF1D6C78AF00A55987 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBBD1D6C78AF00A55987 /* SCNNode.swift */; };
 		7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */; };
 		7A4CE39C1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */; };
@@ -87,17 +91,16 @@
 		7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A584FA71D3E241C000C739B /* MBLibrary iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A67F5B51D746676002B56C8 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A67F5B41D746676002B56C8 /* SceneKit.framework */; };
 		7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A6B9C8E1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A6B9C8F1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A6B9C901D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
-		7A72CEC41D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
 		7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
 		7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
 		7A75AED31D5525470034B4EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A75AED21D5525470034B4EA /* StoreKit.framework */; };
 		7A75AED51D55255B0034B4EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A75AED41D55255B0034B4EA /* StoreKit.framework */; };
 		7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */; };
-		7A80AC131D62564D0085A3F0 /* SCNGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */; };
 		7A80AC141D62564D0085A3F0 /* SCNGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */; };
 		7A80AC161D625D320085A3F0 /* Support Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC151D625D320085A3F0 /* Support Types.swift */; };
 		7A80AC171D625D320085A3F0 /* Support Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC151D625D320085A3F0 /* Support Types.swift */; };
@@ -111,7 +114,6 @@
 		7AA084061D5FB9B100B57943 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA084021D5FB9B100B57943 /* Int.swift */; };
 		7AA0840D1D5FBC2700B57943 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840C1D5FBC2700B57943 /* IntTests.swift */; };
 		7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */; };
-		7ACF689F1D645FBE0048DE52 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */; };
 		7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */; };
 		7AD1597D1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
 		7AD1597E1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
@@ -150,6 +152,7 @@
 		7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlelessWindow.swift; sourceTree = "<group>"; };
 		7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextField.swift; sourceTree = "<group>"; };
 		7A1ACD011D3F973A00411C2C /* FlippedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedView.swift; sourceTree = "<group>"; };
+		7A2537F11D745A3200A1407C /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		7A2F5AFF1D3FABFB0012F485 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		7A2F5B031D3FB1250012F485 /* EnhancedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnhancedTextField.swift; sourceTree = "<group>"; };
 		7A2F5B041D3FB1250012F485 /* SlidingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingLabel.swift; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 		7A584FA51D3E241C000C739B /* MBLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A584FA71D3E241C000C739B /* MBLibrary iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary iOS.h"; sourceTree = "<group>"; };
 		7A584FA91D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A67F5B41D746676002B56C8 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
 		7A6B9C8C1D6B28E400018648 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector4.swift; sourceTree = "<group>"; };
 		7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A67F5B51D746676002B56C8 /* SceneKit.framework in Frameworks */,
 				7A75AED51D55255B0034B4EA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2537F21D745A3200A1407C /* SceneKit.framework in Frameworks */,
 				7A75AED31D5525470034B4EA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +402,8 @@
 		7A75AED11D5525470034B4EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A67F5B41D746676002B56C8 /* SceneKit.framework */,
+				7A2537F11D745A3200A1407C /* SceneKit.framework */,
 				7A75AED41D55255B0034B4EA /* StoreKit.framework */,
 				7A75AED21D5525470034B4EA /* StoreKit.framework */,
 			);
@@ -728,12 +736,11 @@
 				7A3994BB1D3F5F3D000665A0 /* String.swift in Sources */,
 				7A39949F1D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A3994A31D3F5F3D000665A0 /* Date.swift in Sources */,
-				7A72CEC41D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A3994B71D3F5F3D000665A0 /* Misc.swift in Sources */,
 				7A372EE11D71BFE400F7AB7F /* CALayer.swift in Sources */,
 				7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */,
+				7A2537F91D745BE600A1407C /* SCNGeometry.swift in Sources */,
 				7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */,
-				7A80AC131D62564D0085A3F0 /* SCNGeometry.swift in Sources */,
 				7A3994AF1D3F5F3D000665A0 /* Double.swift in Sources */,
 				7A39949B1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */,
@@ -741,12 +748,13 @@
 				7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */,
 				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
-				7A48EBBE1D6C78AF00A55987 /* SCNNode.swift in Sources */,
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
+				7A2537F81D745B2200A1407C /* SCNNode.swift in Sources */,
 				7A19E0901D5753BD009AFD27 /* UIAlertController.swift in Sources */,
 				7A4CE3AA1D3F746000DAAE70 /* UIView.swift in Sources */,
-				7ACF689F1D645FBE0048DE52 /* SCNVector3.swift in Sources */,
+				7A2537F71D745B0B00A1407C /* SCNVector3.swift in Sources */,
 				7A4CE3AE1D3F74BB00DAAE70 /* UIFont.swift in Sources */,
+				7A2537F61D745AE800A1407C /* SCNVector4.swift in Sources */,
 				7A83150C1D4241FD000F35AE /* FAQController.swift in Sources */,
 				7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */,
 				7A3994AB1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,

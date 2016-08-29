@@ -12,7 +12,7 @@ extension UIFont {
 	
 	public func makeMonospacedDigit() -> UIFont {
 		let size = self.pointSize
-		let desc = self.fontDescriptor()
+		let desc = self.fontDescriptor
 		let monospaced = desc.addingAttributes([
 			UIFontDescriptorFeatureSettingsAttribute: [
 				[

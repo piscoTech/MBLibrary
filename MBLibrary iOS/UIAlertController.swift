@@ -24,7 +24,7 @@ extension UIAlertController {
 		
 		let loading = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 		loading.translatesAutoresizingMaskIntoConstraints = false
-		loading.color = .gray()
+		loading.color = .gray
 		pending.view.addSubview(loading)
 		
 		let views = ["loading": loading]

@@ -20,12 +20,11 @@ public func - (l: Float3, r: Float3) -> Float3 {
 	return [l.x - r.x, l.y - r.y, l.z - r.z]
 }
 
-prefix operator - {}
 public prefix func - (p: Float3) -> Float3 {
 	return [-p.x, -p.y, -p.z]
 }
 
-public struct Float3: ArrayLiteralConvertible, Equatable {
+public struct Float3: ExpressibleByArrayLiteral, Equatable {
 	
 	public typealias Element = Float
 	public let x, y, z: Float
@@ -60,7 +59,7 @@ public struct Float3: ArrayLiteralConvertible, Equatable {
 	
 }
 
-public struct Face: ArrayLiteralConvertible {
+public struct Face: ExpressibleByArrayLiteral {
 	
 	public typealias Element = Float3
 	public let a, b, c: Float3

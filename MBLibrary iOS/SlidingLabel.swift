@@ -15,7 +15,7 @@ public class SlidingLabel: UIView, Animatable {
 	
 	private var innerView: UILabel!
 	private var hCenter: NSLayoutConstraint!
-	private var fadePositions: [CGFloat] = []
+	private var fadePositions: [NSNumber] = []
 	private var fadeMarginMask: CAGradientLayer!
 	
 	private let fadingSpace: CGFloat = 10
@@ -81,7 +81,7 @@ public class SlidingLabel: UIView, Animatable {
 		fadeMarginMask.frame = CGRect(origin: CGPoint.zero, size: self.frame.size)
 		let w = self.frame.width
 		let pos = fadingSpace / w
-		fadePositions = [0, pos, 1 - pos, 1]
+		fadePositions = [0, pos, 1 - pos, 1].map { NSNumber(value: Double($0)) }
 		fadeMarginMask.locations = fadePositions
 	}
 	
