@@ -91,6 +91,9 @@
 		7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A584FA71D3E241C000C739B /* MBLibrary iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A5B4FDC1D773A450083EEA9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B4FDB1D773A450083EEA9 /* Bundle.swift */; };
+		7A5B4FDD1D773A450083EEA9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B4FDB1D773A450083EEA9 /* Bundle.swift */; };
+		7A5B4FDE1D773A450083EEA9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B4FDB1D773A450083EEA9 /* Bundle.swift */; };
 		7A67F5B51D746676002B56C8 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A67F5B41D746676002B56C8 /* SceneKit.framework */; };
 		7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A6B9C8E1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
@@ -182,6 +185,7 @@
 		7A584FA51D3E241C000C739B /* MBLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A584FA71D3E241C000C739B /* MBLibrary iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary iOS.h"; sourceTree = "<group>"; };
 		7A584FA91D3E241C000C739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A5B4FDB1D773A450083EEA9 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		7A67F5B41D746676002B56C8 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
 		7A6B9C8C1D6B28E400018648 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector4.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				7A3994911D3F5F3D000665A0 /* Array.swift */,
 				7A3994941D3F5F3D000665A0 /* Dictionary.swift */,
 				7A3994981D3F5F3D000665A0 /* Misc.swift */,
+				7A5B4FDB1D773A450083EEA9 /* Bundle.swift */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 				7A80AC141D62564D0085A3F0 /* SCNGeometry.swift in Sources */,
 				7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */,
 				7A48EBBF1D6C78AF00A55987 /* SCNNode.swift in Sources */,
+				7A5B4FDD1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */,
 				7A3994C01D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
@@ -721,6 +727,7 @@
 				7A3994B11D3F5F3D000665A0 /* Double.swift in Sources */,
 				7A3994B51D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A39949D1D3F5F3D000665A0 /* Array.swift in Sources */,
+				7A5B4FDE1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A6B9C8F1D6B28E400018648 /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,6 +744,7 @@
 				7A39949F1D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A3994A31D3F5F3D000665A0 /* Date.swift in Sources */,
 				7A3994B71D3F5F3D000665A0 /* Misc.swift in Sources */,
+				7A5B4FDC1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A372EE11D71BFE400F7AB7F /* CALayer.swift in Sources */,
 				7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */,
 				7A2537F91D745BE600A1407C /* SCNGeometry.swift in Sources */,

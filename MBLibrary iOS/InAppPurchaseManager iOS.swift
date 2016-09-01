@@ -16,9 +16,7 @@ extension InAppPurchaseManager {
 	}
 	
 	public class func getAlert(forError error: Error) -> UIAlertController? {
-		let err = error as NSError
-		guard err.code != SKError.Code.paymentCancelled.rawValue else {
-			// No need to display any error if the payment was cancelled.
+		guard InAppPurchaseManager.shouldDisplayError(for: error) else {
 			return nil
 		}
 

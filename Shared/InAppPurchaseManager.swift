@@ -9,9 +9,47 @@
 import Foundation
 import StoreKit
 
-public typealias ProductTransactionHandler = (_ success: Bool, _ error: Error?) -> ()
+public struct TransactionStatus {
+	
+	/// The product identifier the transaction referes to.
+	public let product: String
+	/// The status of the transaction.
+	public let status: MBPaymentTransactionState
+	/// If the transaction has status `.failed` the error, `nil` otherwise.
+	public let error: Error?
+	
+}
+
+public struct RestorationStatus {
+	
+	/// Whether or not the restoration process was successful.
+	public let success: Bool
+	/// In case of success the number of restored transactions, `nil` otherwise.
+	public let restored: Int?
+	/// The error in case of failure, `nil` otherwise.
+	public let error: Error?
+	
+}
+
+public enum MBPaymentTransactionState {
+	/// Tha transaction is completed as the payment has been finished.
+	case purchased
+	/// The transaction is completed as the purchase has been restored.
+	case restored
+	/// Tha transaction has somehow failed.
+	case failed
+	/// The transaction has been deferred waiting for approval by family manager, any modal view locking the app should be dismissed while waiting for `failed` or `completed` status.
+	case deferred
+	
+	public func isSuccess() -> Bool {
+		return self == .purchased || self == .restored
+	}
+}
 
 public class InAppPurchaseManager: NSObject {
+	
+	public static let transactionNotification = NSNotification.Name("MBLibraryIAPManagerTransactionNotification")
+	public static let restoreNotification = NSNotification.Name("MBLibraryIAPManagerRestoreNotification")
 	
 	public static let defaultsKeyPrefix = "iapStatus_"
 	public fileprivate(set) var areProductsLoaded = false
@@ -20,11 +58,7 @@ public class InAppPurchaseManager: NSObject {
 	fileprivate var productsStatus: [String: (purchased: Bool, product: SKProduct?)]
 	
 	fileprivate var productsRequest: SKProductsRequest?
-	
 	fileprivate var productsRequestHandler: ((_ success: Bool, _ products: [SKProduct]?) -> ())?
-	fileprivate var buyCompletionHandler: [String: (_ success: Bool, _ error: Error?) -> ()] = [:]
-	fileprivate var restoreProcessHandler: ((_ success: Bool, _ restored: Int?, _ error:
-	Error?) -> ())?
 	
 	fileprivate var restoredTransaction = 0
 	
@@ -38,15 +72,14 @@ public class InAppPurchaseManager: NSObject {
 	
 	public init(productIds: Set<String>, inUserDefaults defaults: KeyValueStore) {
 		self.defaults = defaults
-		
 		productsStatus = [:]
-		for pId in productIds {
-			productsStatus[pId] = (defaults.bool(forKey: InAppPurchaseManager.defaultsKeyPrefix + pId), nil)
-		}
-		
+
 		super.init()
 		
 		SKPaymentQueue.default().add(self)
+		for pId in productIds {
+			productsStatus[pId] = (defaults.bool(forKey: InAppPurchaseManager.defaultsKeyPrefix + pId), nil)
+		}
 	}
 	
 	public func loadProducts(completion: ((_ success: Bool, _ products: [SKProduct]?) -> ())?) {
@@ -58,10 +91,20 @@ public class InAppPurchaseManager: NSObject {
 		productsRequest!.start()
 	}
 	
+	/// Check if the specified product has been purchased.
+	///
+	/// - parameter pId: The product identifier of the product to check.
+	///
+	/// - returns: Whether or not the product has been purchased, at least once in case of consumable.
 	public func isProductPurchased(pId: String) -> Bool {
 		return productsStatus[pId]?.purchased ?? false
 	}
 	
+	/// Check if the specified product has been purchased.
+	///
+	/// - parameter product: The product to check.
+	///
+	/// - returns: Whether or not the product has been purchased, at least once in case of consumable.
 	public func isProductPurchased(product: SKProduct) -> Bool {
 		return isProductPurchased(pId: product.productIdentifier)
 	}
@@ -70,35 +113,40 @@ public class InAppPurchaseManager: NSObject {
 		return SKPaymentQueue.canMakePayments()
 	}
 	
-	///- returns: Whether or not the specified productID exist and the payment has been initialized.
-	@discardableResult
-	public func buyProduct(pId: String, completion: ProductTransactionHandler?) -> Bool {
+	///Initialize the transaction for buying the specified product.
+	///
+	///Listen to `InAppPurchaseManager.transactionNotification` notification to receive feedback on the transaction as `TransactionStatus` in the notification object.
+	///- returns: Whether or not the specified product identifier exist and the payment has been initialized.
+	public func buyProduct(pId: String) -> Bool {
 		guard let (_, tmp) = productsStatus[pId], let p = tmp else {
 			return false
 		}
 		
-		buyProduct(product: p, completion: completion)
+		buyProduct(product: p)
 		return true
 	}
 	
-	public func buyProduct(product: SKProduct, completion: ProductTransactionHandler?) {
+	///Initialize the transaction for buying the specified product.
+	///
+	///Listen to `InAppPurchaseManager.transactionNotification` notification to receive feedback on the transaction as `TransactionStatus` in the notification object.
+	public func buyProduct(product: SKProduct) {
 		let payment = SKPayment(product: product)
 		SKPaymentQueue.default().add(payment)
-		
-		buyCompletionHandler[product.productIdentifier] = completion
 	}
 	
 	///Initialize restore process for previous purchases.
-	///- parameter requestCompletion: This block is called upon error on restoring purchases or if there are no purchase to restore, if some purchases are restored the appropriate callback block will be called (if present).
-	///- parameter success: Set to `true` if the restoration process was successful, `false` otherwise.
-	///- parameter restored: If the restoration was successful will hold the number of restored transaction, `nil` otherwise.
-	///- parameter error: The error in case of failure of the restoration process, `nil` otherwise.
-	///- parameter productCompletion: The callback block to be called after each purchases, identified by its productId as the key, is completed.
-	public func restorePurchases(requestCompletion: ((_ success: Bool, _ restored: Int?, _ error: Error?) -> ())?, productCompletion: [String: ProductTransactionHandler]?) {
-		restoreProcessHandler = requestCompletion
-		buyCompletionHandler += productCompletion ?? [:]
+	///
+	///Listen to `InAppPurchaseManager.restoreNotification` notification to receive the result of the process stored as `RestorationStatus` in the notification object.
+	public func restorePurchases() {
 		restoredTransaction = 0
 		SKPaymentQueue.default().restoreCompletedTransactions()
+	}
+	
+	class func shouldDisplayError(for e: Error) -> Bool {
+		let err = e as NSError
+		
+		// No need to display any error if the payment was cancelled.
+		return err.code != SKError.Code.paymentCancelled.rawValue
 	}
 	
 }
@@ -141,15 +189,12 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 			switch (transaction.transactionState) {
 			case .purchased:
 				complete(transaction)
-				break
 			case .failed:
 				failed(transaction)
-				break
 			case .restored:
 				restore(transaction)
-				break
 			case .deferred:
-				break
+				updateTransaction(for: transaction.payment.productIdentifier, withStatus: .deferred)
 			case .purchasing:
 				break
 			}
@@ -157,17 +202,15 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 	}
 	
 	public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-		restoreProcessHandler?(true, restoredTransaction, nil)
-		restoreProcessHandler = nil
+		NotificationCenter.default.post(name: InAppPurchaseManager.restoreNotification, object: RestorationStatus(success: true, restored: restoredTransaction, error: nil))
 	}
 	
 	public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-		restoreProcessHandler?(false, nil, error)
-		restoreProcessHandler = nil
+		NotificationCenter.default.post(name: InAppPurchaseManager.restoreNotification, object: RestorationStatus(success: false, restored: nil, error: error))
 	}
 	
 	private func complete(_ transaction: SKPaymentTransaction) {
-		finishTrasactionFor(transaction.payment.productIdentifier)
+		updateTransaction(for: transaction.payment.productIdentifier, withStatus: .purchased)
 		SKPaymentQueue.default().finishTransaction(transaction)
 	}
 	
@@ -177,23 +220,25 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 		}
 		
 		restoredTransaction += 1
-		finishTrasactionFor(productIdentifier)
+		updateTransaction(for: productIdentifier, withStatus: .restored)
 		SKPaymentQueue.default().finishTransaction(transaction)
 	}
 	
 	private func failed(_ transaction: SKPaymentTransaction) {
-		finishTrasactionFor(transaction.payment.productIdentifier, withError: transaction.error)
+		updateTransaction(for: transaction.payment.productIdentifier, withStatus: .failed, andError: transaction.error)
 		SKPaymentQueue.default().finishTransaction(transaction)
 	}
 	
-	private func finishTrasactionFor(_ identifier: String, withError error: Error? = nil) {
-		if error == nil {
-			productsStatus[identifier]?.purchased = true
-			defaults.set(true, forKey: InAppPurchaseManager.defaultsKeyPrefix + identifier)
+	private func updateTransaction(for product: String, withStatus status: MBPaymentTransactionState, andError error: Error? = nil) {
+		precondition(error != nil || status != .failed, "Missing error")
+		
+		if status.isSuccess() {
+			productsStatus[product]?.purchased = true
+			defaults.set(true, forKey: InAppPurchaseManager.defaultsKeyPrefix + product)
 			defaults.synchronize()
 		}
 		
-		buyCompletionHandler[identifier]?(error == nil, error)
-		buyCompletionHandler[identifier] = nil
+		NotificationCenter.default.post(name: InAppPurchaseManager.transactionNotification, object: TransactionStatus(product: product, status: status, error: status == .failed ? error : nil))
 	}
+	
 }
