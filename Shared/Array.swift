@@ -8,25 +8,7 @@
 
 import Foundation
 
-public protocol Sortable {
-	
-	func sortBefore(_ oth: Self) -> Bool
-	
-}
-
-extension Array where Element: Sortable {
-	
-	///Returns a sorted copy of the collection using the criteria provided by its elements.
-	public func sorted() -> [Element] {
-		return self.sorted { $0.sortBefore($1) }
-	}
-	
-	///Sorts the collection using the criteria provided by its elements.
-	mutating public func sort() {
-		self.sort { $0.sortBefore($1) }
-	}
-	
-}
+// MARK: - Operation with elements
 
 extension Array where Element: Equatable {
 	
@@ -55,7 +37,23 @@ extension Array where Element: Equatable {
 		return count
 	}
 	
+	/// Modify the array leaving only the first instance of duplicated elements.
+	mutating public func removeDuplicates() {
+		var i = 0
+		
+		while i < self.count {
+			let before = Array(self[0 ..< i])
+			if before.index(of: self[i]) != nil {
+				self.remove(at: i)
+			} else {
+				i += 1
+			}
+		}
+	}
+	
 }
+
+// MARK: - Random access
 
 extension Array {
 	
@@ -86,6 +84,48 @@ extension Array {
 		}
 		
 		return self[Int.random(to: self.count)]
+	}
+	
+}
+
+// MARK: - Set operation
+
+extension Array where Element: Equatable {
+	
+	/// Merge together the elements of two arrays preserving order, duplicated elements will be removed and only the first one will be kept.
+	///
+	/// - parameter oth: The other array.
+	///
+	/// - returns: The union of arrays elements.
+	public func union(_ oth: [Element]) -> [Element] {
+		var res = self + oth
+		res.removeDuplicates()
+		
+		return res
+	}
+	
+	/// Intersect the elements of two arrays preserving the order of the first array, duplicated elements will be removed and only the first one will be kept.
+	///
+	/// - parameter oth: The other array.
+	///
+	/// - returns: The intersection of arrays elements.
+	public func intersect(_ oth: [Element]) -> [Element] {
+		var res = self.filter { oth.index(of: $0) != nil }
+		res.removeDuplicates()
+		
+		return res
+	}
+	
+	/// Subract the element of the passed array preserving the order, duplicated elements will be removed and only the first one will be kept.
+	///
+	/// - parameter oth: The other array.
+	///
+	/// - returns: The difference of arrays elements.
+	public func subtract(_ oth: [Element]) -> [Element] {
+		var res = self.filter { oth.index(of: $0) == nil }
+		res.removeDuplicates()
+		
+		return res
 	}
 	
 }

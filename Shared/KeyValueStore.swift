@@ -106,7 +106,7 @@ public class KeyValueStore {
 		}
 	}
 	
-	public func set(_ value: AnyObject, forKey: KeyValueStoreKey) {
+	public func set(_ value: Any, forKey: KeyValueStoreKey) {
 		let key = forKey.description
 		if isLocal {
 			localStore.set(value, forKey: key)
