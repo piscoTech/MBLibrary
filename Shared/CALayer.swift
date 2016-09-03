@@ -11,11 +11,15 @@ import UIKit
 
 extension CALayer {
 	
-	public func image(transparent: Bool = true) -> UIImage {
+	public func image(transparent: Bool = true) -> UIImage? {
 		UIGraphicsBeginImageContextWithOptions(self.frame.size, !transparent, 0)
 		
-		self.render(in: UIGraphicsGetCurrentContext()!)
-		let res = UIGraphicsGetImageFromCurrentImageContext()!
+		guard let current = UIGraphicsGetCurrentContext() else {
+			return nil
+		}
+		
+		self.render(in: current)
+		let res = UIGraphicsGetImageFromCurrentImageContext()
 		
 		UIGraphicsEndImageContext()
 		
