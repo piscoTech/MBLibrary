@@ -117,6 +117,7 @@
 		7AA084061D5FB9B100B57943 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA084021D5FB9B100B57943 /* Int.swift */; };
 		7AA0840D1D5FBC2700B57943 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840C1D5FBC2700B57943 /* IntTests.swift */; };
 		7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */; };
+		7AC78C7C1D8F1C0C009D3118 /* OutlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC78C7B1D8F1C0C009D3118 /* OutlinedLabel.swift */; };
 		7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */; };
 		7AD1597D1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
 		7AD1597E1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
@@ -200,6 +201,7 @@
 		7AA084021D5FB9B100B57943 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		7AA0840C1D5FBC2700B57943 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InAppPurchaseManager iOS.swift"; sourceTree = "<group>"; };
+		7AC78C7B1D8F1C0C009D3118 /* OutlinedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedLabel.swift; sourceTree = "<group>"; };
 		7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3.swift; sourceTree = "<group>"; };
 		7AD159811D5793E2009E54EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AD159831D5793E4009E54EE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				7A4CE3A91D3F746000DAAE70 /* UIView.swift */,
 				7A4CE3AB1D3F748D00DAAE70 /* UILabel.swift */,
+				7AC78C7B1D8F1C0C009D3118 /* OutlinedLabel.swift */,
 				7A4CE3AD1D3F74BB00DAAE70 /* UIFont.swift */,
 				7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */,
 				7A2F5AFF1D3FABFB0012F485 /* PopoverController.swift */,
@@ -754,6 +757,7 @@
 				7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */,
 				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
 				7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */,
+				7AC78C7C1D8F1C0C009D3118 /* OutlinedLabel.swift in Sources */,
 				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
