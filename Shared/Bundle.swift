@@ -10,11 +10,18 @@ import Foundation
 
 extension Bundle {
 	
-	public var versionInfo: (version: String, build: String) {
+	public var versionInfo: (version: String, build: String, isDebug: Bool) {
 		let version = (self.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String) ?? "0.0"
 		let build = (self.object(forInfoDictionaryKey: "CFBundleVersion") as? String) ?? "0"
+		let debug = _isDebugAssertConfiguration()
 		
-		return (version, build)
+		return (version, build, debug)
+	}
+	
+	public var versionDescription: String {
+		let (version, build, debug) = versionInfo
+		
+		return "v\(version) (\(build))" + (debug ? " Debug" : "")
 	}
 	
 }
