@@ -28,7 +28,8 @@ extension UIAlertController {
 		pending.view.addSubview(loading)
 		
 		let views = ["loading": loading]
-		var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(20)-[loading]-(20)-|", options: [], metrics: nil, views: views)
+		let space: [String: CGFloat] = ["p" : 20]
+		var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(p)-[loading]-(p)-|", options: [], metrics: space, views: views)
 		constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[loading]|", options: [], metrics: nil, views: views)
 		pending.view.addConstraints(constraints)
 		
@@ -36,6 +37,24 @@ extension UIAlertController {
 		loading.startAnimating()
 		
 		return pending
+	}
+	
+	public class func getModalProgress() -> (alert: UIAlertController, bar: UIProgressView) {
+		let progress = UIAlertController(title: nil, message: "", preferredStyle: .alert)
+		
+		let bar = UIProgressView()
+		bar.translatesAutoresizingMaskIntoConstraints = false
+		bar.trackTintColor = .lightGray
+		progress.view.addSubview(bar)
+		
+		let views = ["loading": bar]
+		var space: [String: CGFloat] = ["p" : 30]
+		var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(p)-[loading]-(p)-|", options: [], metrics: space, views: views)
+		space = ["p" : 20]
+		constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-(p)-[loading]-(p)-|", options: [], metrics: space, views: views)
+		progress.view.addConstraints(constraints)
+		
+		return (progress, bar)
 	}
 
 }
