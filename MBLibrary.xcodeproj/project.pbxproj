@@ -19,6 +19,8 @@
 		7A0065331D3EBC310089297D /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0065321D3EBC310089297D /* ArrayTests.swift */; };
 		7A0C41C31D55398C0082AEAE /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
 		7A19E0901D5753BD009AFD27 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19E08F1D5753BD009AFD27 /* UIAlertController.swift */; };
+		7A1A25601E6CB29C00992D52 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A255F1E6CB29C00992D52 /* HealthKit.swift */; };
+		7A1A25611E6CB29C00992D52 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A255F1E6CB29C00992D52 /* HealthKit.swift */; };
 		7A1ACD021D3F973A00411C2C /* TitlelessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */; };
 		7A1ACD031D3F973A00411C2C /* MinHeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */; };
 		7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACD011D3F973A00411C2C /* FlippedView.swift */; };
@@ -153,6 +155,7 @@
 		7A0065301D3EBB270089297D /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
 		7A0065321D3EBC310089297D /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		7A19E08F1D5753BD009AFD27 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		7A1A255F1E6CB29C00992D52 /* HealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlelessWindow.swift; sourceTree = "<group>"; };
 		7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextField.swift; sourceTree = "<group>"; };
 		7A1ACD011D3F973A00411C2C /* FlippedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedView.swift; sourceTree = "<group>"; };
@@ -315,6 +318,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7A1A255E1E6CB22D00992D52 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				7A1A255F1E6CB29C00992D52 /* HealthKit.swift */,
+			);
+			name = HealthKit;
+			sourceTree = "<group>";
+		};
 		7A372EDF1D71BFAE00F7AB7F /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +340,7 @@
 				7A372EDF1D71BFAE00F7AB7F /* Graphics */,
 				7A3994C31D3F5F4D000665A0 /* Foundation */,
 				7A80AC111D6256310085A3F0 /* SceneKit */,
+				7A1A255E1E6CB22D00992D52 /* HealthKit */,
 				7A3994971D3F5F3D000665A0 /* Main.swift */,
 				7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */,
 				7A3994921D3F5F3D000665A0 /* Complex.swift */,
@@ -726,6 +738,7 @@
 				7A3994A91D3F5F3D000665A0 /* Dictionary.swift in Sources */,
 				7A3994BD1D3F5F3D000665A0 /* String.swift in Sources */,
 				7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */,
+				7A1A25611E6CB29C00992D52 /* HealthKit.swift in Sources */,
 				7A3994A51D3F5F3D000665A0 /* Date.swift in Sources */,
 				7A3994AD1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A3994B11D3F5F3D000665A0 /* Double.swift in Sources */,
@@ -742,6 +755,7 @@
 			files = (
 				7A3994B31D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A4CE3B01D3F752800DAAE70 /* KeyValueStore.swift in Sources */,
+				7A1A25601E6CB29C00992D52 /* HealthKit.swift in Sources */,
 				7A2F5B051D3FB1250012F485 /* EnhancedTextField.swift in Sources */,
 				7A3994BF1D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
 				7A3994BB1D3F5F3D000665A0 /* String.swift in Sources */,
@@ -1044,7 +1058,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1066,7 +1080,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
