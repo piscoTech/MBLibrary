@@ -24,6 +24,7 @@
 		7A1ACD021D3F973A00411C2C /* TitlelessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */; };
 		7A1ACD031D3F973A00411C2C /* MinHeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */; };
 		7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ACD011D3F973A00411C2C /* FlippedView.swift */; };
+		7A2224451E6F14060046E9DE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2224441E6F14060046E9DE /* FileManager.swift */; };
 		7A2537F21D745A3200A1407C /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2537F11D745A3200A1407C /* SceneKit.framework */; };
 		7A2537F61D745AE800A1407C /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
 		7A2537F71D745B0B00A1407C /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */; };
@@ -159,6 +160,7 @@
 		7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlelessWindow.swift; sourceTree = "<group>"; };
 		7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextField.swift; sourceTree = "<group>"; };
 		7A1ACD011D3F973A00411C2C /* FlippedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedView.swift; sourceTree = "<group>"; };
+		7A2224441E6F14060046E9DE /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		7A2537F11D745A3200A1407C /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		7A2F5AFF1D3FABFB0012F485 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		7A2F5B031D3FB1250012F485 /* EnhancedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnhancedTextField.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				7A3994941D3F5F3D000665A0 /* Dictionary.swift */,
 				7A3994981D3F5F3D000665A0 /* Misc.swift */,
 				7A5B4FDB1D773A450083EEA9 /* Bundle.swift */,
+				7A2224441E6F14060046E9DE /* FileManager.swift */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				7A39949F1D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A3994A31D3F5F3D000665A0 /* Date.swift in Sources */,
 				7A3994B71D3F5F3D000665A0 /* Misc.swift in Sources */,
+				7A2224451E6F14060046E9DE /* FileManager.swift in Sources */,
 				7A5B4FDC1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A372EE11D71BFE400F7AB7F /* CALayer.swift in Sources */,
 				7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */,
