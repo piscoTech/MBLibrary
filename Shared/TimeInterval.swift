@@ -10,7 +10,7 @@ import Foundation
 
 extension TimeInterval {
 	
-	public func getDuration() -> String {
+	public func getDuration(hideHours shouldHide: Bool = false) -> String {
 		var s = Int(floor(self))
 		let neg = s < 0
 		if neg {
@@ -22,11 +22,13 @@ extension TimeInterval {
 		
 		let h = m / 60
 		m = m % 60
+		let doHide = shouldHide && h == 0
 		
 		let sec = (s < 10 ? "0" : "") + "\(s)"
-		let min = (m < 10 ? "0" : "") + "\(m)"
+		let min = (m < 10 && !doHide ? "0" : "") + "\(m)"
+		let hour = doHide ? "" : "\(h):"
 		
-		return (neg ? "-" : "") + "\(h):\(min):\(sec)"
+		return (neg ? "-" : "") + "\(hour)\(min):\(sec)"
 	}
 	
 	public func getUNIXDateTime() -> String {
