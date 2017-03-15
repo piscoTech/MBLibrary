@@ -70,6 +70,14 @@ extension Double {
 		return base
 	}
 	
+	public func rounded(to: Double) -> Double {
+		return (self / to).rounded() * to
+	}
+	
+	mutating public func round(to: Double) {
+		self = self.rounded(to: to)
+	}
+	
 	// MARK: - RNG
 	
 	///Generate a random number between `from` (inclusive) and `to` (exclusive).
