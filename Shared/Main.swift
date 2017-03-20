@@ -42,3 +42,27 @@ public func MBLocalizedString(_ key: String, comment: String) -> String {
 	let bundle = Bundle(for: KeyValueStore.self)
 	return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: comment)
 }
+
+public let iOS: Bool = {
+	if #available(iOS 8, iOSApplicationExtension 8, *) {
+		return true
+	} else {
+		return false
+	}
+}()
+
+public let macOS: Bool = {
+	if #available(OSX 10.10, OSXApplicationExtension 10.10, *) {
+		return true
+	} else {
+		return false
+	}
+}()
+
+public let watchOS: Bool = {
+	if #available(watchOS 2, watchOSApplicationExtension 2, *) {
+		return true
+	} else {
+		return false
+	}
+}()
