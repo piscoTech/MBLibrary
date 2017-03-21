@@ -43,26 +43,26 @@ public func MBLocalizedString(_ key: String, comment: String) -> String {
 	return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: comment)
 }
 
-public let iOS: Bool = {
-	if #available(iOS 8, iOSApplicationExtension 8, *) {
+public let isiOS: Bool = {
+	#if os(iOS)
 		return true
-	} else {
+	#else
 		return false
-	}
+	#endif
 }()
 
-public let macOS: Bool = {
-	if #available(OSX 10.10, OSXApplicationExtension 10.10, *) {
+public let ismacOS: Bool = {
+	#if os(OSX)
 		return true
-	} else {
+	#else
 		return false
-	}
+	#endif
 }()
 
-public let watchOS: Bool = {
-	if #available(watchOS 2, watchOSApplicationExtension 2, *) {
+public let iswatchOS: Bool = {
+	#if os(watchOS)
 		return true
-	} else {
+	#else
 		return false
-	}
+	#endif
 }()
