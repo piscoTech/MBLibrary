@@ -37,17 +37,16 @@ extension CGPoint {
 	
 	///The angle (in radians) described by the vector relative to the positive x axis in `(-π, π]` range.
 	public var angle: CGFloat {
-		let fπ = CGFloat(π)
 		if x == 0 {
-			return CGFloat(π_2) * sgn(y)
+			return .pi / 2 * sgn(y)
 		}
 		
-		let res = atan(y / x) + (x < 0 ? fπ : 0)
+		let res = atan(y / x) + (x < 0 ? .pi : 0)
 		switch res {
-		case let tmp where tmp > fπ:
-			return tmp - 2 * fπ
-		case let tmp where tmp < -fπ:
-			return tmp + 2 * fπ
+		case let tmp where tmp > .pi:
+			return tmp - 2 * .pi
+		case let tmp where tmp < -.pi:
+			return tmp + 2 * .pi
 		case let tmp:
 			return tmp
 		}
