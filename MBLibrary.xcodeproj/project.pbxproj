@@ -18,6 +18,24 @@
 		7A0065311D3EBB270089297D /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0065301D3EBB270089297D /* TimeIntervalTests.swift */; };
 		7A0065331D3EBC310089297D /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0065321D3EBC310089297D /* ArrayTests.swift */; };
 		7A0C41C31D55398C0082AEAE /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
+		7A1305AA1EAB86E500D29048 /* NSURL+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305A81EAB86E500D29048 /* NSURL+XML.h */; };
+		7A1305AB1EAB86E500D29048 /* NSURL+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305A91EAB86E500D29048 /* NSURL+XML.m */; };
+		7A1305AC1EAB87C600D29048 /* NSURL+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305A81EAB86E500D29048 /* NSURL+XML.h */; };
+		7A1305AD1EAB87C600D29048 /* NSURL+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305A91EAB86E500D29048 /* NSURL+XML.m */; };
+		7A1305AE1EAB87C600D29048 /* NSURL+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305A81EAB86E500D29048 /* NSURL+XML.h */; };
+		7A1305AF1EAB87C600D29048 /* NSURL+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305A91EAB86E500D29048 /* NSURL+XML.m */; };
+		7A1305B11EAB885A00D29048 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305B01EAB885A00D29048 /* Bridging-Header.h */; };
+		7A1305B21EAB885A00D29048 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305B01EAB885A00D29048 /* Bridging-Header.h */; };
+		7A1305B31EAB885A00D29048 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305B01EAB885A00D29048 /* Bridging-Header.h */; };
+		7A1305B41EAB886E00D29048 /* NSURL+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305A91EAB86E500D29048 /* NSURL+XML.m */; };
+		7A1305B61EAB8A9500D29048 /* XMLElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305B51EAB8A9500D29048 /* XMLElements.swift */; };
+		7A1305B71EAB8A9500D29048 /* XMLElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305B51EAB8A9500D29048 /* XMLElements.swift */; };
+		7A1305B81EAB8A9500D29048 /* XMLElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305B51EAB8A9500D29048 /* XMLElements.swift */; };
+		7A1305B91EAB8A9500D29048 /* XMLElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305B51EAB8A9500D29048 /* XMLElements.swift */; };
+		7A1305C01EAB8C8D00D29048 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305BF1EAB8C8D00D29048 /* URL.swift */; };
+		7A1305C11EAB8C8D00D29048 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305BF1EAB8C8D00D29048 /* URL.swift */; };
+		7A1305C21EAB8C8D00D29048 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305BF1EAB8C8D00D29048 /* URL.swift */; };
+		7A1305C31EAB8C8D00D29048 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305BF1EAB8C8D00D29048 /* URL.swift */; };
 		7A19E0901D5753BD009AFD27 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19E08F1D5753BD009AFD27 /* UIAlertController.swift */; };
 		7A1A25601E6CB29C00992D52 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A255F1E6CB29C00992D52 /* HealthKit.swift */; };
 		7A1A25611E6CB29C00992D52 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A255F1E6CB29C00992D52 /* HealthKit.swift */; };
@@ -155,6 +173,11 @@
 		7A00652E1D3EB9A40089297D /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		7A0065301D3EBB270089297D /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
 		7A0065321D3EBC310089297D /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		7A1305A81EAB86E500D29048 /* NSURL+XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+XML.h"; sourceTree = "<group>"; };
+		7A1305A91EAB86E500D29048 /* NSURL+XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+XML.m"; sourceTree = "<group>"; };
+		7A1305B01EAB885A00D29048 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		7A1305B51EAB8A9500D29048 /* XMLElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElements.swift; sourceTree = "<group>"; };
+		7A1305BF1EAB8C8D00D29048 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		7A19E08F1D5753BD009AFD27 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		7A1A255F1E6CB29C00992D52 /* HealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		7A1ACCFF1D3F973A00411C2C /* TitlelessWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlelessWindow.swift; sourceTree = "<group>"; };
@@ -320,6 +343,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7A1305A71EAB86A500D29048 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				7A1305B51EAB8A9500D29048 /* XMLElements.swift */,
+				7A1305A81EAB86E500D29048 /* NSURL+XML.h */,
+				7A1305A91EAB86E500D29048 /* NSURL+XML.m */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
 		7A1A255E1E6CB22D00992D52 /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +372,7 @@
 		7A3994901D3F5F3D000665A0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7A1305A71EAB86A500D29048 /* XML */,
 				7A372EDF1D71BFAE00F7AB7F /* Graphics */,
 				7A3994C31D3F5F4D000665A0 /* Foundation */,
 				7A80AC111D6256310085A3F0 /* SceneKit */,
@@ -350,6 +384,7 @@
 				7A83150B1D4241FD000F35AE /* FAQController.swift */,
 				7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */,
 				7AD159821D5793E2009E54EE /* Localizable.strings */,
+				7A1305B01EAB885A00D29048 /* Bridging-Header.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -369,6 +404,7 @@
 				7A3994981D3F5F3D000665A0 /* Misc.swift */,
 				7A5B4FDB1D773A450083EEA9 /* Bundle.swift */,
 				7A2224441E6F14060046E9DE /* FileManager.swift */,
+				7A1305BF1EAB8C8D00D29048 /* URL.swift */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -470,6 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0064CD1D3E9AF10089297D /* MBLibrary macOS.h in Headers */,
+				7A1305AC1EAB87C600D29048 /* NSURL+XML.h in Headers */,
+				7A1305B21EAB885A00D29048 /* Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +516,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0065011D3EB02B0089297D /* MBLibrary watchOS.h in Headers */,
+				7A1305AE1EAB87C600D29048 /* NSURL+XML.h in Headers */,
+				7A1305B31EAB885A00D29048 /* Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +526,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A584FA81D3E241C000C739B /* MBLibrary iOS.h in Headers */,
+				7A1305AA1EAB86E500D29048 /* NSURL+XML.h in Headers */,
+				7A1305B11EAB885A00D29048 /* Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +717,7 @@
 				7A5B4FDD1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */,
+				7A1305B71EAB8A9500D29048 /* XMLElements.swift in Sources */,
 				7A3994C01D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
 				7A3994B81D3F5F3D000665A0 /* Misc.swift in Sources */,
 				7A3994A81D3F5F3D000665A0 /* Dictionary.swift in Sources */,
@@ -687,8 +730,10 @@
 				7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */,
 				7A3994AC1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A3994B01D3F5F3D000665A0 /* Double.swift in Sources */,
+				7A1305C11EAB8C8D00D29048 /* URL.swift in Sources */,
 				7A3994B41D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A39949C1D3F5F3D000665A0 /* Array.swift in Sources */,
+				7A1305AD1EAB87C600D29048 /* NSURL+XML.m in Sources */,
 				7A4CE3A61D3F73FA00DAAE70 /* NSTextField.swift in Sources */,
 				7A6B9C8E1D6B28E400018648 /* Bool.swift in Sources */,
 				7A80AC171D625D320085A3F0 /* Support Types.swift in Sources */,
@@ -702,9 +747,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A3994B61D3F5F3D000665A0 /* Main.swift in Sources */,
+				7A1305B91EAB8A9500D29048 /* XMLElements.swift in Sources */,
 				7A3994C21D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
+				7A1305C31EAB8C8D00D29048 /* URL.swift in Sources */,
 				7A3994BA1D3F5F3D000665A0 /* Misc.swift in Sources */,
 				7AA084061D5FB9B100B57943 /* Int.swift in Sources */,
+				7A1305B41EAB886E00D29048 /* NSURL+XML.m in Sources */,
 				7A9B2C881D67618B00A132C0 /* CGPointTests.swift in Sources */,
 				7A39949E1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A0065311D3EBB270089297D /* TimeIntervalTests.swift in Sources */,
@@ -734,9 +782,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4CE3B21D3F752800DAAE70 /* KeyValueStore.swift in Sources */,
+				7A1305B81EAB8A9500D29048 /* XMLElements.swift in Sources */,
+				7A1305AF1EAB87C600D29048 /* NSURL+XML.m in Sources */,
 				7A3994A11D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A3994C11D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
 				7AA084051D5FB9B100B57943 /* Int.swift in Sources */,
+				7A1305C21EAB8C8D00D29048 /* URL.swift in Sources */,
 				7A3994B91D3F5F3D000665A0 /* Misc.swift in Sources */,
 				7A3994A91D3F5F3D000665A0 /* Dictionary.swift in Sources */,
 				7A3994BD1D3F5F3D000665A0 /* String.swift in Sources */,
@@ -775,10 +826,12 @@
 				7A39949B1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */,
 				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
+				7A1305C01EAB8C8D00D29048 /* URL.swift in Sources */,
 				7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */,
 				7AC78C7C1D8F1C0C009D3118 /* OutlinedLabel.swift in Sources */,
 				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
+				7A1305B61EAB8A9500D29048 /* XMLElements.swift in Sources */,
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
 				7A2537F81D745B2200A1407C /* SCNNode.swift in Sources */,
 				7A19E0901D5753BD009AFD27 /* UIAlertController.swift in Sources */,
@@ -790,6 +843,7 @@
 				7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */,
 				7A3994AB1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
 				7A80AC161D625D320085A3F0 /* Support Types.swift in Sources */,
+				7A1305AB1EAB86E500D29048 /* NSURL+XML.m in Sources */,
 				7AA084031D5FB9B100B57943 /* Int.swift in Sources */,
 				7A3994A71D3F5F3D000665A0 /* Dictionary.swift in Sources */,
 				7A51E2FC1D64A4860081A9AD /* CGPoint.swift in Sources */,
@@ -999,11 +1053,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MBLibrary-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1046,10 +1104,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MBLibrary-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

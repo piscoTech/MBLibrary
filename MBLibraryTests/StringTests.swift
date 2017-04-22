@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MainTests: XCTestCase {
+class StringTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

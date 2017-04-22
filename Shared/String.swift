@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let XMLEntities: [(value: String, escaped: String)] = [("<", "&lt;"), (">", "&gt;")]
+
 extension String {
 		
 	public var length: Int {
@@ -36,6 +38,24 @@ extension String {
 	public func URLEncode() -> String {
 		let set = CharacterSet(charactersIn: "=\"#%/<>?@\\^`{|}&").inverted
 		return self.addingPercentEncoding(withAllowedCharacters: set)!
+	}
+	
+	public func toXML() -> String {
+		var res = self
+		for (from, to) in XMLEntities {
+			res = res.replacingOccurrences(of: from, with: to)
+		}
+		
+		return res
+	}
+	
+	public func fromXML() -> String {
+		var res = self
+		for (from, to) in XMLEntities {
+			res = res.replacingOccurrences(of: to, with: from)
+		}
+		
+		return res
 	}
 	
 	public func toCSV() -> String {
