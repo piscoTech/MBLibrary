@@ -72,7 +72,7 @@
 				}
 				
 				if (attrName && attrVal) {
-					[node addWithAttribute:[[XMLAttribute alloc] initWithName:attrName value:attrVal]];
+					[node addWithAttribute:attrName withValue:attrVal];
 				}
 				
 				attribute = attribute->next;
@@ -109,7 +109,7 @@
 		}
 		
 		// Load XML document
-		doc = xmlReadMemory([data bytes], (int)[data length], "", NULL, XML_PARSE_RECOVER);
+		doc = xmlReadMemory([data bytes], (int)[data length], "", NULL, 0);
 		if (doc != NULL) {
 			// Create XPath evaluation context
 			xpathCtx = xmlXPathNewContext(doc);
