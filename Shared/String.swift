@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let XMLEntities: [(value: String, escaped: String)] = [("<", "&lt;"), (">", "&gt;")]
+private let XMLEntities: [(value: String, escaped: String)] = [("&", "&amp;"), ("<", "&lt;"), (">", "&gt;")]
 
 extension String {
 		
