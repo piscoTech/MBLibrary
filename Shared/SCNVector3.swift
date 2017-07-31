@@ -26,6 +26,8 @@ public prefix func - (p: SCNVector3) -> SCNVector3 {
 
 extension SCNVector3: Equatable {
 	
+	public static let zero = SCNVector3(0, 0, 0)
+	
 	public var float3: Float3 {
 		return [Float(x), Float(y), Float(z)]
 	}

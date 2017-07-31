@@ -53,4 +53,8 @@ extension CGPoint {
 		
 	}
 	
+	public func scale(by f: CGFloat) -> CGPoint {
+		return CGPoint(x: x*f, y: y*f)
+	}
+	
 }
