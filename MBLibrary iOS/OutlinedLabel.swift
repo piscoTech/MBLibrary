@@ -9,20 +9,20 @@
 import UIKit
 
 @IBDesignable
-class OutlinedLabel: UILabel {
+public class OutlinedLabel: UILabel {
 
-	@IBInspectable var outlineWidth: CGFloat = 1 {
+	@IBInspectable public var outlineWidth: CGFloat = 1 {
 		didSet {
 			self.setNeedsDisplay()
 		}
 	}
-	@IBInspectable var outlineColor: UIColor = .white {
+	@IBInspectable public var outlineColor: UIColor = .white {
 		didSet {
 			self.setNeedsDisplay()
 		}
 	}
 	
-	override func drawText(in rect: CGRect) {
+	override public func drawText(in rect: CGRect) {
 		let strokeTextAttributes: [String : Any] = [
 			NSStrokeColorAttributeName : outlineColor,
 			NSStrokeWidthAttributeName : -outlineWidth
