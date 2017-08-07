@@ -108,6 +108,8 @@
 		7A4CE3B11D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
 		7A4CE3B21D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
 		7A4CE3B31D3F752800DAAE70 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */; };
+		7A4E4F871F384A3D00F69758 /* CGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E4F861F384A3D00F69758 /* CGColor.swift */; };
+		7A4E4F881F384F5200F69758 /* CGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E4F861F384A3D00F69758 /* CGColor.swift */; };
 		7A51E2FC1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A51E2FD1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
 		7A51E2FE1D64A4860081A9AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
@@ -210,6 +212,7 @@
 		7A4CE3AB1D3F748D00DAAE70 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		7A4CE3AD1D3F74BB00DAAE70 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		7A4E4F861F384A3D00F69758 /* CGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGColor.swift; path = "../MBLibrary iOS/CGColor.swift"; sourceTree = "<group>"; };
 		7A51E2FB1D64A4860081A9AD /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		7A584FA51D3E241C000C739B /* MBLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A584FA71D3E241C000C739B /* MBLibrary iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary iOS.h"; sourceTree = "<group>"; };
@@ -364,6 +367,7 @@
 		7A372EDF1D71BFAE00F7AB7F /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				7A4E4F861F384A3D00F69758 /* CGColor.swift */,
 				7A51E2FB1D64A4860081A9AD /* CGPoint.swift */,
 			);
 			name = Graphics;
@@ -710,6 +714,7 @@
 				7A3994A01D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A1ACD021D3F973A00411C2C /* TitlelessWindow.swift in Sources */,
 				7A1ACD031D3F973A00411C2C /* MinHeightTextField.swift in Sources */,
+				7A4E4F881F384F5200F69758 /* CGColor.swift in Sources */,
 				7AA084041D5FB9B100B57943 /* Int.swift in Sources */,
 				7A80AC141D62564D0085A3F0 /* SCNGeometry.swift in Sources */,
 				7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */,
@@ -846,6 +851,7 @@
 				7A1305AB1EAB86E500D29048 /* NSURL+XML.m in Sources */,
 				7AA084031D5FB9B100B57943 /* Int.swift in Sources */,
 				7A3994A71D3F5F3D000665A0 /* Dictionary.swift in Sources */,
+				7A4E4F871F384A3D00F69758 /* CGColor.swift in Sources */,
 				7A51E2FC1D64A4860081A9AD /* CGPoint.swift in Sources */,
 				7AD2D56B1D548A3A00CF755F /* VariableToolbar.swift in Sources */,
 			);
