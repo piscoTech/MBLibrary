@@ -2,28 +2,25 @@
 //  CALayer.swift
 //  MBLibrary
 //
-//  Created by Marco Boschi on 27/08/16.
-//  Copyright © 2016 Marco Boschi. All rights reserved.
+//  Created by Marco Boschi on 08/08/2017.
+//  Copyright © 2017 Marco Boschi. All rights reserved.
 //
 
 import QuartzCore
-import UIKit
 
 extension CALayer {
 	
-	public func image(transparent: Bool = true) -> UIImage? {
-		UIGraphicsBeginImageContextWithOptions(self.frame.size, !transparent, 0)
+	public func applyScreenScale(_ scale: CGFloat) {
+		self.shouldRasterize = true
+		self.contentsScale = scale
+		self.rasterizationScale = scale
 		
-		guard let current = UIGraphicsGetCurrentContext() else {
-			return nil
+		for l in self.sublayers ?? [] {
+			l.applyScreenScale(scale)
 		}
+		self.mask?.applyScreenScale(scale)
 		
-		self.render(in: current)
-		let res = UIGraphicsGetImageFromCurrentImageContext()
-		
-		UIGraphicsEndImageContext()
-		
-		return res
+		self.setNeedsDisplay()
 	}
 	
 }
