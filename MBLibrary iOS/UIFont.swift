@@ -13,11 +13,12 @@ extension UIFont {
 	public func makeMonospacedDigit() -> UIFont {
 		let size = self.pointSize
 		let desc = self.fontDescriptor
+		
 		let monospaced = desc.addingAttributes([
-			UIFontDescriptorFeatureSettingsAttribute: [
+			.featureSettings: [
 				[
-					UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
-					UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+					UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
+					.typeIdentifier: kMonospacedNumbersSelector
 				]
 			]
 			])

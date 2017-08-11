@@ -39,29 +39,30 @@ class CGPointTests: XCTestCase {
 	}
 	
 	func testModule() {
-		XCTAssertEqualWithAccuracy(2 * sqrt(2), c.module, accuracy: 0.0001)
+		XCTAssertEqual(2 * sqrt(2), c.module, accuracy: 0.0001)
 	}
 	
 	func testNormalization() {
 		let val: CGFloat = sqrt(2) / 2
 		let norm = c.normalized()
-		XCTAssertEqualWithAccuracy(val, norm.x, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(val, norm.y, accuracy: 0.0001)
+		XCTAssertEqual(val, norm.x, accuracy: 0.0001)
+		XCTAssertEqual(val, norm.y, accuracy: 0.0001)
 	}
 	
 	func testAngle() {
-		XCTAssertEqualWithAccuracy(CGFloat(π_2), CGPoint(x: 0, y: 1).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(-CGFloat(π_2), CGPoint(x: 0, y: -1).angle, accuracy: 0.0001)
+		XCTAssertEqual(.pi / 2, CGPoint(x: 0, y: 1).angle, accuracy: 0.0001)
+		XCTAssertEqual(-.pi / 2, CGPoint(x: 0, y: -1).angle, accuracy: 0.0001)
 		
-		XCTAssertEqualWithAccuracy(CGFloat(π) / 3, CGPoint(x: 1.0/2, y: sqrt(3)/2).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(2 * CGFloat(π) / 3, CGPoint(x: -1.0/2, y: sqrt(3)/2).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(-CGFloat(π) / 3, CGPoint(x: 1.0/2, y: -sqrt(3)/2).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(-2 * CGFloat(π) / 3, CGPoint(x: -1.0/2, y: -sqrt(3)/2).angle, accuracy: 0.0001)
+		let sr = sqrt(3)/2
+		XCTAssertEqual(.pi / 3, CGPoint(x: 0.5, y: sr).angle, accuracy: 0.0001)
+		XCTAssertEqual(2 * .pi / 3, CGPoint(x: -0.5, y: sr).angle, accuracy: 0.0001)
+		XCTAssertEqual(-.pi / 3, CGPoint(x: 0.5, y: -sr).angle, accuracy: 0.0001)
+		XCTAssertEqual(-2 * .pi / 3, CGPoint(x: -0.5, y: -sr).angle, accuracy: 0.0001)
 		
-		XCTAssertEqualWithAccuracy(CGFloat(π_2) / 3, CGPoint(x: sqrt(3)/2, y: 1.0/2).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(5 * CGFloat(π_2) / 3, CGPoint(x: -sqrt(3)/2, y: 1.0/2).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(-CGFloat(π_2) / 3, CGPoint(x: sqrt(3)/2, y: -1.0/2).angle, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(-5 * CGFloat(π_2) / 3, CGPoint(x: -sqrt(3)/2, y: -1.0/2).angle, accuracy: 0.0001)
+		XCTAssertEqual(.pi / 6, CGPoint(x: sr, y: 0.5).angle, accuracy: 0.0001)
+		XCTAssertEqual(5 * .pi / 6, CGPoint(x: -sr, y: 0.5).angle, accuracy: 0.0001)
+		XCTAssertEqual(-.pi / 6, CGPoint(x: sr, y: -0.5).angle, accuracy: 0.0001)
+		XCTAssertEqual(-5 * .pi / 6, CGPoint(x: -sr, y: -0.5).angle, accuracy: 0.0001)
 	}
 	
 }

@@ -23,10 +23,10 @@ public class OutlinedLabel: UILabel {
 	}
 	
 	override public func drawText(in rect: CGRect) {
-		let strokeTextAttributes: [String : Any] = [
-			NSStrokeColorAttributeName : outlineColor,
-			NSStrokeWidthAttributeName : -outlineWidth
-		]
+		let strokeTextAttributes: [NSAttributedStringKey : Any] = [
+			.strokeColor : outlineColor,
+			.strokeWidth : -outlineWidth
+			]
 		
 		let oldText = self.attributedText
 		

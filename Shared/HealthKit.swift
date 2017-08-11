@@ -159,6 +159,12 @@ extension HKWorkoutActivityType {
 			wType = 70
 		case .wheelchairRunPace:
 			wType = 71
+		case .taiChi:
+			wType = 72
+		case .mixedCardio:
+			wType = 73
+		case .handCycling:
+			wType = 74
 		}
 		
 		return MBLocalizedString("WORKOUT_NAME_\(wType)", comment: "Workout")

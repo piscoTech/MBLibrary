@@ -59,7 +59,7 @@ extension SCNVector3: Equatable {
 		return SCNVector3FromGLKVector3(GLKMatrix4MultiplyVector3(rotate, vect))
 	}
 	
-	public func scale(by f: Float) -> SCNVector3 {
+	public func scaled(by f: Float) -> SCNVector3 {
 		return SCNVector3(f*Float(x), f*Float(y), f*Float(z))
 	}
 	

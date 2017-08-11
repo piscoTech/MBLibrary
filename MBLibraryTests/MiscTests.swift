@@ -20,36 +20,42 @@ class MiscTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-	func testMaxMin() {
-		XCTAssertNil(max([Int]()))
-		XCTAssertNil(min([Int]()))
-		
-		let a = [2,8,9,-1,0,-7]
-		XCTAssertEqual(max(a), 9)
-		XCTAssertEqual(min(a), -7)
-	}
 	
 	func testSign() {
 		XCTAssertTrue(sgn(1) > 0)
 		XCTAssertTrue(sgn(-1) < 0)
-		XCTAssertTrue(sgn(0) == 0)
+		XCTAssertEqual(sgn(0), 0)
+		
 		XCTAssertTrue(sgn(1.0) > 0)
 		XCTAssertTrue(sgn(-2.5) < 0)
-		XCTAssertTrue(sgn(0.0) == 0)
+		XCTAssertEqual(sgn(0.0), 0)
+		
+		var f: Float = 1
+		XCTAssertTrue(sgn(f) > 0)
+		f = -2.5
+		XCTAssertTrue(sgn(f) < 0)
+		f = 0
+		XCTAssertEqual(sgn(f), 0)
+		
+		var cgf: CGFloat = 1
+		XCTAssertTrue(sgn(cgf) > 0)
+		cgf = -2.5
+		XCTAssertTrue(sgn(cgf) < 0)
+		cgf = 0
+		XCTAssertEqual(sgn(cgf), 0)
 	}
 	
 	func testClamp() {
-		XCTAssertEqual(1, clamp(0, 1, 3))
-		XCTAssertEqual(2, clamp(2, 1, 3))
-		XCTAssertEqual(3, clamp(5, 1, 3))
-		XCTAssertEqual(1, clamp(1, 1, 3))
-		XCTAssertEqual(3, clamp(3, 1, 3))
+		XCTAssertEqual(1, 0.clamped(to: 1 ... 3))
+		XCTAssertEqual(2, 2.clamped(to: 1 ... 3))
+		XCTAssertEqual(3, 5.clamped(to: 1 ... 3))
+		XCTAssertEqual(1, 1.clamped(to: 1 ... 3))
+		XCTAssertEqual(3, 3.clamped(to: 1 ... 3))
 		
-		XCTAssertEqual(1.5, clamp(0, 1.5, 3))
-		XCTAssertEqual(2.1, clamp(2.1, 1.5, 3))
-		XCTAssertEqual(3, clamp(3.1, 1.5, 3))
-		XCTAssertEqual(3, clamp(3, 1.5, 3))
+		XCTAssertEqual(1.5, 0.clamped(to: 1.5 ... 3))
+		XCTAssertEqual(2.1, (2.1).clamped(to: 1.5 ... 3))
+		XCTAssertEqual(3, (3.1).clamped(to: 1.5 ... 3))
+		XCTAssertEqual(3, 3.clamped(to: 1.5 ... 3))
 	}
 
 }

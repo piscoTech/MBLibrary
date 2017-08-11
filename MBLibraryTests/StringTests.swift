@@ -36,28 +36,28 @@ class StringTests: XCTestCase {
 		let notDecimalPoint = decimalPoint == "." ? "," : "."
 		
 		var s="0\(decimalPoint)5"
-		XCTAssertEqualWithAccuracy(0.5, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(0.5, s.toDouble()!, accuracy: 0.000001)
 		
 		s="-0\(decimalPoint)5"
-		XCTAssertEqualWithAccuracy(-0.5, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(-0.5, s.toDouble()!, accuracy: 0.000001)
 		
 		s="+0\(decimalPoint)5"
-		XCTAssertEqualWithAccuracy(0.5, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(0.5, s.toDouble()!, accuracy: 0.000001)
 		
 		s="\(decimalPoint)5"
-		XCTAssertEqualWithAccuracy(0.5, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(0.5, s.toDouble()!, accuracy: 0.000001)
 		
 		s="+\(decimalPoint)5"
-		XCTAssertEqualWithAccuracy(0.5, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(0.5, s.toDouble()!, accuracy: 0.000001)
 		
 		s="-\(decimalPoint)5"
-		XCTAssertEqualWithAccuracy(-0.5, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(-0.5, s.toDouble()!, accuracy: 0.000001)
 		
 		s="3"
-		XCTAssertEqualWithAccuracy(3, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(3, s.toDouble()!, accuracy: 0.000001)
 		
 		s="-3"
-		XCTAssertEqualWithAccuracy(-3, s.toDouble()!, accuracy: 0.000001)
+		XCTAssertEqual(-3, s.toDouble()!, accuracy: 0.000001)
 		
 		s="3\(notDecimalPoint)3"
 		XCTAssertNil(s.toDouble())

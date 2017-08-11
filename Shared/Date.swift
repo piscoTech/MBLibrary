@@ -15,7 +15,7 @@ extension Date {
 		formatter.dateFormat = "yyyy-MM-dd HH:mm"
 		
 		return formatter
-	}()
+	}(())
 	
 	private static let localDateF = { Void -> DateFormatter in
 		let formatter = DateFormatter()
@@ -23,7 +23,7 @@ extension Date {
 		formatter.timeStyle = .none
 		
 		return formatter
-	}()
+	}(())
 	
 	private static let localTimeF = { Void -> DateFormatter in
 		let formatter = DateFormatter()
@@ -31,7 +31,7 @@ extension Date {
 		formatter.timeStyle = .short
 		
 		return formatter
-	}()
+	}(())
 	
 	public func getUNIXDateTime() -> String {
 		return Date.unixDateTimeF.string(from: self)

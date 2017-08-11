@@ -14,12 +14,15 @@ public class KeyValueStore {
 	
 	private var isLocal: Bool
 	private var localStore: UserDefaults!
+	
+	#if !os(watchOS)
 	private var remoteStore: NSUbiquitousKeyValueStore!
 	
 	public init(iCloudStore: NSUbiquitousKeyValueStore) {
 		isLocal = false
 		remoteStore = iCloudStore
 	}
+	#endif
 	
 	public init(userDefaults: UserDefaults) {
 		isLocal = true
@@ -27,9 +30,11 @@ public class KeyValueStore {
 	}
 	
 	public var store: AnyObject {
-		get {
+		#if !os(watchOS)
 			return isLocal ? localStore : remoteStore
-		}
+		#else
+			return localStore
+		#endif
 	}
 	
 	// MARK: - Setter
@@ -39,7 +44,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -48,7 +55,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(Int64(value), forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(Int64(value), forKey: key)
+			#endif
 		}
 	}
 	
@@ -57,7 +66,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -66,7 +77,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -75,7 +88,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -84,7 +99,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -93,7 +110,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -102,7 +121,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(NSKeyedArchiver.archivedData(withRootObject: value), forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(NSKeyedArchiver.archivedData(withRootObject: value), forKey: key)
+			#endif
 		}
 	}
 	
@@ -111,7 +132,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			remoteStore.set(value, forKey: key)
+			#if !os(watchOS)
+				remoteStore.set(value, forKey: key)
+			#endif
 		}
 	}
 	
@@ -122,7 +145,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.bool(forKey: key)
 		} else {
-			return remoteStore.bool(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.bool(forKey: key)
+			#else
+				return false
+			#endif
 		}
 	}
 	
@@ -131,7 +158,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.integer(forKey: key)
 		} else {
-			return Int(remoteStore.longLong(forKey: key))
+			#if !os(watchOS)
+				return Int(remoteStore.longLong(forKey: key))
+			#else
+				return 0
+			#endif
 		}
 	}
 	
@@ -140,7 +171,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.double(forKey: key)
 		} else {
-			return remoteStore.double(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.double(forKey: key)
+			#else
+				return 0
+			#endif
 		}
 	}
 	
@@ -149,7 +184,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.string(forKey: key)
 		} else {
-			return remoteStore.string(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.string(forKey: key)
+			#else
+				return nil
+			#endif
 		}
 	}
 	
@@ -158,7 +197,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.array(forKey: key)
 		} else {
-			return remoteStore.array(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.array(forKey: key)
+			#else
+				return nil
+			#endif
 		}
 	}
 	
@@ -167,7 +210,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.dictionary(forKey: key)
 		} else {
-			return remoteStore.dictionary(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.dictionary(forKey: key)
+			#else
+				return nil
+			#endif
 		}
 	}
 	
@@ -176,7 +223,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.data(forKey: key)
 		} else {
-			return remoteStore.data(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.data(forKey: key)
+			#else
+				return nil
+			#endif
 		}
 	}
 	
@@ -185,11 +236,16 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.url(forKey: key)
 		} else {
-			if let data = remoteStore.data(forKey: key) {
-				return NSKeyedUnarchiver.unarchiveObject(with: data) as? URL
-			} else {
-				return nil
-			}
+			let def: URL? = nil
+			#if !os(watchOS)
+				if let data = remoteStore.data(forKey: key) {
+					return NSKeyedUnarchiver.unarchiveObject(with: data) as? URL
+				} else {
+					return def
+				}
+			#else
+				return def
+			#endif
 		}
 	}
 	
@@ -198,7 +254,11 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.object(forKey: key)
 		} else {
-			return remoteStore.object(forKey: key)
+			#if !os(watchOS)
+				return remoteStore.object(forKey: key)
+			#else
+				return nil
+			#endif
 		}
 	}
 	
@@ -209,7 +269,9 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.removeObject(forKey: key)
 		} else {
-			remoteStore.removeObject(forKey: key)
+			#if !os(watchOS)
+				remoteStore.removeObject(forKey: key)
+			#endif
 		}
 	}
 	
@@ -217,8 +279,13 @@ public class KeyValueStore {
 		if isLocal {
 			return localStore.synchronize()
 		} else {
-			return remoteStore.synchronize()
+			#if !os(watchOS)
+				return remoteStore.synchronize()
+			#else
+				return false
+			#endif
 		}
 	}
 	
 }
+

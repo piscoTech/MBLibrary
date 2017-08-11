@@ -13,7 +13,7 @@ public class TitlelessWindow: NSWindow {
 	override public func awakeFromNib() {
 		super.awakeFromNib()
 		
-		self.titleVisibility = NSWindowTitleVisibility.hidden
+		self.titleVisibility = .hidden
 		self.titlebarAppearsTransparent = true
 		self.styleMask.update(with: .fullSizeContentView)
 		

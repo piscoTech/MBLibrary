@@ -13,11 +13,12 @@ extension NSFont {
 	public func makeMonospacedDigit() -> NSFont {
 		let size = self.pointSize
 		let desc = self.fontDescriptor
+		
 		let monospaced = desc.addingAttributes([
-			NSFontFeatureSettingsAttribute: [
+			.featureSettings: [
 				[
-					NSFontFeatureTypeIdentifierKey: kNumberSpacingType,
-					NSFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+					NSFontDescriptor.FeatureKey.typeIdentifier: kNumberSpacingType,
+					.selectorIdentifier: kMonospacedNumbersSelector
 				]
 			]
 			])

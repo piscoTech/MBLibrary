@@ -127,7 +127,7 @@ public class MinHeightTextView: UITextView {
 		// Inset the rect
 		var rect = UIEdgeInsetsInsetRect(bounds, self.contentInset)
 		
-		if let style = self.typingAttributes[NSParagraphStyleAttributeName] as AnyObject? {
+		if let style = self.typingAttributes[NSAttributedStringKey.paragraphStyle.rawValue] as AnyObject? {
 			rect.origin.x += style.headIndent
 			rect.origin.y += style.firstLineHeadIndent
 		}
@@ -138,7 +138,7 @@ public class MinHeightTextView: UITextView {
 		return rect
 	}
 	
-	func textChanged(_ not: Notification) {
+	@objc func textChanged(_ not: Notification) {
 		let obj = not.object as? MinHeightTextView
 		if obj != self {
 			return

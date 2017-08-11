@@ -10,9 +10,9 @@ import Foundation
 
 @objc public class XMLNode: NSObject {
 	
-	public let name: String
+	@objc public let name: String
 	
-	public private(set) var content: String?
+	@objc public private(set) var content: String?
 	public private(set) var attributes: [String: String]
 	public private(set) var children: [XMLNode]
 	
@@ -20,22 +20,22 @@ import Foundation
 		fatalError("Initialize with init(name:)")
 	}
 	
-	init(name: String) {
+	@objc init(name: String) {
 		self.name = name
 		
 		children = []
 		attributes = [:]
 	}
 	
-	func set(content s: String?) {
+	@objc func set(content s: String?) {
 		self.content = s
 	}
 	
-	func add(attribute a: String, withValue v: String) {
+	@objc func add(attribute a: String, withValue v: String) {
 		attributes[a] = v
 	}
 	
-	func add(child c: XMLNode) {
+	@objc func add(child c: XMLNode) {
 		children.append(c)
 	}
 	

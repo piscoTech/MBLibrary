@@ -32,12 +32,12 @@ class ComplexTests: XCTestCase {
     
     func testSum() {
         var sum = a + b
-		XCTAssertEqualWithAccuracy(sum.r, 0, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(sum.i, -2, accuracy: 0.0001)
+		XCTAssertEqual(sum.r, 0, accuracy: 0.0001)
+		XCTAssertEqual(sum.i, -2, accuracy: 0.0001)
 		
 		sum = b + c
-		XCTAssertEqualWithAccuracy(sum.r, -2, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(sum.i, 3, accuracy: 0.0001)
+		XCTAssertEqual(sum.r, -2, accuracy: 0.0001)
+		XCTAssertEqual(sum.i, 3, accuracy: 0.0001)
     }
 	
 	func testEquality() {
@@ -46,36 +46,36 @@ class ComplexTests: XCTestCase {
 	
 	func testProduct() {
 		var prod = b * c
-		XCTAssertEqualWithAccuracy(prod.r, 0, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(prod.i, -6, accuracy: 0.0001)
+		XCTAssertEqual(prod.r, 0, accuracy: 0.0001)
+		XCTAssertEqual(prod.i, -6, accuracy: 0.0001)
 		
 		prod = a * d
-		XCTAssertEqualWithAccuracy(prod.r, 12, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(prod.i, 4, accuracy: 0.0001)
+		XCTAssertEqual(prod.r, 12, accuracy: 0.0001)
+		XCTAssertEqual(prod.i, 4, accuracy: 0.0001)
 		
 		prod = 3.1 * a
-		XCTAssertEqualWithAccuracy(prod.r, 6.2, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(prod.i, -6.2, accuracy: 0.0001)
+		XCTAssertEqual(prod.r, 6.2, accuracy: 0.0001)
+		XCTAssertEqual(prod.i, -6.2, accuracy: 0.0001)
 		XCTAssertEqual(prod, a * 3.1)
 	}
 	
 	func testDivision() {
 		let div = a / d
-		XCTAssertEqualWithAccuracy(div.r, -0.2, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(div.i, -0.6, accuracy: 0.0001)
+		XCTAssertEqual(div.r, -0.2, accuracy: 0.0001)
+		XCTAssertEqual(div.i, -0.6, accuracy: 0.0001)
 	}
 	
 	func testConjugate() {
 		let conj = a.conjucate()
-		XCTAssertEqualWithAccuracy(conj.r, a.r, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(conj.i, -a.i, accuracy: 0.0001)
+		XCTAssertEqual(conj.r, a.r, accuracy: 0.0001)
+		XCTAssertEqual(conj.i, -a.i, accuracy: 0.0001)
 		
 		XCTAssertEqual(b, b.conjucate())
 	}
 	
 	func testModule() {
-		XCTAssertEqualWithAccuracy(a.abs(), 2.8284, accuracy: 0.0001)
-		XCTAssertEqualWithAccuracy(b.abs(), abs(b.r), accuracy: 0.0001)
+		XCTAssertEqual(a.abs(), 2.8284, accuracy: 0.0001)
+		XCTAssertEqual(b.abs(), abs(b.r), accuracy: 0.0001)
 	}
     
 }
