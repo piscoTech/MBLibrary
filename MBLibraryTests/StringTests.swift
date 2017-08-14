@@ -64,17 +64,18 @@ class StringTests: XCTestCase {
     }
 	
 	func testSubstring() {
-		XCTAssertEqual("d!", ("Hello World!").substring(from: -2))
-		XCTAssertEqual("!", ("Hello World!").substring(from: -1))
+		XCTAssertEqual("d!", "Hello World!"[(-2)...])
+		XCTAssertEqual("!", "Hello World!"[(-1)...])
 		
-		XCTAssertEqual("H", ("Hello World!").substring(to: 1))
-		XCTAssertEqual("He", ("Hello World!").substring(to: 2))
+		XCTAssertEqual("H", "Hello World!"[..<1])
+		XCTAssertEqual("He", "Hello World!"[...1])
 		
-		XCTAssertEqual("llo World!", ("Hello World!").substring(from: 2))
-		XCTAssertEqual("Hello Worl", ("Hello World!").substring(to: -2))
+		XCTAssertEqual("llo World!", "Hello World!"[2...])
+		XCTAssertEqual("Hello Worl", "Hello World!"[..<(-2)])
+		XCTAssertEqual("Hello World", "Hello World!"[...(-2)])
 		
-		XCTAssertEqual("ll", ("Hello World!").substring(with: 2..<4))
 		XCTAssertEqual("ll", ("Hello World!")[2..<4])
+		XCTAssertEqual("llo", ("Hello World!")[2...4])
 	}
 
 }

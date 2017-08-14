@@ -43,10 +43,10 @@ extension Double {
 					numSeparated[1] += ([String](repeating: "0", count: n-nDec)).joined(separator: "")
 				}
 				
-				base=numSeparated[0] + numSeparated[1][0..<n] + decimalPoint
+				base=numSeparated[0] + numSeparated[1][0 ..< n] + decimalPoint
 				
 				if n < nDec {
-					base += numSeparated[1][n..<nDec]
+					base += numSeparated[1][n ..< nDec]
 				}
 				
 				if base[base.characters.count-1] == decimalPoint {

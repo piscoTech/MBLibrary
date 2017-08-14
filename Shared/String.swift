@@ -68,11 +68,11 @@ extension String {
 		var sign = ""
 		if s != "" {
 			if s[0] == "+" {
-				s = s.substring(from: 1)
+				s = s[1...]
 			}
 			
 			if s[0] == "-" {
-				s = s.substring(from: 1)
+				s = s[1...]
 				sign = "-"
 			}
 		}
@@ -93,27 +93,43 @@ extension String {
 		return String(Array(self.characters)[j])
 	}
 	
-	///Element at last index is _not_ included.
+	///Element at last index _is not_ included.
 	public subscript (r: CountableRange<Int>) -> String {
-		return substring(with: r)
-	}
-	
-	///Element at last index is _not_ included.
-	public func substring(with r: CountableRange<Int>) -> String {
 		let start = self.index(startIndex, offsetBy: r.lowerBound)
 		let end = self.index(startIndex, offsetBy: r.upperBound)
 		
-		return substring(with: start ..< end)
+		return String(self[start ..< end])
 	}
 	
-	public func substring(from i: Int) -> String {
-		let j = i < 0 ? self.characters.count + i : i
-		return substring(from: self.index(startIndex, offsetBy: j))
+	///Element at last index _is_ included.
+	public subscript (r: CountableClosedRange<Int>) -> String {
+		let start = self.index(startIndex, offsetBy: r.lowerBound)
+		let end = self.index(startIndex, offsetBy: r.upperBound)
+		
+		return String(self[start ... end])
 	}
 	
-	public func substring(to i: Int) -> String {
+	public subscript (r: CountablePartialRangeFrom<Int>) -> String {
+		let i = r.lowerBound
 		let j = i < 0 ? self.characters.count + i : i
-		return substring(to: self.index(startIndex, offsetBy: j))
+		
+		return String(self[self.index(startIndex, offsetBy: j)...])
+	}
+	
+	///Element at last index _is not_ included.
+	public subscript (r: PartialRangeUpTo<Int>) -> String {
+		let i = r.upperBound
+		let j = i < 0 ? self.characters.count + i : i
+		
+		return String(self[..<self.index(startIndex, offsetBy: j)])
+	}
+	
+	///Element at last index _is_ included.
+	public subscript (r: PartialRangeThrough<Int>) -> String {
+		let i = r.upperBound
+		let j = i < 0 ? self.characters.count + i : i
+		
+		return String(self[...self.index(startIndex, offsetBy: j)])
 	}
 	
 	private static let nFormat: NumberFormatter = {
