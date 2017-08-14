@@ -149,6 +149,7 @@
 		7ADEA86D1F3DA6FD00AF2A1C /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */; };
 		7ADEA86E1F3DA6FE00AF2A1C /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */; };
 		7ADEA86F1F3DA6FF00AF2A1C /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */; };
+		7AF456721F41881700D5BB7F /* NSNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456711F41881700D5BB7F /* NSNib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,7 @@
 		7AD159831D5793E4009E54EE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AD2D56A1D548A3A00CF755F /* VariableToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableToolbar.swift; sourceTree = "<group>"; };
 		7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
+		7AF456711F41881700D5BB7F /* NSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +298,7 @@
 		7A0064CB1D3E9AF10089297D /* MBLibrary macOS */ = {
 			isa = PBXGroup;
 			children = (
-				7A4CE3A21D3F739A00DAAE70 /* Cocoa */,
+				7A4CE3A21D3F739A00DAAE70 /* AppKit */,
 				7A0064D21D3E9B070089297D /* Supporting Files */,
 			);
 			path = "MBLibrary macOS";
@@ -415,9 +417,10 @@
 			name = Foundation;
 			sourceTree = "<group>";
 		};
-		7A4CE3A21D3F739A00DAAE70 /* Cocoa */ = {
+		7A4CE3A21D3F739A00DAAE70 /* AppKit */ = {
 			isa = PBXGroup;
 			children = (
+				7AF456711F41881700D5BB7F /* NSNib.swift */,
 				7A4CE3A31D3F73BF00DAAE70 /* NSView.swift */,
 				7A4CE3A51D3F73FA00DAAE70 /* NSTextField.swift */,
 				7A4CE3A71D3F741700DAAE70 /* NSFont.swift */,
@@ -425,7 +428,7 @@
 				7A1ACD001D3F973A00411C2C /* MinHeightTextField.swift */,
 				7A1ACD011D3F973A00411C2C /* FlippedView.swift */,
 			);
-			name = Cocoa;
+			name = AppKit;
 			sourceTree = "<group>";
 		};
 		7A584F7C1D3E23ED000C739B = {
@@ -724,6 +727,7 @@
 				7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */,
 				7A48EBBF1D6C78AF00A55987 /* SCNNode.swift in Sources */,
 				7A5B4FDD1D773A450083EEA9 /* Bundle.swift in Sources */,
+				7AF456721F41881700D5BB7F /* NSNib.swift in Sources */,
 				7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */,
 				7A1ACD041D3F973A00411C2C /* FlippedView.swift in Sources */,
 				7A1305B71EAB8A9500D29048 /* XMLNode.swift in Sources */,
