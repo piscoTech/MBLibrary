@@ -44,13 +44,15 @@ public class SlidingLabel: UIView, Animatable {
 		innerView = UILabel()
 		innerView.textAlignment = .center
 		innerView.translatesAutoresizingMaskIntoConstraints = false
+		innerView.setContentCompressionResistancePriority(.required, for: .horizontal)
 		addSubview(innerView)
 		
-		let top = NSLayoutConstraint(item: innerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-		let bottom = NSLayoutConstraint(item: innerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
+		let width = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: innerView, attribute: .width, multiplier: 1, constant: 0)
+		width.priority = .defaultHigh
+		width.isActive = true
+		NSLayoutConstraint(item: innerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
+		NSLayoutConstraint(item: innerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
 		hCenter = NSLayoutConstraint(item: innerView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
-		top.isActive = true
-		bottom.isActive = true
 		hCenter.isActive = true
 		
 		//Fading margin
@@ -88,7 +90,7 @@ public class SlidingLabel: UIView, Animatable {
 	private func manageSubviews() {
 		if !animationInitialized {
 			animationInitialized = true
-			
+
 			//Starting animation
 			self.layer.mask = fadeMarginMask
 			if innerView.frame.width > self.frame.width {
