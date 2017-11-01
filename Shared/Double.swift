@@ -38,7 +38,7 @@ extension Double {
 			} else if n > 0 {
 				var numSeparated = base.components(separatedBy: decimalPoint)
 				if numSeparated.count == 1 { numSeparated[1] = "" }
-				let nDec=numSeparated[1].characters.count
+				let nDec=numSeparated[1].count
 				if n > nDec {
 					numSeparated[1] += ([String](repeating: "0", count: n-nDec)).joined(separator: "")
 				}
@@ -49,8 +49,8 @@ extension Double {
 					base += numSeparated[1][n ..< nDec]
 				}
 				
-				if base[base.characters.count-1] == decimalPoint {
-					base = base[0..<(base.characters.count-1)]
+				if base[base.count-1] == decimalPoint {
+					base = base[0..<(base.count-1)]
 				}
 			}
 		}
@@ -59,7 +59,7 @@ extension Double {
 		var numParts = base.components(separatedBy: decimalPoint)
 		if numParts.count == 2 && (
 			fmod(num, 1) == 0
-				|| numParts[1] == ([String](repeating: "0", count: numParts[1].characters.count)).joined(separator: "")
+				|| numParts[1] == ([String](repeating: "0", count: numParts[1].count)).joined(separator: "")
 			) {
 			base = numParts[0]
 		}

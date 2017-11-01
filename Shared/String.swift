@@ -14,7 +14,7 @@ extension String {
 		
 	public var length: Int {
 		get {
-			return self.characters.count
+			return self.count
 		}
 	}
 	
@@ -24,7 +24,7 @@ extension String {
 		}
 		
 		let digit = "0123456789"
-		for c in self.characters {
+		for c in self {
 			if digit.range(of: "\(c)") == nil {
 				return false
 			}
@@ -89,8 +89,8 @@ extension String {
 	// MARK: - Substring
 	
 	public subscript (i: Int) -> String {
-		let j = i < 0 ? self.characters.count + i : i
-		return String(Array(self.characters)[j])
+		let j = i < 0 ? self.count + i : i
+		return String(Array(self)[j])
 	}
 	
 	///Element at last index _is not_ included.
@@ -111,7 +111,7 @@ extension String {
 	
 	public subscript (r: CountablePartialRangeFrom<Int>) -> String {
 		let i = r.lowerBound
-		let j = i < 0 ? self.characters.count + i : i
+		let j = i < 0 ? self.count + i : i
 		
 		return String(self[self.index(startIndex, offsetBy: j)...])
 	}
@@ -119,7 +119,7 @@ extension String {
 	///Element at last index _is not_ included.
 	public subscript (r: PartialRangeUpTo<Int>) -> String {
 		let i = r.upperBound
-		let j = i < 0 ? self.characters.count + i : i
+		let j = i < 0 ? self.count + i : i
 		
 		return String(self[..<self.index(startIndex, offsetBy: j)])
 	}
@@ -127,7 +127,7 @@ extension String {
 	///Element at last index _is_ included.
 	public subscript (r: PartialRangeThrough<Int>) -> String {
 		let i = r.upperBound
-		let j = i < 0 ? self.characters.count + i : i
+		let j = i < 0 ? self.count + i : i
 		
 		return String(self[...self.index(startIndex, offsetBy: j)])
 	}
