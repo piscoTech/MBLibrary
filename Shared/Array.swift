@@ -129,3 +129,35 @@ extension Array where Element: Equatable {
 	}
 	
 }
+
+// MARK: - Join elements
+
+extension Array where Element == NSAttributedString {
+	
+	public func joined() -> NSAttributedString {
+		return joined(separator: "")
+	}
+	
+	public func joined(separator: String) -> NSAttributedString {
+		return joined(separator: NSAttributedString(string: separator))
+	}
+	
+	public func joined(separator: NSAttributedString) -> NSAttributedString {
+		let res = NSMutableAttributedString()
+		var addSeparator = false
+		
+		for s in self {
+			if addSeparator {
+				res.append(separator)
+			} else {
+				addSeparator = true
+			}
+			
+			res.append(s)
+		}
+		
+		return res
+	}
+	
+}
+
