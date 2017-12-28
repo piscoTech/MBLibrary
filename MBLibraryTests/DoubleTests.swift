@@ -28,6 +28,34 @@ class DoubleTests: XCTestCase {
 		XCTAssertEqual((-1e12 - 0.16).toString(), "-1000000000000\(decimalPoint)16")
 	}
 	
+	func testRoundTo() {
+		XCTAssertEqual(1, (1.2).rounded(to: 0.5))
+		XCTAssertEqual(-1, (-1.2).rounded(to: 0.5))
+		XCTAssertEqual(1.5, (1.3).rounded(to: 0.5))
+		XCTAssertEqual(-1.5, (-1.3).rounded(to: 0.5))
+		XCTAssertEqual(1.5, (1.7).rounded(to: 0.5))
+		XCTAssertEqual(-1.5, (-1.7).rounded(to: 0.5))
+		
+		var d = 1.2
+		d.round(to: 0.5)
+		XCTAssertEqual(1, d)
+		d = -1.2
+		d.round(to: 0.5)
+		XCTAssertEqual(-1, d)
+		d = 1.3
+		d.round(to: 0.5)
+		XCTAssertEqual(1.5, d)
+		d = -1.3
+		d.round(to: 0.5)
+		XCTAssertEqual(-1.5, d)
+		d = 1.7
+		d.round(to: 0.5)
+		XCTAssertEqual(1.5, d)
+		d = -1.7
+		d.round(to: 0.5)
+		XCTAssertEqual(-1.5, d)
+	}
+	
 	func testRange() {
 		let min = 10.0
 		let max = 103.0
