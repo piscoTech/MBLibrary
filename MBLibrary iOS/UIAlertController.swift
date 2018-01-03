@@ -10,11 +10,12 @@ import UIKit
 
 extension UIAlertController {
 	
-	convenience public init(simpleAlert title: String, message: String?) {
+	convenience public init(simpleAlert title: String, message: String?, completion: (() -> Void)? = nil) {
 		self.init(title: title, message: message, preferredStyle: .alert)
 		
 		let ok = UIAlertAction(title: MBLocalizedString("OK", comment: "Ok"), style: .cancel) { (_) in
 			self.dismiss(animated: true, completion: nil)
+			completion?()
 		}
 		self.addAction(ok)
 	}
