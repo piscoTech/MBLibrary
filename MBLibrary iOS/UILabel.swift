@@ -19,8 +19,8 @@ extension UILabel {
 		
 		let animation = CATransition()
 		animation.duration = time
-		animation.type = kCATransitionFade
-		animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+		animation.type = .fade
+		animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 		self.layer.add(animation, forKey: "changeTextTransition")
 		
 		self.text = newValue

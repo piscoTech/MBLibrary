@@ -15,10 +15,10 @@ public class EnhancedTextField: UITextField {
 			isUserInteractionEnabled = isEditable
 			isEnabled = isEditable
 			if isEditable {
-				borderStyle = UITextBorderStyle.roundedRect
+				borderStyle = .roundedRect
 				backgroundColor = .white
 			} else {
-				borderStyle = UITextBorderStyle.none
+				borderStyle = .none
 				backgroundColor = nil
 			}
 		}

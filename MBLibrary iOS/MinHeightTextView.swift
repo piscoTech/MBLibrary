@@ -82,7 +82,7 @@ public class MinHeightTextView: UITextView {
 	
 	private func commonInit() {
 		for constraint in constraints {
-			if constraint.firstAttribute == NSLayoutAttribute.height
+			if constraint.firstAttribute == .height
 				&& constraint.firstItem as! NSObject == self
 				&& constraint.relation == .equal {
 				heightConstraint = constraint
@@ -93,7 +93,7 @@ public class MinHeightTextView: UITextView {
 		layer.borderColor = UIColor(white: 212.0 / 255.0, alpha: 1).cgColor
 		layer.cornerRadius = 6
 		
-		NotificationCenter.default.addObserver(self, selector: #selector(MinHeightTextView.textChanged(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(MinHeightTextView.textChanged(_:)), name: UITextView.textDidChangeNotification, object: self)
 		
 		self.contentInset = .zero
 		self.editCorrectionType = self.autocorrectionType
@@ -125,9 +125,9 @@ public class MinHeightTextView: UITextView {
 	
 	private func placeholderRectForBounds(_ bounds: CGRect) -> CGRect {
 		// Inset the rect
-		var rect = UIEdgeInsetsInsetRect(bounds, self.contentInset)
+		var rect = bounds.inset(by: self.contentInset)
 		
-		if let style = self.typingAttributes[NSAttributedStringKey.paragraphStyle.rawValue] as AnyObject? {
+		if let style = self.typingAttributes[NSAttributedString.Key.paragraphStyle] as AnyObject? {
 			rect.origin.x += style.headIndent
 			rect.origin.y += style.firstLineHeadIndent
 		}

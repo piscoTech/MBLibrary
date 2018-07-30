@@ -23,7 +23,7 @@ extension UIAlertController {
 	public class func getModalLoading() -> UIAlertController {
 		let pending = UIAlertController(title: nil, message: "", preferredStyle: .alert)
 		
-		let loading = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+		let loading = UIActivityIndicatorView(style: .whiteLarge)
 		loading.translatesAutoresizingMaskIntoConstraints = false
 		loading.color = .gray
 		pending.view.addSubview(loading)
