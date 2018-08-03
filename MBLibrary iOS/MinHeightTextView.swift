@@ -120,7 +120,7 @@ public class MinHeightTextView: UITextView {
 	}
 	
 	private func updatePlaceholderDisplay() {
-		placeholderView.isHidden = !self.text.isEmpty || (self.placeholder?.length ?? 0) == 0
+		placeholderView.isHidden = !self.text.isEmpty || (self.placeholder?.count ?? 0) == 0
 	}
 	
 	private func placeholderRectForBounds(_ bounds: CGRect) -> CGRect {

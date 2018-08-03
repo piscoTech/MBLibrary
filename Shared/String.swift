@@ -11,12 +11,6 @@ import Foundation
 private let XMLEntities: [(value: String, escaped: String)] = [("&", "&amp;"), ("<", "&lt;"), (">", "&gt;")]
 
 extension String {
-		
-	public var length: Int {
-		get {
-			return self.count
-		}
-	}
 	
 	public func isDigit() -> Bool {
 		if self == "" {
