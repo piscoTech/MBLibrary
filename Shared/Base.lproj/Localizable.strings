@@ -7,12 +7,18 @@
 */
 
 "OK" = "OK";
+"ERROR" = "Error";
 
 // InApp Purchases stuff
 "ERROR_PURCHASE" = "Purchase error";
 "ERROR_PROD_LIST" = "Cannot load products";
 "ERROR_TRANSACTION" = "Cannot complete purchase";
 "PURCHASE_RESTORED" = "Purchase restored";
+
+// Contact Me form
+
+"CANT_SEND_CONTACT_MSG" = "An error was encountered while sending your message, please try again.";
+"MSG_PLACEHOLDER" = "Your message...";
 
 // Workout types name
 "WORKOUT_NAME_0" = "Other";

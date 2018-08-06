@@ -7,8 +7,15 @@
 */
 
 "OK" = "OK";
+"ERROR" = "Errore";
 
 // InApp Purchases stuff
 "ERROR_PURCHASE" = "Errore d'acquisto";
 "ERROR_PROD_LIST" = "Impossibile caricare i prodotti";
 "ERROR_TRANSACTION" = "Impossibile completare l'acquisto";
+"PURCHASE_RESTORED" = "Acquisto ripristinato";
+
+// Contact Me form
+
+"CANT_SEND_CONTACT_MSG" = "Si è verificato un problema durante l'invio del tuo messaggio, prova ancora.";
+"MSG_PLACEHOLDER" = "Il tuo messaggio...";

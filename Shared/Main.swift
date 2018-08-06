@@ -29,9 +29,9 @@ public protocol Animatable: class {
 	
 }
 
-///Returns a localized string from the MBLibrary framework bundle.
+/// Returns a localized string from the MBLibrary framework bundle.
 public func MBLocalizedString(_ key: String, comment: String) -> String {
-	//Use any class from the framework included in all targets
+	// Use any class from the framework included in all targets
 	let bundle = Bundle(for: KeyValueStore.self)
 	return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: comment)
 }

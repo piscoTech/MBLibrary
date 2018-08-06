@@ -12,7 +12,7 @@ private let XMLEntities: [(value: String, escaped: String)] = [("&", "&amp;"), (
 
 extension String {
 	
-	public func isDigit() -> Bool {
+	public var isDigit: Bool {
 		if self == "" {
 			return false
 		}
@@ -25,6 +25,15 @@ extension String {
 		}
 		
 		return true
+	}
+	
+	public var isValidEmailAddress: Bool {
+		let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+		if let range = self.range(of: emailRegEx, options: .regularExpression) {
+			return range.lowerBound == self.startIndex && range.upperBound == self.endIndex
+		} else {
+			return false
+		}
 	}
 	
 	// MARK: - Transform
