@@ -131,6 +131,9 @@
 		7A80AC141D62564D0085A3F0 /* SCNGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */; };
 		7A80AC161D625D320085A3F0 /* Support Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC151D625D320085A3F0 /* Support Types.swift */; };
 		7A80AC171D625D320085A3F0 /* Support Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AC151D625D320085A3F0 /* Support Types.swift */; };
+		7A82D90521199CC400DB3941 /* ShowFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82D90321199CC400DB3941 /* ShowFaqVC.swift */; };
+		7A82D90621199CC400DB3941 /* FaqListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82D90421199CC400DB3941 /* FaqListTVC.swift */; };
+		7A82D90E2119A2A200DB3941 /* FAQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A82D9102119A2A200DB3941 /* FAQ.storyboard */; };
 		7A83150C1D4241FD000F35AE /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83150B1D4241FD000F35AE /* FAQController.swift */; };
 		7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83150B1D4241FD000F35AE /* FAQController.swift */; };
 		7A9B2C861D6760CA00A132C0 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A51E2FB1D64A4860081A9AD /* CGPoint.swift */; };
@@ -235,6 +238,10 @@
 		7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextView.swift; sourceTree = "<group>"; };
 		7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNGeometry.swift; sourceTree = "<group>"; };
 		7A80AC151D625D320085A3F0 /* Support Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Support Types.swift"; sourceTree = "<group>"; };
+		7A82D90321199CC400DB3941 /* ShowFaqVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFaqVC.swift; sourceTree = "<group>"; };
+		7A82D90421199CC400DB3941 /* FaqListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqListTVC.swift; sourceTree = "<group>"; };
+		7A82D90F2119A2A200DB3941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FAQ.storyboard; sourceTree = "<group>"; };
+		7A82D9122119A2A500DB3941 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/FAQ.strings; sourceTree = "<group>"; };
 		7A83150B1D4241FD000F35AE /* FAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQController.swift; sourceTree = "<group>"; };
 		7A9B2C871D67618B00A132C0 /* CGPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
 		7AA084021D5FB9B100B57943 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -475,6 +482,7 @@
 		7A584FA61D3E241C000C739B /* MBLibrary iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7A82D8FE21199C9000DB3941 /* FAQs */,
 				7A458459211820BB007BEB2D /* Contact Me */,
 				7A7722EF1D74450A00A770BF /* Graphics */,
 				7A0064BB1D3E92B50089297D /* UIKit */,
@@ -521,6 +529,16 @@
 				7A80AC121D62564D0085A3F0 /* SCNGeometry.swift */,
 			);
 			name = SceneKit;
+			sourceTree = "<group>";
+		};
+		7A82D8FE21199C9000DB3941 /* FAQs */ = {
+			isa = PBXGroup;
+			children = (
+				7A82D90421199CC400DB3941 /* FaqListTVC.swift */,
+				7A82D90321199CC400DB3941 /* ShowFaqVC.swift */,
+				7A82D9102119A2A200DB3941 /* FAQ.storyboard */,
+			);
+			name = FAQs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,6 +742,7 @@
 			files = (
 				7AD1597D1D5793E2009E54EE /* Localizable.strings in Resources */,
 				7A45846321182563007BEB2D /* Contact Me.storyboard in Resources */,
+				7A82D90E2119A2A200DB3941 /* FAQ.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +869,7 @@
 				7A2224451E6F14060046E9DE /* FileManager.swift in Sources */,
 				7A5B4FDC1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A372EE11D71BFE400F7AB7F /* CALayer iOS.swift in Sources */,
+				7A82D90621199CC400DB3941 /* FaqListTVC.swift in Sources */,
 				7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */,
 				7A2537F91D745BE600A1407C /* SCNGeometry.swift in Sources */,
 				7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */,
@@ -864,6 +884,7 @@
 				7AC78C7C1D8F1C0C009D3118 /* OutlinedLabel.swift in Sources */,
 				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
+				7A82D90521199CC400DB3941 /* ShowFaqVC.swift in Sources */,
 				7A1305B61EAB8A9500D29048 /* XMLNode.swift in Sources */,
 				7A4CE3AC1D3F748D00DAAE70 /* UILabel.swift in Sources */,
 				7A2537F81D745B2200A1407C /* SCNNode.swift in Sources */,
@@ -905,6 +926,15 @@
 				7ACF1539211885A300C7B3E5 /* it */,
 			);
 			name = "Contact Me.storyboard";
+			sourceTree = "<group>";
+		};
+		7A82D9102119A2A200DB3941 /* FAQ.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A82D90F2119A2A200DB3941 /* Base */,
+				7A82D9122119A2A500DB3941 /* it */,
+			);
+			name = FAQ.storyboard;
 			sourceTree = "<group>";
 		};
 		7AD159821D5793E2009E54EE /* Localizable.strings */ = {
