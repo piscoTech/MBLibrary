@@ -51,6 +51,14 @@ extension Array where Element: Equatable {
 		}
 	}
 	
+	/// Return a copy of the array leaving only the first instance of duplicated elements.
+	public func removingDuplicates() -> [Element] {
+		var copy = self
+		copy.removeDuplicates()
+		
+		return copy
+	}
+	
 }
 
 // MARK: - Random access

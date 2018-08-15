@@ -20,16 +20,11 @@ class StringTests: XCTestCase {
         super.tearDown()
     }
 	
-	func testLength() {
-		XCTAssertEqual("Hello".length, 5)
-		XCTAssertEqual("😂🔝".length, 2)
-	}
-	
 	func testDigit() {
-		XCTAssertTrue("985743".isDigit())
-		XCTAssertFalse("Hello, world!".isDigit())
-		XCTAssertFalse("12345f".isDigit())
-		XCTAssertFalse("".isDigit())
+		XCTAssertTrue("985743".isDigit)
+		XCTAssertFalse("Hello, world!".isDigit)
+		XCTAssertFalse("12345f".isDigit)
+		XCTAssertFalse("".isDigit)
 	}
 
     func testToDouble() {

@@ -49,6 +49,16 @@ class ArrayTests: XCTestCase {
 		XCTAssertEqual(d, [2,1,3,4])
 	}
 	
+	func testRemovingDuplicates() {
+		let dA = a.removingDuplicates()
+		let dD = d.removingDuplicates()
+		
+		XCTAssertEqual(a, [4,2,-6])
+		XCTAssertEqual(d, [2,2,1,1,3,4])
+		XCTAssertEqual(dA, [4,2,-6])
+		XCTAssertEqual(dD, [2,1,3,4])
+	}
+	
 	func testUnion() {
 		var res = d.union(c)
 		XCTAssertEqual(res, [2,1,3,4,5])
