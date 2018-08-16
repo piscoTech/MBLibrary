@@ -61,6 +61,33 @@ extension Array where Element: Equatable {
 	
 }
 
+extension Array where Element: Hashable {
+	
+	/// The mode of the array, that is the most frequent element or `nil` if the array is empty.
+	public var mode: Element? {
+		guard let f = self.first else {
+			return nil
+		}
+		
+		var counter = [Element: Int]()
+		var max = 0
+		var mode = f
+		
+		for e in self {
+			let count = (counter[e] ?? 0) + 1
+			counter[e] = count
+			
+			if count > max {
+				mode = e
+				max = count
+			}
+		}
+		
+		return mode
+	}
+	
+}
+
 // MARK: - Random access
 
 extension Array {

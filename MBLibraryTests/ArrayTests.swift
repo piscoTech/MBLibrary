@@ -59,6 +59,15 @@ class ArrayTests: XCTestCase {
 		XCTAssertEqual(dD, [2,1,3,4])
 	}
 	
+	func testMode() {
+		XCTAssertEqual(a.mode, 4)
+		XCTAssertEqual(d.mode, 2)
+		
+		let ar = [1,2,3,4,1,2,3,1,2,1]
+		XCTAssertEqual(ar.mode, 1)
+		XCTAssertNil([Int]().mode)
+	}
+	
 	func testUnion() {
 		var res = d.union(c)
 		XCTAssertEqual(res, [2,1,3,4,5])
