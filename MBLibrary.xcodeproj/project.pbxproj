@@ -151,6 +151,9 @@
 		7AA0840D1D5FBC2700B57943 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840C1D5FBC2700B57943 /* IntTests.swift */; };
 		7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */; };
 		7AC78C7C1D8F1C0C009D3118 /* OutlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC78C7B1D8F1C0C009D3118 /* OutlinedLabel.swift */; };
+		7AC920C6212EFBFE0062211C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC920C5212EFBFE0062211C /* CoreDataManager.swift */; };
+		7AC920C7212EFBFE0062211C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC920C5212EFBFE0062211C /* CoreDataManager.swift */; };
+		7AC920C8212EFBFE0062211C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC920C5212EFBFE0062211C /* CoreDataManager.swift */; };
 		7ACF68A01D645FBE0048DE52 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */; };
 		7AD1597D1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
 		7AD1597E1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
@@ -260,6 +263,7 @@
 		7AA0840C1D5FBC2700B57943 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InAppPurchaseManager iOS.swift"; sourceTree = "<group>"; };
 		7AC78C7B1D8F1C0C009D3118 /* OutlinedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedLabel.swift; sourceTree = "<group>"; };
+		7AC920C5212EFBFE0062211C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7ACF1539211885A300C7B3E5 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = "it.lproj/Contact Me.strings"; sourceTree = "<group>"; };
 		7ACF689E1D645FBE0048DE52 /* SCNVector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3.swift; sourceTree = "<group>"; };
 		7AD159811D5793E2009E54EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -424,6 +428,7 @@
 				7A4CE3AF1D3F752800DAAE70 /* KeyValueStore.swift */,
 				7A83150B1D4241FD000F35AE /* FAQController.swift */,
 				7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */,
+				7AC920C5212EFBFE0062211C /* CoreDataManager.swift */,
 				7AD159821D5793E2009E54EE /* Localizable.strings */,
 				7A1305B01EAB885A00D29048 /* Bridging-Header.h */,
 			);
@@ -803,6 +808,7 @@
 				7A4CE3A41D3F73BF00DAAE70 /* NSView.swift in Sources */,
 				7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */,
 				7A3994AC1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,
+				7AC920C7212EFBFE0062211C /* CoreDataManager.swift in Sources */,
 				7A3994B01D3F5F3D000665A0 /* Double.swift in Sources */,
 				7A1305C11EAB8C8D00D29048 /* URL.swift in Sources */,
 				7A3994B41D3F5F3D000665A0 /* Main.swift in Sources */,
@@ -873,6 +879,7 @@
 				7A3994B51D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A39949D1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A5B4FDE1D773A450083EEA9 /* Bundle.swift in Sources */,
+				7AC920C8212EFBFE0062211C /* CoreDataManager.swift in Sources */,
 				7A6B9C8F1D6B28E400018648 /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,6 +907,7 @@
 				7A3994AF1D3F5F3D000665A0 /* Double.swift in Sources */,
 				7ADEA86C1F3DA03B00AF2A1C /* Numbers.swift in Sources */,
 				7A39949B1D3F5F3D000665A0 /* Array.swift in Sources */,
+				7AC920C6212EFBFE0062211C /* CoreDataManager.swift in Sources */,
 				7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */,
 				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
 				7A1305C01EAB8C8D00D29048 /* URL.swift in Sources */,
