@@ -105,8 +105,14 @@
 		
 		NSData *data = [[NSData alloc] initWithContentsOfURL:self];
 		if (data == NULL) {
-			return nil;
+			if ([self startAccessingSecurityScopedResource]) {
+				data = [[NSData alloc] initWithContentsOfURL:self];
+				[self stopAccessingSecurityScopedResource];
+			}
 		}
+		
+		if (data == NULL)
+			return nil;
 		
 		// Load XML document
 		doc = xmlReadMemory([data bytes], (int)[data length], "", NULL, 0);
