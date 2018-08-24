@@ -36,7 +36,9 @@ public class CoreDataManager {
 		do {
 			try migrateStore()
 		} catch MBCoreDataError.notAStore {
-			try FileManager.default.removeItem(at: storeURL)
+			if FileManager.default.fileExists(atPath: storeURL.absoluteString) {
+				try FileManager.default.removeItem(at: storeURL)
+			}
 		}
 		
 		let coordinator = NSPersistentStoreCoordinator(managedObjectModel: moms.last!)
