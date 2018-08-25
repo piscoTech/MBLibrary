@@ -39,6 +39,10 @@ public class CoreDataManager {
 			if FileManager.default.fileExists(atPath: storeURL.absoluteString) {
 				try FileManager.default.removeItem(at: storeURL)
 			}
+		} catch MBCoreDataError.incompatibleModels {
+			try FileManager.default.removeItem(at: storeURL)
+		} catch let e {
+			throw e
 		}
 		
 		let coordinator = NSPersistentStoreCoordinator(managedObjectModel: moms.last!)
@@ -71,7 +75,9 @@ public class CoreDataManager {
 			}
 			
 			return idx
-		} catch {
+		} catch MBCoreDataError.incompatibleModels {
+			throw MBCoreDataError.incompatibleModels
+		} catch _ {
 			throw MBCoreDataError.notAStore
 		}
 	}
