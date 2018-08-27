@@ -88,20 +88,6 @@ extension Array where Element: Hashable {
 	
 }
 
-// MARK: - Random access
-
-extension Array {
-		
-	public var random: Element? {
-		guard self.count > 0 else {
-			return nil
-		}
-		
-		return self[Int.random(to: self.count)]
-	}
-	
-}
-
 // MARK: - Set operation
 
 extension Array where Element: Equatable {
