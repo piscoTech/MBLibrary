@@ -173,9 +173,9 @@ public class ContactMeViewController: UIViewController, UITextViewDelegate {
 						let alert = UIAlertController(simpleAlert: MBLocalizedString("ERROR", comment: "Error"), message: MBLocalizedString("CANT_SEND_CONTACT_MSG", comment: "Can't send"))
 						self.present(alert, animated: true)
 						
-						self.cancelBtn.isEnabled = false
-						self.messageField.isEditable = false
-						self.emailField.isEnabled = false
+						self.cancelBtn.isEnabled = true
+						self.messageField.isEditable = true
+						self.emailField.isEnabled = true
 						self.updateSendButton()
 						
 						return
