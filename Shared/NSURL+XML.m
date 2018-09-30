@@ -32,6 +32,10 @@
 	- (XMLNode *)processNode:(xmlNodePtr)currentNode withParent:(XMLNode *)parent {
 		XMLNode *node = nil;
 		
+		if (currentNode->type == XML_COMMENT_NODE) {
+			return nil;
+		}
+		
 		if (currentNode->name) {
 			NSString *nodeName = [NSString stringWithCString:(const char *)currentNode->name encoding:NSUTF8StringEncoding];
 			node = [[XMLNode alloc] initWithName:nodeName];
