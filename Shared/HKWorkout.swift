@@ -19,6 +19,8 @@ extension HKWorkout {
 	/// The workout starts as active, the end of a segment is marked by a `.pause` or `.motionPaused` or the end of the workout, a new segment is started by a `.resume` or `.motionResumed` event.
 	public var activeSegments: [DateInterval] {
 		var events = self.workoutEvents ?? []
+		// Remove non-useful events
+		events = events.filter { resumeEvents.contains($0.type) || pauseEvents.contains($0.type) }
 		// Remove any event at the beginning that's not a pause event
 		if let pauseInd = events.index(where: { pauseEvents.contains($0.type) }) {
 			events = Array(events.suffix(from: pauseInd))
