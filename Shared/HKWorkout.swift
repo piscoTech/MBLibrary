@@ -33,7 +33,7 @@ extension HKWorkout {
 		while !events.isEmpty {
 			let pause = events.removeFirst()
 			let end: Date
-			if #available(iOS 11.0, *) {
+			if #available(iOS 11.0, watchOS 4.0, *) {
 				end = pause.dateInterval.start
 			} else {
 				end = pause.date
@@ -41,7 +41,7 @@ extension HKWorkout {
 			intervals.append(DateInterval(start: intervalStart, end: end))
 			
 			if let resume = events.index(where: { resumeEvents.contains($0.type) }) {
-				if #available(iOS 11.0, *) {
+				if #available(iOS 11.0, watchOS 4.0, *) {
 					intervalStart = events[resume].dateInterval.start
 				} else {
 					intervalStart = events[resume].date

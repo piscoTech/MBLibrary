@@ -129,7 +129,7 @@ public class ContactMeViewController: UIViewController, UITextViewDelegate {
 	}
 	
 	@IBAction func send(_ sender: AnyObject) {
-		let fileUrl = URL(string: "http://www.marcoboschi.altervista.org/sendMail.php")!
+		let fileUrl = URL(string: "https://marcoboschi.altervista.org/sendMail/")!
 		
 		// Create the request
 		let urlRequest = NSMutableURLRequest(url: fileUrl)
