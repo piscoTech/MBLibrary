@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBLibrary
 import HealthKit
 
 extension HKWorkoutActivityType {
