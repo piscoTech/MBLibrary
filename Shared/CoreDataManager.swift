@@ -70,7 +70,7 @@ public class CoreDataManager {
 		do {
 			let meta = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: storeType, at: storeURL)
 			
-			guard let idx = moms.index(where: { $0.isConfiguration(withName: nil, compatibleWithStoreMetadata: meta) }) else {
+			guard let idx = moms.firstIndex(where: { $0.isConfiguration(withName: nil, compatibleWithStoreMetadata: meta) }) else {
 				throw MBCoreDataError.incompatibleModels
 			}
 			

@@ -22,7 +22,7 @@ extension HKWorkout {
 		// Remove non-useful events
 		events = events.filter { resumeEvents.contains($0.type) || pauseEvents.contains($0.type) }
 		// Remove any event at the beginning that's not a pause event
-		if let pauseInd = events.index(where: { pauseEvents.contains($0.type) }) {
+		if let pauseInd = events.firstIndex(where: { pauseEvents.contains($0.type) }) {
 			events = Array(events.suffix(from: pauseInd))
 		}
 		var intervals = [DateInterval]()
@@ -40,7 +40,7 @@ extension HKWorkout {
 			}
 			intervals.append(DateInterval(start: intervalStart, end: end))
 			
-			if let resume = events.index(where: { resumeEvents.contains($0.type) }) {
+			if let resume = events.firstIndex(where: { resumeEvents.contains($0.type) }) {
 				if #available(iOS 11.0, watchOS 4.0, *) {
 					intervalStart = events[resume].dateInterval.start
 				} else {
@@ -48,7 +48,7 @@ extension HKWorkout {
 				}
 				
 				let tmpEv = events.suffix(from: resume)
-				if let pause = tmpEv.index(where: { pauseEvents.contains($0.type) }) {
+				if let pause = tmpEv.firstIndex(where: { pauseEvents.contains($0.type) }) {
 					events = Array(tmpEv.suffix(from: pause))
 				} else {
 					// Empty the array as at the next cycle we expect the first element to be a pause

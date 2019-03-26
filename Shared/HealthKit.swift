@@ -16,8 +16,6 @@ extension HKWorkoutActivityType {
 		let wType: Int
 		
 		switch self {
-		case .other:
-			wType = 0
 		case .americanFootball:
 			wType = 1
 		case .archery:
@@ -166,6 +164,10 @@ extension HKWorkoutActivityType {
 			wType = 73
 		case .handCycling:
 			wType = 74
+		case .other:
+			fallthrough
+		@unknown default:
+			wType = 0
 		}
 		
 		return MBLocalizedString("WORKOUT_NAME_\(wType)", comment: "Workout")

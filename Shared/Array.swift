@@ -15,7 +15,7 @@ extension Array where Element: Equatable {
 	///Appends the passed elements if and only if it isn't already inside the array.
 	///- returns: Whether or not the insertions succeded.
 	@discardableResult mutating public func appendUnique(_ el: Element) -> Bool {
-		if let _ = self.index(of: el) {
+		if let _ = self.firstIndex(of: el) {
 			return false
 		} else {
 			self.append(el)
@@ -29,7 +29,7 @@ extension Array where Element: Equatable {
 	@discardableResult mutating public func removeElement(_ el: Element) -> Int {
 		var count = 0
 		
-		while let i = self.index(of: el) {
+		while let i = self.firstIndex(of: el) {
 			remove(at: i)
 			count += 1
 		}
@@ -43,7 +43,7 @@ extension Array where Element: Equatable {
 		
 		while i < self.count {
 			let before = Array(self[0 ..< i])
-			if before.index(of: self[i]) != nil {
+			if before.firstIndex(of: self[i]) != nil {
 				self.remove(at: i)
 			} else {
 				i += 1
@@ -110,7 +110,7 @@ extension Array where Element: Equatable {
 	///
 	/// - returns: The intersection of arrays elements.
 	public func intersect(_ oth: [Element]) -> [Element] {
-		var res = self.filter { oth.index(of: $0) != nil }
+		var res = self.filter { oth.firstIndex(of: $0) != nil }
 		res.removeDuplicates()
 		
 		return res
@@ -122,7 +122,7 @@ extension Array where Element: Equatable {
 	///
 	/// - returns: The difference of arrays elements.
 	public func subtract(_ oth: [Element]) -> [Element] {
-		var res = self.filter { oth.index(of: $0) == nil }
+		var res = self.filter { oth.firstIndex(of: $0) == nil }
 		res.removeDuplicates()
 		
 		return res

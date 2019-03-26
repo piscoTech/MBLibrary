@@ -50,9 +50,9 @@ public class SlidingLabel: UIView, Animatable {
 		let width = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: innerView, attribute: .width, multiplier: 1, constant: 0)
 		width.priority = .defaultHigh
 		width.isActive = true
-		NSLayoutConstraint(item: innerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
-		NSLayoutConstraint(item: innerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-		hCenter = NSLayoutConstraint(item: innerView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
+		NSLayoutConstraint(item: innerView as Any, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
+		NSLayoutConstraint(item: innerView as Any, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+		hCenter = NSLayoutConstraint(item: innerView as Any, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
 		hCenter.isActive = true
 		
 		//Fading margin
