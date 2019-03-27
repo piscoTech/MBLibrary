@@ -52,15 +52,15 @@ public struct Complex: Equatable, CustomStringConvertible {
 		i = im
 	}
 	
-	public func isReal() -> Bool {
+	public var isReal: Bool {
 		return i == 0
 	}
 	
-	public func isComplex() -> Bool {
+	public var isComplex: Bool {
 		return i != 0
 	}
 	
-	public func conjucate() -> Complex {
+	public func conjugate() -> Complex {
 		return Complex(re: r, im: -i)
 	}
 	

@@ -22,12 +22,12 @@ class ComplexTests: XCTestCase {
     }
 	
 	func testType() {
-		XCTAssert(a.isComplex())
-		XCTAssert(!a.isReal())
-		XCTAssert(b.isReal())
-		XCTAssert(!b.isComplex())
-		XCTAssert(c.isComplex())
-		XCTAssert(!c.isReal())
+		XCTAssert(a.isComplex)
+		XCTAssert(!a.isReal)
+		XCTAssert(b.isReal)
+		XCTAssert(!b.isComplex)
+		XCTAssert(c.isComplex)
+		XCTAssert(!c.isReal)
 	}
     
     func testSum() {
@@ -66,11 +66,11 @@ class ComplexTests: XCTestCase {
 	}
 	
 	func testConjugate() {
-		let conj = a.conjucate()
+		let conj = a.conjugate()
 		XCTAssertEqual(conj.r, a.r, accuracy: 0.0001)
 		XCTAssertEqual(conj.i, -a.i, accuracy: 0.0001)
 		
-		XCTAssertEqual(b, b.conjucate())
+		XCTAssertEqual(b, b.conjugate())
 	}
 	
 	func testModule() {

@@ -19,7 +19,7 @@ extension NSTextField {
 		
 		NSAnimationContext.runAnimationGroup({ (context: NSAnimationContext) -> Void in
 			context.duration = time / 2
-			context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+			context.timingFunction = CAMediaTimingFunction(name: .easeOut)
 			self.animator().alphaValue = 0
 			}, completionHandler: { () -> Void in
 				self.stringValue = newValue
@@ -28,7 +28,7 @@ extension NSTextField {
 				}
 				NSAnimationContext.runAnimationGroup({ (context: NSAnimationContext) -> Void in
 					context.duration = time / 2
-					context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+					context.timingFunction = CAMediaTimingFunction(name: .easeOut)
 					self.animator().alphaValue = 1
 					}, completionHandler: nil)
 		})
