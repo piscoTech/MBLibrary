@@ -40,6 +40,16 @@ class ComplexTests: XCTestCase {
 		XCTAssertEqual(sum.i, 3, accuracy: 0.0001)
     }
 	
+	func testDiff() {
+		var sum = a - b
+		XCTAssertEqual(sum.r, 4, accuracy: 0.0001)
+		XCTAssertEqual(sum.i, -2, accuracy: 0.0001)
+		
+		sum = b - c
+		XCTAssertEqual(sum.r, -2, accuracy: 0.0001)
+		XCTAssertEqual(sum.i, -3, accuracy: 0.0001)
+	}
+	
 	func testEquality() {
 		XCTAssertEqual(b + c, Complex(re: -2, im: 3))
 	}

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Accelerate
 
 public func == (l: Complex, r: Complex) -> Bool {
 	return l.r == r.r && l.i == r.i
@@ -14,6 +15,10 @@ public func == (l: Complex, r: Complex) -> Bool {
 
 public func + (l: Complex, r: Complex) -> Complex {
 	return Complex(re: l.r + r.r, im: l.i + r.i)
+}
+
+public func - (l: Complex, r: Complex) -> Complex {
+	return Complex(re: l.r - r.r, im: l.i - r.i)
 }
 
 public func * (l: Complex, r: Complex) -> Complex {
@@ -33,9 +38,10 @@ public func / (l: Complex, r: Complex) -> Complex {
 	return Complex(re: (l.r * r.r + l.i * r.i)/denom, im: (l.i * r.r - l.r * r.i)/denom)
 }
 
-public struct Complex: Equatable, CustomStringConvertible {
+public typealias Complex = __CLPK_doublecomplex
+
+extension Complex: Equatable, CustomStringConvertible {
 	
-	public var r, i: Double
 	public var description: String {
 		get {
 			var re = r.toString()
@@ -48,8 +54,7 @@ public struct Complex: Equatable, CustomStringConvertible {
 	}
 	
 	public init(re: Double, im: Double) {
-		r = re
-		i = im
+		self.init(r: re, i: im)
 	}
 	
 	public var isReal: Bool {
