@@ -40,7 +40,7 @@ public func / (l: Complex, r: Complex) -> Complex {
 
 public typealias Complex = __CLPK_doublecomplex
 
-extension Complex: Equatable, CustomStringConvertible {
+extension Complex: Equatable, CustomStringConvertible, ExpressibleByFloatLiteral {
 	
 	public var description: String {
 		get {
@@ -51,6 +51,10 @@ extension Complex: Equatable, CustomStringConvertible {
 			
 			return "\(re)\(im)𝒊"
 		}
+	}
+	
+	public init(floatLiteral value: Double) {
+		self.init(r: value, i: 0)
 	}
 	
 	public init(re: Double, im: Double) {

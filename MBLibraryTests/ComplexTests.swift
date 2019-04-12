@@ -20,6 +20,11 @@ class ComplexTests: XCTestCase {
 		c = Complex(re: 0, im: 3)
 		d = Complex(re: 2, im: 4)
     }
+
+	func testFromDuble() {
+		XCTAssertEqual(4.0, Complex(r: 4, i: 0))
+		XCTAssertEqual(-1.0, Complex(r: -1, i: 0))
+	}
 	
 	func testType() {
 		XCTAssert(a.isComplex)
