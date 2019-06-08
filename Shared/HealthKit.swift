@@ -164,6 +164,10 @@ extension HKWorkoutActivityType {
 			wType = 73
 		case .handCycling:
 			wType = 74
+		case .discSports:
+			wType = 75
+		case .fitnessGaming:
+			wType = 76
 		case .other:
 			fallthrough
 		@unknown default:

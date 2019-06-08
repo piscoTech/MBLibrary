@@ -56,7 +56,7 @@ extension Double {
 		}
 		
 		//Delete negative part if equal to zero
-		var numParts = base.components(separatedBy: decimalPoint)
+		let numParts = base.components(separatedBy: decimalPoint)
 		if numParts.count == 2 && (
 			fmod(num, 1) == 0
 				|| numParts[1] == ([String](repeating: "0", count: numParts[1].count)).joined(separator: "")
