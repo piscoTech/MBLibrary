@@ -150,6 +150,7 @@
 		7AA084061D5FB9B100B57943 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA084021D5FB9B100B57943 /* Int.swift */; };
 		7AA0840D1D5FBC2700B57943 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840C1D5FBC2700B57943 /* IntTests.swift */; };
 		7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */; };
+		7AA356EF22AD74C6003CDFF0 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA356EE22AD74C6003CDFF0 /* ActivityIndicator.swift */; };
 		7AB95A53223845ED0021EE86 /* MBHealth_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB95A51223845ED0021EE86 /* MBHealth_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AB95A602238471B0021EE86 /* MBHealth_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB95A5E2238471B0021EE86 /* MBHealth_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AB95A67223848170021EE86 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A255F1E6CB29C00992D52 /* HealthKit.swift */; };
@@ -282,6 +283,7 @@
 		7AA084021D5FB9B100B57943 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		7AA0840C1D5FBC2700B57943 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InAppPurchaseManager iOS.swift"; sourceTree = "<group>"; };
+		7AA356EE22AD74C6003CDFF0 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		7AB95A4F223845ED0021EE86 /* MBHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB95A51223845ED0021EE86 /* MBHealth_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBHealth_iOS.h; sourceTree = "<group>"; };
 		7AB95A52223845ED0021EE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				7A458459211820BB007BEB2D /* Contact Me */,
 				7A7722EF1D74450A00A770BF /* Graphics */,
 				7A0064BB1D3E92B50089297D /* UIKit */,
+				7AA356ED22AD7462003CDFF0 /* SwiftUI */,
 				7A0064BC1D3E92D60089297D /* Main iOS.swift */,
 				7AA0840E1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift */,
 				7A75FB671D3E619F00F66CF9 /* Supporting Files */,
@@ -616,6 +619,14 @@
 				7A82D9102119A2A200DB3941 /* FAQ.storyboard */,
 			);
 			name = FAQs;
+			sourceTree = "<group>";
+		};
+		7AA356ED22AD7462003CDFF0 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7AA356EE22AD74C6003CDFF0 /* ActivityIndicator.swift */,
+			);
+			name = SwiftUI;
 			sourceTree = "<group>";
 		};
 		7AB95A50223845ED0021EE86 /* MBHealth iOS */ = {
@@ -1068,6 +1079,7 @@
 				7A3994AF1D3F5F3D000665A0 /* Double.swift in Sources */,
 				7ADEA86C1F3DA03B00AF2A1C /* Numbers.swift in Sources */,
 				7A39949B1D3F5F3D000665A0 /* Array.swift in Sources */,
+				7AA356EF22AD74C6003CDFF0 /* ActivityIndicator.swift in Sources */,
 				7AC920C6212EFBFE0062211C /* CoreDataManager.swift in Sources */,
 				7A2F5B061D3FB1250012F485 /* SlidingLabel.swift in Sources */,
 				7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */,
