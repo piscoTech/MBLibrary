@@ -129,6 +129,7 @@
 		7A6B9C8F1D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A6B9C901D6B28E400018648 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B9C8C1D6B28E400018648 /* Bool.swift */; };
 		7A72CEC51D65A30E00D8C8DC /* SCNVector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */; };
+		7A73E00722AE816F00FDA477 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73E00622AE816F00FDA477 /* MessageCell.swift */; };
 		7A75AECF1D5525300034B4EA /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
 		7A75AED31D5525470034B4EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A75AED21D5525470034B4EA /* StoreKit.framework */; };
 		7A75FB691D3E61B100F66CF9 /* MinHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */; };
@@ -269,6 +270,7 @@
 		7A5B4FDB1D773A450083EEA9 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		7A6B9C8C1D6B28E400018648 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		7A72CEC31D65A30E00D8C8DC /* SCNVector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector4.swift; sourceTree = "<group>"; };
+		7A73E00622AE816F00FDA477 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
 		7A75AED21D5525470034B4EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7A75FB681D3E61B100F66CF9 /* MinHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinHeightTextView.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA356EE22AD74C6003CDFF0 /* ActivityIndicator.swift */,
+				7A73E00622AE816F00FDA477 /* MessageCell.swift */,
 			);
 			name = SwiftUI;
 			sourceTree = "<group>";
@@ -1072,6 +1075,7 @@
 				7A2224451E6F14060046E9DE /* FileManager.swift in Sources */,
 				7A5B4FDC1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7A372EE11D71BFE400F7AB7F /* CALayer iOS.swift in Sources */,
+				7A73E00722AE816F00FDA477 /* MessageCell.swift in Sources */,
 				7A82D90621199CC400DB3941 /* FaqListTVC.swift in Sources */,
 				7A2F5B001D3FABFB0012F485 /* PopoverController.swift in Sources */,
 				7A2537F91D745BE600A1407C /* SCNGeometry.swift in Sources */,

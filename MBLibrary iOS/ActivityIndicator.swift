@@ -9,12 +9,12 @@
 import SwiftUI
 import Combine
 
-@available(iOSApplicationExtension 13.0, *)
+@available(iOS 13.0, *)
 public struct ActivityIndicator : UIViewRepresentable {
 	public let style: UIActivityIndicatorView.Style
 	private let animating: Binding<Bool>
 
-	public init(style: UIActivityIndicatorView.Style, animating: Binding<Bool>) {
+	public init(style: UIActivityIndicatorView.Style, animating: Binding<Bool> = Binding.constant(true)) {
 		self.style = style
 		self.animating = animating
 	}
