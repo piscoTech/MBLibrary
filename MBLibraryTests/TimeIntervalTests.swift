@@ -28,16 +28,11 @@ class TimeIntervalTests: XCTestCase {
     }
 
 	func testDuration() {
-		XCTAssertEqual(a.getDuration(), "2:34:15")
-		XCTAssertEqual(a.getDuration(hideHours: true), "2:34:15")
-		XCTAssertEqual(b.getDuration(), "0:00:20")
-		XCTAssertEqual(b.getDuration(hideHours: true), "0:20")
-		XCTAssertEqual(c.getDuration(), "2:04:05")
-		XCTAssertEqual(c.getDuration(hideHours: true), "2:04:05")
-		XCTAssertEqual(d.getDuration(), "0:01:25")
-		XCTAssertEqual(d.getDuration(hideHours: true), "1:25")
-		XCTAssertEqual(e.getDuration(), "0:10:25")
-		XCTAssertEqual(e.getDuration(hideHours: true), "10:25")
+		XCTAssertEqual(a.getRawDuration(), "2:34:15")
+		XCTAssertEqual(b.getRawDuration(), "0:00:20")
+		XCTAssertEqual(c.getRawDuration(), "2:04:05")
+		XCTAssertEqual(d.getRawDuration(), "0:01:25")
+		XCTAssertEqual(e.getRawDuration(), "0:10:25")
 	}
 
 }

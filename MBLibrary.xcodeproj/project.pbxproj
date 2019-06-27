@@ -166,6 +166,12 @@
 		7AD1597F1D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
 		7AD159801D5793E2009E54EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AD159821D5793E2009E54EE /* Localizable.strings */; };
 		7AD2D56B1D548A3A00CF755F /* VariableToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2D56A1D548A3A00CF755F /* VariableToolbar.swift */; };
+		7AD7D8F222C2B3890092480A /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7D8F122C2B3890092480A /* WeakReference.swift */; };
+		7AD7D8F322C2B3890092480A /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7D8F122C2B3890092480A /* WeakReference.swift */; };
+		7AD7D8F422C2B3890092480A /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7D8F122C2B3890092480A /* WeakReference.swift */; };
+		7AD7D8F622C2B3AD0092480A /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7D8F522C2B3AD0092480A /* WeakArray.swift */; };
+		7AD7D8F722C2B3AD0092480A /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7D8F522C2B3AD0092480A /* WeakArray.swift */; };
+		7AD7D8F822C2B3AD0092480A /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7D8F522C2B3AD0092480A /* WeakArray.swift */; };
 		7ADEA86C1F3DA03B00AF2A1C /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */; };
 		7ADEA86D1F3DA6FD00AF2A1C /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */; };
 		7ADEA86E1F3DA6FE00AF2A1C /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */; };
@@ -296,6 +302,8 @@
 		7AD159831D5793E4009E54EE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AD2D56A1D548A3A00CF755F /* VariableToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableToolbar.swift; sourceTree = "<group>"; };
 		7AD7D5442199B02000521D8B /* HKWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKWorkout.swift; sourceTree = "<group>"; };
+		7AD7D8F122C2B3890092480A /* WeakReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReference.swift; sourceTree = "<group>"; };
+		7AD7D8F522C2B3AD0092480A /* WeakArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
 		7ADEA86B1F3DA03B00AF2A1C /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		7AF456711F41881700D5BB7F /* NSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -466,6 +474,7 @@
 				7A3994C31D3F5F4D000665A0 /* Foundation */,
 				7A80AC111D6256310085A3F0 /* SceneKit */,
 				7A1A255E1E6CB22D00992D52 /* HealthKit */,
+				7AD7D8F022C2B3660092480A /* Weak Array */,
 				7A3994971D3F5F3D000665A0 /* Main.swift */,
 				7A4CE39A1D3F734000DAAE70 /* Main iOS & macOS.swift */,
 				7A3994921D3F5F3D000665A0 /* Complex.swift */,
@@ -650,6 +659,15 @@
 				7AB95A5F2238471B0021EE86 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AD7D8F022C2B3660092480A /* Weak Array */ = {
+			isa = PBXGroup;
+			children = (
+				7AD7D8F122C2B3890092480A /* WeakReference.swift */,
+				7AD7D8F522C2B3AD0092480A /* WeakArray.swift */,
+			);
+			path = "Weak Array";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -967,6 +985,7 @@
 				7A4CE3B11D3F752800DAAE70 /* KeyValueStore.swift in Sources */,
 				7A4CE39C1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */,
 				7A3994A41D3F5F3D000665A0 /* Date.swift in Sources */,
+				7AD7D8F722C2B3AD0092480A /* WeakArray.swift in Sources */,
 				7A4CE3A81D3F741700DAAE70 /* NSFont.swift in Sources */,
 				7A4CE3A41D3F73BF00DAAE70 /* NSView.swift in Sources */,
 				7A83150D1D4241FD000F35AE /* FAQController.swift in Sources */,
@@ -974,6 +993,7 @@
 				7AC920C7212EFBFE0062211C /* CoreDataManager.swift in Sources */,
 				7A3994B01D3F5F3D000665A0 /* Double.swift in Sources */,
 				7A1305C11EAB8C8D00D29048 /* URL.swift in Sources */,
+				7AD7D8F322C2B3890092480A /* WeakReference.swift in Sources */,
 				7A3994B41D3F5F3D000665A0 /* Main.swift in Sources */,
 				7A39949C1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A1305AD1EAB87C600D29048 /* NSURL+XML.m in Sources */,
@@ -1029,6 +1049,7 @@
 				7A1305AF1EAB87C600D29048 /* NSURL+XML.m in Sources */,
 				7A3994A11D3F5F3D000665A0 /* Complex.swift in Sources */,
 				7A3994C11D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
+				7AD7D8F422C2B3890092480A /* WeakReference.swift in Sources */,
 				7AA084051D5FB9B100B57943 /* Int.swift in Sources */,
 				7A1305C21EAB8C8D00D29048 /* URL.swift in Sources */,
 				7A3994A91D3F5F3D000665A0 /* Dictionary.swift in Sources */,
@@ -1039,6 +1060,7 @@
 				7A3994B11D3F5F3D000665A0 /* Double.swift in Sources */,
 				7ADEA86E1F3DA6FE00AF2A1C /* Numbers.swift in Sources */,
 				7A3994B51D3F5F3D000665A0 /* Main.swift in Sources */,
+				7AD7D8F822C2B3AD0092480A /* WeakArray.swift in Sources */,
 				7A39949D1D3F5F3D000665A0 /* Array.swift in Sources */,
 				7A5B4FDE1D773A450083EEA9 /* Bundle.swift in Sources */,
 				7AC920C8212EFBFE0062211C /* CoreDataManager.swift in Sources */,
@@ -1051,6 +1073,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A3994B31D3F5F3D000665A0 /* Main.swift in Sources */,
+				7AD7D8F622C2B3AD0092480A /* WeakArray.swift in Sources */,
 				7A4CE3B01D3F752800DAAE70 /* KeyValueStore.swift in Sources */,
 				7A2F5B051D3FB1250012F485 /* EnhancedTextField.swift in Sources */,
 				7A3994BF1D3F5F3D000665A0 /* TimeInterval.swift in Sources */,
@@ -1087,6 +1110,7 @@
 				7A4CE3AE1D3F74BB00DAAE70 /* UIFont.swift in Sources */,
 				7A2537F61D745AE800A1407C /* SCNVector4.swift in Sources */,
 				7A83150C1D4241FD000F35AE /* FAQController.swift in Sources */,
+				7AD7D8F222C2B3890092480A /* WeakReference.swift in Sources */,
 				7A4CE39B1D3F734000DAAE70 /* Main iOS & macOS.swift in Sources */,
 				7A29761421123BC300460237 /* EnhancedNavigationBar.swift in Sources */,
 				7A3994AB1D3F5F3D000665A0 /* DispatchQueue.swift in Sources */,

@@ -9,25 +9,37 @@
 import Foundation
 
 extension TimeInterval {
+
+	private static let durationF: DateComponentsFormatter = {
+		let formatter = DateComponentsFormatter()
+		formatter.unitsStyle = .abbreviated
+		formatter.allowedUnits = [.hour, .minute, .second]
+		formatter.zeroFormattingBehavior = .default
+
+		return formatter
+	}()
 	
-	public func getDuration(hideHours shouldHide: Bool = false) -> String {
+	public func getFormattedDuration() -> String {
+		return TimeInterval.durationF.string(from: self)!
+	}
+
+	public func getRawDuration() -> String {
 		var s = self
 		let neg = s < 0
 		if neg {
 			s *= -1
 		}
-		
+
 		let m = floor(s / 60)
 		let sec = Int(fmod(s, 60))
-		
+
 		let h = floor(m / 60)
 		let min = Int(fmod(m, 60))
-		let doHide = shouldHide && h == 0
-		
+
 		var res = (sec < 10 ? "0" : "") + "\(sec)"
-		res = (min < 10 && !doHide ? "0" : "") + "\(min):" + res
-		res = (doHide ? "" : "\(h.toString()):") + res
-		
+		res = (min < 10 ? "0" : "") + "\(min):" + res
+		res = "\(h.toString()):" + res
+
 		return (neg ? "-" : "") + res
 	}
 	
