@@ -197,7 +197,7 @@ extension InAppPurchaseManager: SKPaymentTransactionObserver {
 				updateTransaction(for: transaction.payment.productIdentifier, withStatus: .deferred)
 			case .purchasing:
 				fallthrough
-			@unknown default:
+			default:
 				break
 			}
 		}
