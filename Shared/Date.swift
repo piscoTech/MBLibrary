@@ -9,6 +9,8 @@
 import Foundation
 
 extension Date {
+
+	// MARK: - Formatting
 	
 	private static let unixDateTimeF: DateFormatter = {
 		let formatter = DateFormatter()
@@ -32,7 +34,7 @@ extension Date {
 		
 		return formatter
 	}()
-	
+
 	public func getUNIXDateTime() -> String {
 		return Date.unixDateTimeF.string(from: self)
 	}
@@ -47,6 +49,20 @@ extension Date {
 	
 	public func getFormattedTime() -> String {
 		return Date.localTimeF.string(from: self)
+	}
+
+	// MARK: - Handling
+
+	public func removingTime(keepTimeZone: Bool = false) -> Date {
+		var additionalComponents: Set<Calendar.Component> = []
+		if keepTimeZone {
+			additionalComponents.insert(.timeZone)
+		}
+
+		let calendar = Calendar.current
+		let comp = calendar.dateComponents(Set([Calendar.Component.era, .year, .month, .day, .calendar]).union(additionalComponents), from: self)
+
+		return calendar.date(from: comp)!
 	}
 	
 }
