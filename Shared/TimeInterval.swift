@@ -13,7 +13,6 @@ extension TimeInterval {
 	private static let durationF: DateComponentsFormatter = {
 		let formatter = DateComponentsFormatter()
 		formatter.unitsStyle = .abbreviated
-		formatter.allowedUnits = [.hour, .minute, .second]
 		formatter.zeroFormattingBehavior = .default
 
 		return formatter

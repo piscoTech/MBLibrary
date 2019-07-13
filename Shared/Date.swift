@@ -53,15 +53,26 @@ extension Date {
 
 	// MARK: - Handling
 
-	public func removingTime(keepTimeZone: Bool = false) -> Date {
-		var additionalComponents: Set<Calendar.Component> = []
-		if keepTimeZone {
-			additionalComponents.insert(.timeZone)
+	public enum RoundingPrecision {
+		case day, minute
+	}
+
+	public func round(to precision: RoundingPrecision = .day, keepTimeZone: Bool = false) -> Date {
+		var components: Set<Calendar.Component> = [.calendar]
+		switch precision {
+		case .minute:
+			components.formUnion([.minute, .hour])
+			fallthrough
+		case .day:
+			components.formUnion([.day, .month, .year, .era])
 		}
-
+		if keepTimeZone {
+			components.insert(.timeZone)
+		}
+		
 		let calendar = Calendar.current
-		let comp = calendar.dateComponents(Set([Calendar.Component.era, .year, .month, .day, .calendar]).union(additionalComponents), from: self)
-
+		let comp = calendar.dateComponents(components, from: self)
+		
 		return calendar.date(from: comp)!
 	}
 	
