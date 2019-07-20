@@ -27,7 +27,8 @@ class MiscTests: XCTestCase {
 		XCTAssertEqual(sgn(0), 0)
 		
 		XCTAssertTrue(sgn(1.0) > 0)
-		XCTAssertTrue(sgn(-2.5) < 0)
+		let neg = -2.5
+		XCTAssertTrue(sgn(neg) < 0)
 		XCTAssertEqual(sgn(0.0), 0)
 		
 		var f: Float = 1

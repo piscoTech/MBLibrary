@@ -109,7 +109,7 @@ public class InAppPurchaseManager: NSObject {
 		return isProductPurchased(pId: product.productIdentifier)
 	}
 	
-	public var canMakePayments: Bool {
+	public class var canMakePayments: Bool {
 		return SKPaymentQueue.canMakePayments()
 	}
 	

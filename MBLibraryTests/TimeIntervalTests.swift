@@ -33,6 +33,12 @@ class TimeIntervalTests: XCTestCase {
 		XCTAssertEqual(c.getRawDuration(), "2:04:05")
 		XCTAssertEqual(d.getRawDuration(), "0:01:25")
 		XCTAssertEqual(e.getRawDuration(), "0:10:25")
+		
+		XCTAssertEqual(a.getRawDuration(hideHours: true), "2:34:15")
+		XCTAssertEqual(b.getRawDuration(hideHours: true), "0:20")
+		XCTAssertEqual(c.getRawDuration(hideHours: true), "2:04:05")
+		XCTAssertEqual(d.getRawDuration(hideHours: true), "1:25")
+		XCTAssertEqual(e.getRawDuration(hideHours: true), "10:25")
 	}
 
 }

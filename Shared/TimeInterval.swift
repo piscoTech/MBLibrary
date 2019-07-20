@@ -22,7 +22,7 @@ extension TimeInterval {
 		return TimeInterval.durationF.string(from: self)!
 	}
 
-	public func getRawDuration() -> String {
+	public func getRawDuration(hideHours shouldHide: Bool = false) -> String {
 		var s = self
 		let neg = s < 0
 		if neg {
@@ -34,10 +34,11 @@ extension TimeInterval {
 
 		let h = floor(m / 60)
 		let min = Int(fmod(m, 60))
+		let doHide = shouldHide && h == 0
 
 		var res = (sec < 10 ? "0" : "") + "\(sec)"
-		res = (min < 10 ? "0" : "") + "\(min):" + res
-		res = "\(h.toString()):" + res
+		res = (min < 10 && !doHide ? "0" : "") + "\(min):" + res
+		res = (doHide ? "" : "\(h.toString()):") + res
 
 		return (neg ? "-" : "") + res
 	}
