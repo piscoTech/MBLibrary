@@ -8,11 +8,71 @@
 
 import Foundation
 import HealthKit
+import MBLibrary
 
 fileprivate let resumeEvents = [HKWorkoutEventType.resume, .motionResumed]
 fileprivate let pauseEvents = [HKWorkoutEventType.pause, .motionPaused]
 
+public struct WorkoutLocationType {
+
+	public let genericIndoor: Bool?
+	public let swimmingIndoor: Bool?
+
+	fileprivate init(_ wrkt: HKWorkout) {
+		genericIndoor = wrkt.metadata?[HKMetadataKeyIndoorWorkout] as? Bool
+
+		if let rawSwimLoc = wrkt.metadata?[HKMetadataKeySwimmingLocationType] as? Int, let swimLoc = HKWorkoutSwimmingLocationType(rawValue: rawSwimLoc) {
+			switch swimLoc {
+			case .pool:
+				swimmingIndoor = true
+			case .openWater:
+				swimmingIndoor = false
+			case .unknown:
+				fallthrough
+			@unknown default:
+				swimmingIndoor = nil
+			}
+		} else {
+			swimmingIndoor = nil
+		}
+	}
+}
+
 extension HKWorkout {
+
+	/// The localized name of the workout type including location information, e.g. indoor/outdoor.
+	public var workoutActivityName: String {
+		switch workoutActivityType {
+		case .running, .walking, .cycling:
+			if let loc = workoutLocation.genericIndoor {
+				if loc {
+					return String(format: MBLocalizedString("GENERIC_INDOOR_%@", comment: "Indoor"), workoutActivityType.name)
+				} else {
+					return String(format: MBLocalizedString("GENERIC_OUTDOOR_%@", comment: "Outdoor"), workoutActivityType.name)
+				}
+			} else {
+				return workoutActivityType.name
+			}
+
+		case .swimming:
+			if let loc = workoutLocation.swimmingIndoor {
+				if loc {
+					return String(format: MBLocalizedString("SWIMMING_POOL_%@", comment: "Pool"), workoutActivityType.name)
+				} else {
+					return String(format: MBLocalizedString("SWIMMING_OPEN_WATER_%@", comment: "Open water"), workoutActivityType.name)
+				}
+			} else {
+				return workoutActivityType.name
+			}
+
+		default:
+			return workoutActivityType.name
+		}
+	}
+
+	public var workoutLocation: WorkoutLocationType {
+		return WorkoutLocationType(self)
+	}
 	
 	/// The periods of time when the workout was active.
 	///

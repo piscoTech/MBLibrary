@@ -98,3 +98,9 @@
 "WORKOUT_NAME_74" = "Hand Cycling";
 "WORKOUT_NAME_75" = "Disc Sports";
 "WORKOUT_NAME_76" = "Fitness Gaming";
+
+// Workout Location Types
+"GENERIC_INDOOR_%@" = "Indoor %@";
+"GENERIC_OUTDOOR_%@" = "Outdoor %@";
+"SWIMMING_POOL_%@" = "Pool %@";
+"SWIMMING_OPEN_WATER_%@" = "Open Water %@";
