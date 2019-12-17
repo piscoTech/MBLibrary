@@ -1,0 +1,106 @@
+/* 
+  Localizable.strings
+  MBLibrary
+
+  Created by Marco Boschi on 07/08/16.
+  Copyright © 2016 Marco Boschi. All rights reserved.
+*/
+
+"OK" = "OK";
+"ERROR" = "Erreur";
+
+// InApp Purchases stuff
+"ERROR_PURCHASE" = "Erreur lors de l'achat";
+"ERROR_PROD_LIST" = "Impossible de charger les produits";
+"ERROR_TRANSACTION" = "Impossible de compléter l'achat";
+"PURCHASE_RESTORED" = "L'achat à bien été restauré";
+
+// Contact Me form
+
+"CANT_SEND_CONTACT_MSG" = "Une erreur a été rencontrée lors de l'envoie du message, veuillez réessayer.";
+"MSG_PLACEHOLDER" = "Votre message...";
+
+// Workout types name
+"WORKOUT_NAME_0" = "Autre";
+"WORKOUT_NAME_1" = "Football Américain";
+"WORKOUT_NAME_2" = "Tir à l'arc";
+"WORKOUT_NAME_3" = "Football Australien";
+"WORKOUT_NAME_4" = "Badminton";
+"WORKOUT_NAME_5" = "Baseball";
+"WORKOUT_NAME_6" = "Basketball";
+"WORKOUT_NAME_7" = "Bowling";
+"WORKOUT_NAME_8" = "Boxe";
+"WORKOUT_NAME_9" = "Escalade";
+"WORKOUT_NAME_10" = "Cricket";
+"WORKOUT_NAME_11" = "Cross-Training";
+"WORKOUT_NAME_12" = "Curling";
+"WORKOUT_NAME_13" = "Vélo";
+"WORKOUT_NAME_14" = "Danse";
+"WORKOUT_NAME_15" = "Entraînement Inspiré par la Danse";
+"WORKOUT_NAME_16" = "Elliptique";
+"WORKOUT_NAME_17" = "Sports Équestre";
+"WORKOUT_NAME_18" = "Escrime";
+"WORKOUT_NAME_19" = "Pêche";
+"WORKOUT_NAME_20" = "Renforcement Fonctionnel";
+"WORKOUT_NAME_21" = "Golf";
+"WORKOUT_NAME_22" = "Gymnastique";
+"WORKOUT_NAME_23" = "Handball";
+"WORKOUT_NAME_24" = "Randonnée";
+"WORKOUT_NAME_25" = "Hockey";
+"WORKOUT_NAME_26" = "Chasse";
+"WORKOUT_NAME_27" = "Crosse";
+"WORKOUT_NAME_28" = "Arts Martiaux";
+"WORKOUT_NAME_29" = "Corps et Esprit";
+"WORKOUT_NAME_30" = "Cardio et Renforcement";
+"WORKOUT_NAME_31" = "Sports de Rame";
+"WORKOUT_NAME_32" = "Jeu";
+"WORKOUT_NAME_33" = "Préparation et Récupération";
+"WORKOUT_NAME_34" = "Racquetball";
+"WORKOUT_NAME_35" = "Rameur";
+"WORKOUT_NAME_36" = "Rugby";
+"WORKOUT_NAME_37" = "Course";
+"WORKOUT_NAME_38" = "Voile";
+"WORKOUT_NAME_39" = "Skateboard";
+"WORKOUT_NAME_40" = "Sports d'Hiver";
+"WORKOUT_NAME_41" = "Football";
+"WORKOUT_NAME_42" = "Softball";
+"WORKOUT_NAME_43" = "Squash";
+"WORKOUT_NAME_44" = "Escaliers";
+"WORKOUT_NAME_45" = "Surf";
+"WORKOUT_NAME_46" = "Nage";
+"WORKOUT_NAME_47" = "Tennis de Table";
+"WORKOUT_NAME_48" = "Tennis";
+"WORKOUT_NAME_49" = "Athlétisme";
+"WORKOUT_NAME_50" = "Renforcement Musculaire";
+"WORKOUT_NAME_51" = "Volleyball";
+"WORKOUT_NAME_52" = "Marche";
+"WORKOUT_NAME_53" = "Gymnastique Aquatique";
+"WORKOUT_NAME_54" = "Water-Polo";
+"WORKOUT_NAME_55" = "Sports Aquatiques";
+"WORKOUT_NAME_56" = "Lutte";
+"WORKOUT_NAME_57" = "Yoga";
+"WORKOUT_NAME_58" = "Barre";
+"WORKOUT_NAME_59" = "Entraînement Abdominal";
+"WORKOUT_NAME_60" = "Ski de Fond";
+"WORKOUT_NAME_61" = "Ski Alpin";
+"WORKOUT_NAME_62" = "Flexibilité";
+"WORKOUT_NAME_63" = "Fractionné";
+"WORKOUT_NAME_64" = "Corde à Sauter";
+"WORKOUT_NAME_65" = "Kickboxing";
+"WORKOUT_NAME_66" = "Pilates";
+"WORKOUT_NAME_67" = "Snowboarding";
+"WORKOUT_NAME_68" = "Escaliers";
+"WORKOUT_NAME_69" = "Step";
+"WORKOUT_NAME_70" = "Balade en Fauteuil";
+"WORKOUT_NAME_71" = "Course en Fauteuil";
+"WORKOUT_NAME_72" = "Tai-Chi";
+"WORKOUT_NAME_73" = "Cardio Mixte";
+"WORKOUT_NAME_74" = "Vélo à Main";
+"WORKOUT_NAME_75" = "Sports de Disques";
+"WORKOUT_NAME_76" = "Jeux de Remise en Forme";
+
+// Workout Location Types
+"GENERIC_INDOOR_%@" = "%@ en Intérieur";
+"GENERIC_OUTDOOR_%@" = "%@ en Extérieur";
+"SWIMMING_POOL_%@" = "%@ en Piscine";
+"SWIMMING_OPEN_WATER_%@" = "%@ en Eau Libre";
