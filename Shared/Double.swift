@@ -10,17 +10,12 @@ import Foundation
 
 extension Double {
 	
-	public func toCSV() -> String {
-		var n = "\(self)"
-		
-		if let point = n.range(of: ".") {
-			n = n.replacingCharacters(in: point, with: decimalPoint)
-		}
-		
-		return n.toCSV()
+	public func toCSV(forcingPointSeparator forcePoint: Bool = false) -> String {
+		return self.toString(forcingPointSeparator: forcePoint).toCSV()
 	}
 	
-	public func toString() -> String {
+	public func toString(forcingPointSeparator forcePoint: Bool = false) -> String {
+		let decimalPoint = forcePoint ? "." : MBLibrary.decimalPoint
 		var num = self
 		let negative = num < 0
 		if negative { num *= -1 }
@@ -66,7 +61,7 @@ extension Double {
 		
 		if negative { base = "-" + base }
 		if base == "-0" { base = "0" }
-		
+
 		return base
 	}
 	

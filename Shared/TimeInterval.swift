@@ -18,11 +18,11 @@ extension TimeInterval {
 		return formatter
 	}()
 	
-	public func getFormattedDuration() -> String {
-		return TimeInterval.durationF.string(from: self)!
+	public var formattedDuration: String {
+		Self.durationF.string(from: self)!
 	}
 
-	public func getRawDuration(hideHours shouldHide: Bool = false) -> String {
+	public func rawDuration(hidingHours shouldHide: Bool = false) -> String {
 		var s = self
 		let neg = s < 0
 		if neg {
@@ -42,29 +42,33 @@ extension TimeInterval {
 
 		return (neg ? "-" : "") + res
 	}
-	
-	public func getUNIXDateTime() -> String {
+
+	/// The representation in the local time zone in the format `YYYY-MM-DD HH:mm` of the date created by interpreting the receiver as the number of seconds from January 1, 1970 00:00:00 UTC.
+	public var unixDateTime: String {
 		let date = Date(timeIntervalSince1970: self)
 		
-		return date.getUNIXDateTime()
+		return date.unixDateTime
 	}
-	
-	public func getFormattedDateTime() -> String {
+
+	/// The representation in the local time zone and current locale of the date and time created by interpreting the receiver as the number of seconds from January 1, 1970 00:00:00 UTC.
+	public var formattedDateTime: String {
 		let date = Date(timeIntervalSince1970: self)
 		
-		return date.getFormattedDate() + " " + date.getFormattedTime()
+		return date.formattedDate
 	}
-	
-	public func getFormattedDate() -> String {
+
+	/// The representation in the local time zone and current locale of the date created by interpreting the receiver as the number of seconds from January 1, 1970 00:00:00 UTC.
+	public var formattedDate: String {
 		let date = Date(timeIntervalSince1970: self)
 		
-		return date.getFormattedDate()
+		return date.formattedDate
 	}
-	
-	public func getFormattedTime() -> String {
+
+	/// The representation in the local time zone and current locale of the time created by interpreting the receiver as the number of seconds from January 1, 1970 00:00:00 UTC.
+	public var formattedTime: String {
 		let date = Date(timeIntervalSince1970: self)
 		
-		return date.getFormattedTime()
+		return date.formattedTime
 	}
 	
 }

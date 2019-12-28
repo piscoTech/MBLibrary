@@ -35,20 +35,50 @@ extension Date {
 		return formatter
 	}()
 
-	public func getUNIXDateTime() -> String {
-		return Date.unixDateTimeF.string(from: self)
+	private static let utcF: DateFormatter = {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		formatter.timeZone = TimeZone(abbreviation: "UTC")
+
+		return formatter
+	}()
+
+	private static let utcIsoF: DateFormatter = {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+		formatter.timeZone = TimeZone(abbreviation: "UTC")
+
+		return formatter
+	}()
+
+	/// The representation of the receiver in the local time zone in the format `YYYY-MM-DD HH:mm`.
+	public var unixDateTime: String {
+		Self.unixDateTimeF.string(from: self)
 	}
-	
-	public func getFormattedDateTime() -> String {
-		return getFormattedDate() + " " + getFormattedTime()
+
+	/// The representation of the receiver in the local time zone and current locale.
+	public var formattedDateTime: String {
+		"\(formattedDate) \(formattedTime)"
 	}
-	
-	public func getFormattedDate() -> String {
-		return Date.localDateF.string(from: self)
+
+	/// The representation of the receiver date in the local time zone and current locale.
+	public var formattedDate: String {
+		Self.localDateF.string(from: self)
 	}
-	
-	public func getFormattedTime() -> String {
-		return Date.localTimeF.string(from: self)
+
+	/// The representation of the receiver time in the local time zone and current locale.
+	public var formattedTime: String {
+		Self.localTimeF.string(from: self)
+	}
+
+	/// The representation of the receiver in UTC in the format `YYYY-MM-DD HH:mm:ss`.
+	public var utcDateTime: String {
+		Self.utcF.string(from: self)
+	}
+
+	/// The representation of the receiver in UTC according to ISO 8601 specification, e.g. `2019-12-22T14:54:35.536Z`.
+	public var utcISOdescription: String {
+		Self.utcIsoF.string(from: self)
 	}
 
 	// MARK: - Handling
