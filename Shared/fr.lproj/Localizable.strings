@@ -10,20 +10,20 @@
 "ERROR" = "Erreur";
 
 // InApp Purchases stuff
-"ERROR_PURCHASE" = "Erreur lors de l'achat";
+"ERROR_PURCHASE" = "Erreur lors de l’achat";
 "ERROR_PROD_LIST" = "Impossible de charger les produits";
-"ERROR_TRANSACTION" = "Impossible de compléter l'achat";
-"PURCHASE_RESTORED" = "L'achat à bien été restauré";
+"ERROR_TRANSACTION" = "Impossible de compléter l’achat";
+"PURCHASE_RESTORED" = "L’achat à bien été restauré";
 
 // Contact Me form
 
-"CANT_SEND_CONTACT_MSG" = "Une erreur a été rencontrée lors de l'envoie du message, veuillez réessayer.";
+"CANT_SEND_CONTACT_MSG" = "Une erreur a été rencontrée lors de l’envoie du message, veuillez réessayer.";
 "MSG_PLACEHOLDER" = "Votre message...";
 
 // Workout types name
 "WORKOUT_NAME_0" = "Autre";
 "WORKOUT_NAME_1" = "Football américain";
-"WORKOUT_NAME_2" = "Tir à l'arc";
+"WORKOUT_NAME_2" = "Tir à l’arc";
 "WORKOUT_NAME_3" = "Football australien";
 "WORKOUT_NAME_4" = "Badminton";
 "WORKOUT_NAME_5" = "Baseball";
@@ -61,7 +61,7 @@
 "WORKOUT_NAME_37" = "Course";
 "WORKOUT_NAME_38" = "Voile";
 "WORKOUT_NAME_39" = "Skateboard";
-"WORKOUT_NAME_40" = "Sports d'hiver";
+"WORKOUT_NAME_40" = "Sports d’hiver";
 "WORKOUT_NAME_41" = "Football";
 "WORKOUT_NAME_42" = "Softball";
 "WORKOUT_NAME_43" = "Squash";

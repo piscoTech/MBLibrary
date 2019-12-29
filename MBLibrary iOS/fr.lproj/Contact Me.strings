@@ -2,9 +2,6 @@
 /* Class = "UINavigationItem"; title = "Contact Me"; ObjectID = "2Jy-SO-rCd"; */
 "2Jy-SO-rCd.title" = "Me contacter";
 
-/* Class = "UITextView"; text = "[Placeholder]"; ObjectID = "8ci-ez-1MU"; */
-"8ci-ez-1MU.text" = "[Placeholder]";
-
 /* Class = "UILabel"; text = "This will only be used to reply to you"; ObjectID = "YaQ-Ht-ce4"; */
 "YaQ-Ht-ce4.text" = "Ne va être utilisée que pour vous répondre";
 
