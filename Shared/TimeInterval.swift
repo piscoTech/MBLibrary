@@ -50,6 +50,13 @@ extension TimeInterval {
 		return date.unixDateTime
 	}
 
+	/// The representation in the local time zone in the format `YYYY-MM-DD HH:mm:ss.sss` of the date created by interpreting the receiver as the number of seconds from January 1, 1970 00:00:00 UTC.
+	public var unixTimestamp: String {
+		let date = Date(timeIntervalSince1970: self)
+
+		return date.unixTimestamp
+	}
+
 	/// The representation in the local time zone and current locale of the date and time created by interpreting the receiver as the number of seconds from January 1, 1970 00:00:00 UTC.
 	public var formattedDateTime: String {
 		let date = Date(timeIntervalSince1970: self)

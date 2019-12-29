@@ -18,6 +18,13 @@ extension Date {
 		
 		return formatter
 	}()
+
+	private static let unixTimestampF: DateFormatter = {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+
+		return formatter
+	}()
 	
 	private static let localDateF: DateFormatter = {
 		let formatter = DateFormatter()
@@ -37,7 +44,7 @@ extension Date {
 
 	private static let utcF: DateFormatter = {
 		let formatter = DateFormatter()
-		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 		formatter.timeZone = TimeZone(abbreviation: "UTC")
 
 		return formatter
@@ -56,6 +63,11 @@ extension Date {
 		Self.unixDateTimeF.string(from: self)
 	}
 
+	/// The representation of the receiver in the local time zone in the format `YYYY-MM-DD HH:mm:ss.sss`.
+	public var unixTimestamp: String {
+		Self.unixTimestampF.string(from: self)
+	}
+
 	/// The representation of the receiver in the local time zone and current locale.
 	public var formattedDateTime: String {
 		"\(formattedDate) \(formattedTime)"
@@ -71,8 +83,8 @@ extension Date {
 		Self.localTimeF.string(from: self)
 	}
 
-	/// The representation of the receiver in UTC in the format `YYYY-MM-DD HH:mm:ss`.
-	public var utcDateTime: String {
+	/// The representation of the receiver in UTC in the format `YYYY-MM-DD HH:mm:ss.sss`.
+	public var utcTimestamp: String {
 		Self.utcF.string(from: self)
 	}
 
