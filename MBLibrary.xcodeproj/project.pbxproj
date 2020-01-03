@@ -210,6 +210,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B77B46923A98109007CABA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FAQ.strings; sourceTree = "<group>"; };
+		3B77B46A23A98109007CABA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/Contact Me.strings"; sourceTree = "<group>"; };
+		3B77B46B23A98109007CABA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A0064BC1D3E92D60089297D /* Main iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Main iOS.swift"; sourceTree = "<group>"; };
 		7A0064CA1D3E9AF00089297D /* MBLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0064CC1D3E9AF10089297D /* MBLibrary macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBLibrary macOS.h"; sourceTree = "<group>"; };
@@ -909,6 +912,7 @@
 				en,
 				Base,
 				it,
+				fr,
 			);
 			mainGroup = 7A584F7C1D3E23ED000C739B;
 			productRefGroup = 7A584F871D3E23ED000C739B /* Products */;
@@ -1193,6 +1197,7 @@
 			children = (
 				7A45846421182563007BEB2D /* Base */,
 				7ACF1539211885A300C7B3E5 /* it */,
+				3B77B46A23A98109007CABA6 /* fr */,
 			);
 			name = "Contact Me.storyboard";
 			sourceTree = "<group>";
@@ -1202,6 +1207,7 @@
 			children = (
 				7A82D90F2119A2A200DB3941 /* Base */,
 				7A82D9122119A2A500DB3941 /* it */,
+				3B77B46923A98109007CABA6 /* fr */,
 			);
 			name = FAQ.storyboard;
 			sourceTree = "<group>";
@@ -1211,6 +1217,7 @@
 			children = (
 				7AD159811D5793E2009E54EE /* Base */,
 				7AD159831D5793E4009E54EE /* it */,
+				3B77B46B23A98109007CABA6 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

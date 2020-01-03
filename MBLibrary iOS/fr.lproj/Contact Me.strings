@@ -1,0 +1,12 @@
+
+/* Class = "UINavigationItem"; title = "Contact Me"; ObjectID = "2Jy-SO-rCd"; */
+"2Jy-SO-rCd.title" = "Me contacter";
+
+/* Class = "UILabel"; text = "This will only be used to reply to you"; ObjectID = "YaQ-Ht-ce4"; */
+"YaQ-Ht-ce4.text" = "Ne va être utilisée que pour vous répondre";
+
+/* Class = "UIBarButtonItem"; title = "Send"; ObjectID = "bp1-zF-ZAa"; */
+"bp1-zF-ZAa.title" = "Envoyer";
+
+/* Class = "UITextField"; placeholder = "Email..."; ObjectID = "hbr-az-EU4"; */
+"hbr-az-EU4.placeholder" = "Email...";
