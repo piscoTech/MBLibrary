@@ -124,7 +124,7 @@ public class ContactMeViewController: UIViewController, UITextViewDelegate {
 		let boundary="_Pisco_Tech_App_"
 		urlRequest.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
-		var param: [String : String] = [
+		let param: [String : String] = [
 			"fromApp": appName,
 			"text": messageField.text.trimmingCharacters(in: .whitespacesAndNewlines),
 			"mail": emailField.text ?? ""
