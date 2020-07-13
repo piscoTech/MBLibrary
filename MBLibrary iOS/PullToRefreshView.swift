@@ -37,7 +37,7 @@ struct PullToRefresh: UIViewRepresentable {
 	}
 
 	func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PullToRefresh>) {
-		DispatchQueue.main.asyncAfter(deadline: .now()) {
+		DispatchQueue.main.async {
 			guard let viewHost = uiView.superview?.superview else {
 				return
 			}
@@ -51,7 +51,7 @@ struct PullToRefresh: UIViewRepresentable {
 				} else {
 					refreshControl.endRefreshing()
 				}
-				
+
 				return
 			}
 
@@ -84,6 +84,10 @@ struct PullToRefresh: UIViewRepresentable {
 @available(iOS 13.0, *)
 extension View {
 	public func pullToRefresh(isShowing: Binding<Bool>, onRefresh: @escaping () -> Void) -> some View {
-		return background(PullToRefresh(action: onRefresh, isShowing: isShowing))
+		VStack(spacing: 0) {
+			// Keep the original view first, a must to have nice animation with large titles
+			self
+			PullToRefresh(action: onRefresh, isShowing: isShowing).frame(width: 0, height: 0)
+		}
 	}
 }
