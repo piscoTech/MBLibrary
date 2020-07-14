@@ -16,7 +16,7 @@ struct PullToRefresh: UIViewRepresentable {
 	let action: () -> Void
 	@Binding var isShowing: Bool
 
-	func makeUIView(context: UIViewRepresentableContext<PullToRefresh>) -> UIView {
+	func makeUIView(context: Context) -> UIView {
 		let view = UIView(frame: .zero)
 		view.isHidden = true
 		view.isUserInteractionEnabled = false
@@ -24,7 +24,7 @@ struct PullToRefresh: UIViewRepresentable {
 		return view
 	}
 
-	func scrollView(root: UIView) -> UIScrollView? {
+	private func scrollView(root: UIView) -> UIScrollView? {
 		for subview in root.subviews {
 			if let scroll = subview as? UIScrollView {
 				return scroll
@@ -36,7 +36,7 @@ struct PullToRefresh: UIViewRepresentable {
 		return nil
 	}
 
-	func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PullToRefresh>) {
+	func updateUIView(_ uiView: UIView, context: Context) {
 		DispatchQueue.main.async {
 			guard let viewHost = uiView.superview?.superview else {
 				return

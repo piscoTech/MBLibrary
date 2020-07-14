@@ -18,6 +18,7 @@
 		7A0065311D3EBB270089297D /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0065301D3EBB270089297D /* TimeIntervalTests.swift */; };
 		7A0065331D3EBC310089297D /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0065321D3EBC310089297D /* ArrayTests.swift */; };
 		7A0C41C31D55398C0082AEAE /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75AECE1D5525300034B4EA /* InAppPurchaseManager.swift */; };
+		7A1224E024BE125B00362245 /* SearchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1224DF24BE125B00362245 /* SearchableView.swift */; };
 		7A1305AA1EAB86E500D29048 /* NSURL+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305A81EAB86E500D29048 /* NSURL+XML.h */; };
 		7A1305AB1EAB86E500D29048 /* NSURL+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1305A91EAB86E500D29048 /* NSURL+XML.m */; };
 		7A1305AC1EAB87C600D29048 /* NSURL+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1305A81EAB86E500D29048 /* NSURL+XML.h */; };
@@ -231,6 +232,7 @@
 		7A00652E1D3EB9A40089297D /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		7A0065301D3EBB270089297D /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
 		7A0065321D3EBC310089297D /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		7A1224DF24BE125B00362245 /* SearchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableView.swift; sourceTree = "<group>"; };
 		7A1305A81EAB86E500D29048 /* NSURL+XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+XML.h"; sourceTree = "<group>"; };
 		7A1305A91EAB86E500D29048 /* NSURL+XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+XML.m"; sourceTree = "<group>"; };
 		7A1305B01EAB885A00D29048 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				7AB06AD324BA5C4100239B56 /* ActivityIndicator.swift */,
 				7AB06AD724BA5FFD00239B56 /* ModalView.swift */,
 				7A19C79024BB0E8E008B05DD /* PullToRefreshView.swift */,
+				7A1224DF24BE125B00362245 /* SearchableView.swift */,
 			);
 			name = SwiftUI;
 			sourceTree = "<group>";
@@ -1147,6 +1150,7 @@
 				7AA0840F1D5FBD7F00B57943 /* InAppPurchaseManager iOS.swift in Sources */,
 				7AC78C7C1D8F1C0C009D3118 /* OutlinedLabel.swift in Sources */,
 				7A6B9C8D1D6B28E400018648 /* Bool.swift in Sources */,
+				7A1224E024BE125B00362245 /* SearchableView.swift in Sources */,
 				7A19C79124BB0E8E008B05DD /* PullToRefreshView.swift in Sources */,
 				7A0064BD1D3E92D60089297D /* Main iOS.swift in Sources */,
 				7A82D90521199CC400DB3941 /* ShowFaqVC.swift in Sources */,
