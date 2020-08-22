@@ -11,6 +11,9 @@ import UIKit
 
 @available(iOS 13.0, *)
 struct SearchableView: UIViewRepresentable {
+	fileprivate let text: Binding<String?>?
+	fileprivate let scopes: [String]?
+	fileprivate let scope: Binding<Int?>?
 	
 	func makeUIView(context: Context) -> UIView {
 		let view = UIView(frame: .zero)
@@ -53,7 +56,7 @@ struct SearchableView: UIViewRepresentable {
 		return Coordinator(self)
 	}
 
-	class Coordinator: NSObject, UISearchResultsUpdating {
+	class Coordinator: NSObject, UISearchResultsUpdating, UISearchBarDelegate {
 		let view: SearchableView
 		let search: UISearchController
 
@@ -64,10 +67,36 @@ struct SearchableView: UIViewRepresentable {
 
 			search.searchResultsUpdater = self
 			search.dimsBackgroundDuringPresentation = false
+			search.searchBar.scopeButtonTitles = view.scopes
+			search.searchBar.delegate = self
+		}
+
+		func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+			guard let scope = view.scope else {
+				return
+			}
+
+			if (search.searchBar.scopeButtonTitles?.isEmpty ?? true) || !search.isActive {
+				scope.wrappedValue = nil
+			} else {
+				scope.wrappedValue = selectedScope
+			}
 		}
 
 		func updateSearchResults(for searchController: UISearchController) {
-			print("Update results")
+			guard let text = view.text else {
+				return
+			}
+
+			if search.isActive != (text.wrappedValue != nil) {
+				self.searchBar(search.searchBar, selectedScopeButtonIndexDidChange: search.searchBar.selectedScopeButtonIndex)
+			}
+
+			if search.isActive {
+				text.wrappedValue = search.searchBar.text ?? ""
+			} else {
+				text.wrappedValue = nil
+			}
 		}
 
 	}
@@ -76,11 +105,20 @@ struct SearchableView: UIViewRepresentable {
 
 @available(iOS 13.0, *)
 extension View {
-	public func searchable() -> some View {
+	private func anySearchable(text: Binding<String?>? = nil, scopes: [String]? = nil, scope: Binding<Int?>? = nil) -> some View {
 		VStack(spacing: 0) {
 			// Keep the original view first, a must to have nice animation with large titles
 			self
-			SearchableView().frame(width: 0, height: 0)
+			SearchableView(text: text, scopes: scopes, scope: scope).frame(width: 0, height: 0)
 		}
 	}
+
+	public func searchable(text: Binding<String?>) -> some View {
+		return anySearchable(text: text, scopes: nil, scope: nil)
+	}
+
+	public func searchable(text: Binding<String?>, scopes: [String], scope: Binding<Int?>) -> some View {
+		return anySearchable(text: text, scopes: scopes, scope: scope)
+	}
+
 }
