@@ -98,6 +98,10 @@
 "WORKOUT_NAME_74" = "Hand Cycling";
 "WORKOUT_NAME_75" = "Disc Sports";
 "WORKOUT_NAME_76" = "Fitness Gaming";
+"WORKOUT_NAME_77" = "Cardio Dance";
+"WORKOUT_NAME_78" = "Social Dance";
+"WORKOUT_NAME_79" = "Pickleball";
+"WORKOUT_NAME_80" = "Cooldown";
 
 // Workout Location Types
 "GENERIC_INDOOR_%@" = "Indoor %@";

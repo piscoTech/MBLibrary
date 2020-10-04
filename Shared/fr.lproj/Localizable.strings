@@ -98,6 +98,10 @@
 "WORKOUT_NAME_74" = "Vélo à main";
 "WORKOUT_NAME_75" = "Sports de disques";
 "WORKOUT_NAME_76" = "Jeux de remise en forme";
+"WORKOUT_NAME_77" = "Cardio Dance";
+"WORKOUT_NAME_78" = "Social Dance";
+"WORKOUT_NAME_79" = "Pickleball";
+"WORKOUT_NAME_80" = "Cooldown";
 
 // Workout Location Types
 "GENERIC_INDOOR_%@" = "%@ en intérieur";

@@ -168,6 +168,14 @@ extension HKWorkoutActivityType {
 			wType = 75
 		case .fitnessGaming:
 			wType = 76
+		case .cardioDance:
+			wType = 77
+		case .socialDance:
+			wType = 78
+		case .pickleball:
+			wType = 79
+		case .cooldown:
+			wType = 80
 		case .other:
 			fallthrough
 		@unknown default:
