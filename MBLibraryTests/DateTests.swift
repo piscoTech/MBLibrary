@@ -16,7 +16,7 @@ class DateTests: XCTestCase {
         super.setUp()
 		
 		// Jul 19, 2016, 9:42 PM CEST
-		d = Date(timeIntervalSince1970: 1468957321)
+        d = Date(timeIntervalSince1970: 1468957321.167)
 	}
     
     override func tearDown() {
@@ -25,7 +25,7 @@ class DateTests: XCTestCase {
     }
 
     func testUNIX() {
-        XCTAssertEqual(d.utcDateTime, "2016-07-19 19:42:01")
+        XCTAssertEqual(d.utcTimestamp, "2016-07-19 19:42:01.167")
     }
 
 }

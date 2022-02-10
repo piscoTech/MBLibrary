@@ -15,11 +15,11 @@ class TimeIntervalTests: XCTestCase {
     override func setUp() {
         super.setUp()
 		
-		a = TimeInterval(2 * 3600 + 34 * 60 + 15) // 2h 34m 15s
+		a = 2 * 3600 + 34 * 60 + 15 // 2h 34m 15s
 		b = 20 // 20s
-		c = TimeInterval(2 * 3600 + 4 * 60 + 5) // 2h 4m 5s
-		d = TimeInterval(1 * 60 + 25) // 1m 25s
-		e = TimeInterval(10 * 60 + 25) // 10m 25s
+		c = 2 * 3600 + 4 * 60 + 5 // 2h 4m 5s
+		d = 1 * 60 + 25 // 1m 25s
+		e = 10 * 60 + 25 // 10m 25s
     }
     
     override func tearDown() {

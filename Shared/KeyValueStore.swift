@@ -121,9 +121,11 @@ public class KeyValueStore {
 		if isLocal {
 			localStore.set(value, forKey: key)
 		} else {
-			#if !os(watchOS)
-				remoteStore.set(NSKeyedArchiver.archivedData(withRootObject: value), forKey: key)
-			#endif
+            if #available(macOS 10.13, *) {
+                #if !os(watchOS)
+                    remoteStore.set(try? NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: false), forKey: key)
+                #endif
+            }
 		}
 	}
 	
@@ -239,7 +241,7 @@ public class KeyValueStore {
 			let def: URL? = nil
 			#if !os(watchOS)
 				if let data = remoteStore.data(forKey: key) {
-					return NSKeyedUnarchiver.unarchiveObject(with: data) as? URL
+					return try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? URL
 				} else {
 					return def
 				}

@@ -66,7 +66,7 @@ struct SearchableView: UIViewRepresentable {
 			super.init()
 
 			search.searchResultsUpdater = self
-			search.dimsBackgroundDuringPresentation = false
+			search.obscuresBackgroundDuringPresentation = false
 			search.searchBar.scopeButtonTitles = view.scopes
 			search.searchBar.delegate = self
 		}

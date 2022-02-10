@@ -21,7 +21,7 @@ func seedRng(_ s: Int? = nil, forceSeed force: Bool = false) {
 public var decimalPoint: String { return String.decimalPoint }
 public var CSVSeparator: String { return String.CSVSeparator }
 
-public protocol Animatable: class {
+public protocol Animatable: AnyObject {
 	
 	func startAnimation()
 	func stopAnimation()

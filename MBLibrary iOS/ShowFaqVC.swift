@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
 class ShowFaqViewController: UIViewController {
 	
 	var faqID: Int!
 	var faqController: FAQController!
-	@IBOutlet private weak var faqView: UIWebView!
+    @IBOutlet private weak var faqView: WKWebView!
 	
 	private var faqLoaded = false
 
@@ -35,7 +36,7 @@ class ShowFaqViewController: UIViewController {
 		} else {
 			url = faqController.error
 		}
-		faqView.loadRequest(URLRequest(url: url))
+        _ = faqView.load(URLRequest(url: url))
 	}
 
 	override func didReceiveMemoryWarning() {
